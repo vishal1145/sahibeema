@@ -7,7 +7,7 @@ var CategoryMetaSchema = new mongoose.Schema({
         type: String,
         enum: ['COMPANYDETAIL', 'PHONENUMBER']
     },
-    value: String,
+    value: {},
     created_at: { type: Date, default: Date.now }
 });
 
