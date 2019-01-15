@@ -8,4 +8,6 @@ var config = {
     environment:'environment.json'
 }
 var itHoursModule =  ithours.initilaize(app,config);
-server.listen(itHoursModule.core.getEnvironmentVariable('port'));
+console.log(itHoursModule.core)
+var port = itHoursModule.core.getEnvironmentVariable('port')
+server.listen(port);
