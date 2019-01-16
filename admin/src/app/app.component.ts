@@ -16,9 +16,7 @@ export class AppComponent {
 
   async getProducts(){
    var input = {
-    "modelName":"Category",
-    "findQuery":{},
-    "path":""
+    "modelName":"Category"
   }
     let res = await this.itHoursService.executeByGet(input, false);
     console.log(res)
