@@ -1,4 +1,6 @@
 var app = require('express')();
+var cors = require('cors');
+app.use(cors())
 var http = require('http');
 var server = http.createServer(app);
 var ithours = require('ithours');
