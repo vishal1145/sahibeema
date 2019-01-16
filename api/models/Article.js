@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
-var PostSchema = new mongoose.Schema({
+var ArticleSchema = new mongoose.Schema({
 image:String,
 posttitle : String,
 description : String,
@@ -19,8 +19,8 @@ comments: [{
 }],
 created_at: { type: Date, default: Date.now },
 updated_at: { type: Date, default: Date.now },
-created_by: { type: mongoose.Schema.Types.ObjectId, ref: 'artist_user' },
-updated_by: { type: mongoose.Schema.Types.ObjectId, ref: 'artist_user' },
+created_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+updated_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 
 });
-module.exports=mongoose.model('Post', PostSchema);
+module.exports=mongoose.model('Article', ArticleSchema);
