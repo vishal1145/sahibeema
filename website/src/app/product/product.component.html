@@ -4,17 +4,17 @@
                         <div class="about-content col-lg-8 col-md-8 col-sm-12">
                                 <h1 class="text-white text-uppercase">
                                         <span style="border-radius: 4px; padding: 15px; background: #fff; margin-right: 10px"><img
-                                                        src="./assets/img/2.png" style="height: 56px"></span> कार
-                                        इंश्योरेंस
+                                                        src={{productdetails.image}} style="height: 56px"></span> {{productdetails.title}}
+                                        
                                 </h1>
-                                <p class="text-white link-nav"><a href="http://protossofttech.com/sahibeema/index.html">मुख्य
+                                <p class="text-white link-nav"><a href="">मुख्य
                                                 पृष्ट </a>
                                         <span class="lnr lnr-arrow-right"></span>
-                                        <a href="http://protossofttech.com/sahibeema/product.html#">
+                                        <a href="">
                                                 सर्विसेज </a>
                                         <span class="lnr lnr-arrow-right"></span>
-                                        <a href="http://protossofttech.com/sahibeema/product.html#">
-                                                कार इंश्योरेंस</a>
+                                        <a href="">
+                                                {{productdetails.title}}</a>
                                 </p>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 home-banner-ad" style="padding-right: 0">
@@ -26,7 +26,7 @@
                                                                 id="slick-slide00" style="width: 365px;">
                                                                 <div>
                                                                         <div class="ad" style="width: 100%; display: inline-block;">
-                                                                                <a href="http://protossofttech.com/sahibeema/product.html#"
+                                                                                <a href=""
                                                                                         tabindex="0"><img class="img-fluid"
                                                                                                 src="./assets/img/ad_4.jpeg"></a>
                                                                         </div>
@@ -36,7 +36,7 @@
                                                                 tabindex="-1" role="tabpanel" id="slick-slide01" style="width: 365px;">
                                                                 <div>
                                                                         <div class="ad" style="width: 100%; display: inline-block;">
-                                                                                <a href="http://protossofttech.com/sahibeema/product.html#"
+                                                                                <a href=""
                                                                                         tabindex="-1"><img src="./assets/img/ad_4.jpeg"></a>
                                                                         </div>
                                                                 </div>
@@ -45,7 +45,7 @@
                                                                 tabindex="-1" role="tabpanel" id="slick-slide02" style="width: 365px;">
                                                                 <div>
                                                                         <div class="ad" style="width: 100%; display: inline-block;">
-                                                                                <a href="http://protossofttech.com/sahibeema/product.html#"
+                                                                                <a href=""
                                                                                         tabindex="-1"><img src="./assets/img/ad_4.jpeg"></a>
                                                                         </div>
                                                                 </div>
@@ -80,8 +80,9 @@
                         <div class="col-lg-9 posts-list">
                                 <div class="single-post row">
                                         <div class="col-lg-7" style="padding-left: 0">
+                                               
                                                 <div class="video-frame" >
-                                                        <iframe class="card-top-img" src={{media}}
+                                                        <iframe class="card-top-img"  src={{mediaurl}}
                                                                 frameborder="0" allowfullscreen=""></iframe>
                                                 </div>
                                         </div>
@@ -859,7 +860,7 @@
                                                         </div>
                                                         <div class="projects_text">
                                                                 <h4>
-                                                                        <img src={{text.icon}}><a href="http://protossofttech.com/sahibeema/portfolio-details.html">{{text.title}}
+                                                                        <img src={{text.icon}}><a href="">{{text.title}}
                                                                                  </a>
                                                                 </h4>
 
@@ -998,17 +999,17 @@
 			</div>
 
 			<div class="row new-articles">
-				<div class=" single-blog">
+				<div class=" single-blog"  *ngFor= "let funart of newblock">
 				<div class="single-blog-item">
 					<div class="thumb">
-                                            <img class="img-fluid w-100" src="./assets/img/post-img2.jpg" alt="">
+                                            <img class="img-fluid w-100" src="{{funart.image}}" alt="">
 					</div>
 					<p class="date">10 Jan 2018</p>
 					<h4>
-						<a href="#">इंश्योरेंस पॉलिसी लेने के तरीके और सही चुनाव</a>
+						<a href="#">{{funart.posttitle}}</a>
 					</h4>
 					<p>
-						inappropriate behavior ipsum dolor sit amet, consectetur.
+						{{funart.description}}
 					</p>
 					<div class="meta-bottom d-flex justify-content-between">
 						<p><span class="lnr lnr-heart"></span> 15 Likes</p>
@@ -1016,7 +1017,7 @@
 					</div>
 				</div>
 				</div>
-				<div class=" single-blog">
+				<!--<div class=" single-blog">
                                     <div class="single-blog-item">
 					<div class="thumb">
 						<img class="img-fluid w-100" src="./assets/img/b2.jpg" alt="">
@@ -1070,7 +1071,7 @@
 					</div>
 				</div>
 				</div>
-                            <!-- <div class=" single-blog">
+                             <div class=" single-blog">
                                     <div class="single-blog-item">
 					<div class="thumb">
                                             <img class="img-fluid w-100" src="./assets/img/cat-widget2.jpg" alt="">

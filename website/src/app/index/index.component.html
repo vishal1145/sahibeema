@@ -7,7 +7,7 @@
                 <p style="color:#fff; opacity: 0.8; margin-bottom: 0">हमारी इंश्योरेंस पॉलिसीज के बारे में</p>
                 <p style="color:#fff; opacity: 0.8; margin-top: 0">इंश्योरेंस पॉलिसीज सर्विसेज..</p>
                 <div class="products" *ngFor="let text of data">
-                    <a href="product" class="product" ><img src={{text.icon}}>
+                    <a [href]="'product/' + text._id" class="product" ><img src={{text.icon}}>
                         <h5>{{text.title}}</h5>
                     </a>
                     
@@ -31,7 +31,7 @@
                     </a> -->
                 </div>
             </div>
-            <div class="offset-lg-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 home-banner-ad">
+            <div class="offset-lg-1 col-lg-4 col-md-4 col-sm-4 col-xs-12 home-banner-ad" >
                 <div class="banner-ads slick-initialized slick-slider slick-dotted">
                     <div class="slick-list draggable">
                         <div class="slick-track" style="opacity: 1; width: 1095px; transform: translate3d(0px, 0px, 0px);">
@@ -39,8 +39,8 @@
                                 role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00" style="width: 365px;">
                                 <div>
                                     <div class="ad" style="width: 100%; display: inline-block;">
-                                        <a href="http://protossofttech.com/sahibeema/#" tabindex="0"><img class="img-fluid"
-                                                src="../.././assets/img/ad_4.jpeg"></a>
+                                        <a href="" tabindex="0"><img class="img-fluid"
+                                                src={{nameblock}}></a>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                                 frameborder="0" allowfullscreen=""></iframe>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="http://protossofttech.com/sahibeema/#">
+                                    <a href="">
                                         इंश्योरेंस क्या है ... और क्यों लेना चाहिये ?
                                     </a>
                                 </h4>
@@ -155,7 +155,7 @@
                                 frameborder="0" allowfullscreen=""></iframe>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="http://protossofttech.com/sahibeema/#">
+                                    <a href="">
                                         इंश्योरेंस कितने तरह का होता है?
                                     </a>
                                 </h4>
@@ -227,18 +227,18 @@
 				</div>
 			</div>
 
-			<div class="row new-articles" >
-				<div class=" single-blog">
+			<div class="row new-articles"  >
+				<div class=" single-blog" *ngFor= "let funart of newblock">
 				<div class="single-blog-item">
 					<div class="thumb">
-                                            <img class="img-fluid w-100" src={{newartical.image}} alt="">
+                                            <img class="img-fluid w-100" src={{funart.image}} alt="">
 					</div>
 					<p class="date">10 Jan 2018</p>
 					<h4>
-						<a href="#">{{newartical.posttitle}}</a>
+						<a href="#">{{funart.posttitle}}</a>
 					</h4>
 					<p>
-						{{newartical.description}}
+						{{funart.description}}
 					</p>
 					<div class="meta-bottom d-flex justify-content-between">
 						<p><span class="lnr lnr-heart"></span> 15 Likes</p>
@@ -372,7 +372,7 @@
                             </div>
                             <div class="projects_text">
                                 <h4>
-                                    <img src={{text.icon}}><a href="http://protossofttech.com/sahibeema/portfolio-details.html">{{text.title}}
+                                    <img src={{text.icon}}><a href="product">{{text.title}}
                                          </a>
                                 </h4>
 
