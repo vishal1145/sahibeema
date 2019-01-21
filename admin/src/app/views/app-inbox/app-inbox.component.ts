@@ -17,6 +17,8 @@ import { ITHoursService } from 'providers/it-hours-service';
 export class AppInboxComponent implements OnInit, OnDestroy {
   isMobile;
   screenSizeWatcher: Subscription;
+  public viewMode: string = 'grid-view';
+  public currentPage: any;
   isSidenavOpen: Boolean = true;
   selectToggleFlag = false;
   products:any[]
@@ -68,6 +70,9 @@ export class AppInboxComponent implements OnInit, OnDestroy {
       this.isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
       this.updateSidenav();
     });
+  }
+  toggleSideNav() {
+    this.sideNav.opened = !this.sideNav.opened;
   }
   async  getArticles(){
     var input = {

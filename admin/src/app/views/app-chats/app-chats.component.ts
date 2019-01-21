@@ -15,6 +15,8 @@ export class AppChatsComponent implements OnInit, OnDestroy {
   isMobile;
   screenSizeWatcher: Subscription;
   isSidenavOpen: Boolean = true;
+  public viewMode: string = 'grid-view';
+  public currentPage: any;
   products : any[]
   @ViewChild(MatSidenav) public sideNav: MatSidenav;
 
@@ -62,6 +64,9 @@ export class AppChatsComponent implements OnInit, OnDestroy {
       this.isMobile = (change.mqAlias === 'xs') || (change.mqAlias === 'sm');
       this.updateSidenav();
     });
+  }
+  toggleSideNav() {
+    this.sideNav.opened = !this.sideNav.opened;
   }
  async getProducts(){
     var input ={
