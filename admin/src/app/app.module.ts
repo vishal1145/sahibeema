@@ -11,7 +11,7 @@ import {
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/inmemory-db/inmemory-db.service';
-
+import {HttpModule}from '@angular/http'
 import { rootRouterConfig } from './app.routing';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -37,6 +37,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SharedModule,
     HttpClientModule,
     PerfectScrollbarModule,
+    HttpModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

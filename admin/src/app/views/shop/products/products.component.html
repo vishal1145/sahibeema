@@ -13,11 +13,11 @@
               </mat-expansion-panel-header>
               <ul class="product-categories">
                 <li [ngClass]="{'fw-500': 'all' === activeCategory}" (click)="setActiveCategory('all')">All</li>
-                <li *ngFor="let c of categories$ | async" [ngClass]="{'fw-500': c === activeCategory}" (click)="setActiveCategory(c)">{{c}}</li>
+                <li *ngFor="let cat of categories" [ngClass]="{'fw-500': cat === activeCategory}" (click)="setActiveCategory(cat)">{{cat.title}}</li>
               </ul>
             </mat-expansion-panel>
             <!-- Price -->
-            <mat-expansion-panel>
+            <!-- <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Price
@@ -29,9 +29,9 @@
   
               <p class="m-0">Max: {{filterForm.controls['maxPrice']['value'] || 40 | currency:'USD'}}</p>
               <mat-slider class="full-width pl-0" [formControl]="filterForm.controls['maxPrice']" [thumbLabel]="true" [max]="50" [min]="filterForm.controls['minPrice']?.value + 5"></mat-slider>
-            </mat-expansion-panel>
+            </mat-expansion-panel> -->
             <!-- Ratings -->
-            <mat-expansion-panel>
+            <!-- <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Ratings
@@ -43,7 +43,7 @@
   
               <p class="m-0">Max: {{filterForm.controls['maxRating']['value'] || 5}}</p>
               <mat-slider class="full-width mb-1" [formControl]="filterForm.controls['maxRating']" [thumbLabel]="true" [max]="5" [min]="filterForm.controls['minRating']?.value + 1"></mat-slider>
-            </mat-expansion-panel>
+            </mat-expansion-panel> -->
           </mat-accordion>
         </form>
       </div>
@@ -57,7 +57,7 @@
           <button mat-icon-button class="mr-1" (click)="toggleSideNav()"><mat-icon>short_text</mat-icon> </button>
           <div class="product-search-wrap">
             <form [formGroup]="filterForm">
-              <input type="text" name="searchProduct" placeholder="Search product" class="product-search default-bg full-width" [formControl]="filterForm.controls['search']">
+              <input type="text" name="searchProduct" placeholder="Search product" class="product-search default-bg full-width"  (keyup)="onKey($event)" [formControl]="filterForm.controls['search']">
             </form>
           </div>
           <!-- View change buttons and cart -->
@@ -72,7 +72,7 @@
           </div>
           <span fxFlex="20px"></span>
           <button mat-raised-button color="primary" routerLink="/shop/cart">
-            <mat-icon>shopping_cart</mat-icon> Cart ({{cartData.itemCount}})
+            <mat-icon>add_box</mat-icon> Add Product
           </button>
         </div>
         <!-- Products container -->
@@ -81,27 +81,27 @@
           <!-- Product Box -->
           <div  
           class="product-wrap" 
-          *ngFor="let product of products$ | async | paginate: { itemsPerPage: 6, currentPage: currentPage }; let i = index;"
+          *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: currentPage } ; let i = index;"
           [@animate]="{value:'*',params:{delay: (i*100)+'ms', y:'50px'}}">
-            <div class="product-inner default-bg">
+            <div class="product-inner default-bg" >
               <div *ngIf="product?.badge?.text" class="product-badge mat-elevation-z7" [ngStyle]="{background: product?.badge?.color || '#f44336'}">
                 <span>{{product?.badge?.text}}</span>
               </div>
               <div class="featured-img" [routerLink]="['/shop/products/', product._id]">
-                <img [src]="product.photo" alt="">
+                <img [src]="product.media.mediaurl" alt="">
               </div>
               <div class="info-wrap p-1">
-                <div class="main-info">
+                <div class="main-info" style="min-height: 0">
                   <h3 class="title" [routerLink]="['/shop/products/', product._id]">{{product.name}}</h3>
-                  <p class="text-muted p-line">{{product?.subtitle}}</p>
+                  <p class="text-muted p-line">{{product?.title}}</p>
                   <p class="text-muted p-line">
-                    <strong>Category:</strong> {{product?.category}}</p>
-                  <p class="text-muted p-line">
+                    <strong>Category:</strong> {{product?.category.title}}</p>
+                  <!-- <p class="text-muted p-line">
                     <strong>Tags:</strong>
                     <span *ngFor="let t of product.tags">{{t}} </span>
-                  </p>
+                  </p> -->
                 </div>
-                <div class="actions">
+                <!-- <div class="actions">
                   <div class="price-rating">
                     <div class="product-rating" *ngIf="viewMode === 'grid-view'">
                       <star-rating-comp [rating]="product.ratings.rating" [starType]="'svg'" [readOnly]="true" [size]="'small'" [staticColor]="'ok'"></star-rating-comp>
@@ -119,7 +119,7 @@
                       <mat-icon>add_shopping_cart</mat-icon>
                     </button>
                   </div>
-                </div>
+                </div> -->
               </div>
               <!-- Visible when viewMode === list-view -->
               <div class="more-info-wrap p-1" *ngIf="viewMode === 'list-view'">

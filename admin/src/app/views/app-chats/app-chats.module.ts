@@ -15,6 +15,7 @@ import {
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from '../../shared/shared.module'
 import { AppChatsComponent } from './app-chats.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ChatsRoutes } from './app-chats.routing';
 import { ChatLeftSidenavComponent } from './chat-left-sidenav/chat-left-sidenav.component';
 import { ChatContentsComponent } from './chat-contents/chat-contents.component';
@@ -32,6 +33,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     MatIconModule,
     MatButtonModule,
     MatListModule,
+    NgxPaginationModule,
     MatToolbarModule,
     MatCardModule,
     FlexLayoutModule,

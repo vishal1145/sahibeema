@@ -17,7 +17,7 @@ import {
  } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { QuillModule } from 'ngx-quill';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from './../../shared/shared.module';
 import { AppInboxComponent } from './app-inbox.component';
 import { MailComposeComponent } from './mail-compose.component';
@@ -39,6 +39,7 @@ import { InboxRoutes } from "./app-inbox.routing";
     MatCheckboxModule,
     MatTooltipModule,
     MatExpansionModule,
+    NgxPaginationModule,
     FlexLayoutModule,
     QuillModule,
     SharedModule,
