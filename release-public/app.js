@@ -12,6 +12,6 @@ app.use('/wp-includes', serveStatic(__dirname + '/wp-includes'));
 const port = 9111;
 
 
-app.get('/', (req, res) => res.sendfile('./index.html'))
+app.get('*', (req, res) => res.sendfile('./index.html'))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

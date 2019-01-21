@@ -23,6 +23,7 @@ export class SidebarSideComponent implements OnInit, OnDestroy, AfterViewInit {
     this.iconTypeMenuTitle = this.navService.iconTypeMenuTitle;
     this.menuItemsSub = this.navService.menuItems$.subscribe(menuItem => {
       this.menuItems = menuItem;
+     // this.menuItems.push(menuItem[0]);
       //Checks item list has any icon type.
       this.hasIconTypeMenuItem = !!this.menuItems.filter(item => item.type === 'icon').length;
     });

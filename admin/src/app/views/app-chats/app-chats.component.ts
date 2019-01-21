@@ -3,16 +3,21 @@ import { Subscription } from 'rxjs/Subscription';
 import { MediaChange, ObservableMedia } from '@angular/flex-layout';
 import { MatSidenav, MatDialog } from '@angular/material';
 import { ChatService } from './chat.service';
+import { ITHoursService } from 'providers/it-hours-service';
 
 @Component({
   selector: 'app-chats',
   templateUrl: './app-chats.component.html',
-  styleUrls: ['./app-chats.component.css']
+  styleUrls: ['./app-chats.component.css'],
+  providers :[ITHoursService]
 })
 export class AppChatsComponent implements OnInit, OnDestroy {
   isMobile;
   screenSizeWatcher: Subscription;
   isSidenavOpen: Boolean = true;
+  public viewMode: string = 'grid-view';
+  public currentPage: any;
+  products : any[]
   @ViewChild(MatSidenav) public sideNav: MatSidenav;
 
   activeChatUser = {
@@ -26,10 +31,12 @@ export class AppChatsComponent implements OnInit, OnDestroy {
 
   constructor(
     private media: ObservableMedia, 
-    public chatService: ChatService
+    public chatService: ChatService,
+    public itHourService : ITHoursService
   ) {
     console.log(chatService.chats)
     this.user = chatService.user
+    this.getProducts()
   }
 
   ngOnInit() {
@@ -57,5 +64,15 @@ export class AppChatsComponent implements OnInit, OnDestroy {
       this.isMobile = (change.mqAlias === 'xs') || (change.mqAlias === 'sm');
       this.updateSidenav();
     });
+  }
+  toggleSideNav() {
+    this.sideNav.opened = !this.sideNav.opened;
+  }
+ async getProducts(){
+    var input ={
+      "modelName":"Advertisement"
+    }
+    var res = await this.itHourService.executeByGet(input,false);
+    this.products = res.apidata.Data
   }
 }

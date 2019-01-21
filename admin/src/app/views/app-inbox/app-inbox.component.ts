@@ -6,18 +6,22 @@ import { MatSidenav, MatDialog } from '@angular/material';
 
 import { AppInboxService } from './app-inbox.service';
 import { MailComposeComponent } from './mail-compose.component';
+import { ITHoursService } from 'providers/it-hours-service';
 
 @Component({
   selector: 'app-inbox',
   templateUrl: './app-inbox.component.html',
   styleUrls: ['./app-inbox.component.css'],
-  providers: [AppInboxService]
+  providers: [AppInboxService,ITHoursService]
 })
 export class AppInboxComponent implements OnInit, OnDestroy {
   isMobile;
   screenSizeWatcher: Subscription;
+  public viewMode: string = 'grid-view';
+  public currentPage: any;
   isSidenavOpen: Boolean = true;
   selectToggleFlag = false;
+  products:any[]
   @ViewChild(MatSidenav) private sideNav: MatSidenav;
   messages;
 
@@ -25,7 +29,10 @@ export class AppInboxComponent implements OnInit, OnDestroy {
   constructor(private router: Router,
     private media: ObservableMedia,
     public composeDialog: MatDialog,
-    private inboxService: AppInboxService) { }
+    private inboxService: AppInboxService,
+    public itHourService:ITHoursService) {
+      this.getArticles()
+     }
 
   ngOnInit() {
     this.inboxSideNavInit();
@@ -64,4 +71,14 @@ export class AppInboxComponent implements OnInit, OnDestroy {
       this.updateSidenav();
     });
   }
+  toggleSideNav() {
+    this.sideNav.opened = !this.sideNav.opened;
+  }
+  async  getArticles(){
+    var input = {
+      "modelName":"Article"
+    }
+    var res = await this.itHourService.executeByGet(input,false);
+    this.products = res.apidata.Data
+ }
 }

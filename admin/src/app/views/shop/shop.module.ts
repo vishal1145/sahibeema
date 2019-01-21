@@ -25,6 +25,7 @@ import {
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { StarRatingModule } from 'angular-star-rating';
 import { NgxPaginationModule } from 'ngx-pagination';
+
 import { SharedModule } from '../../shared/shared.module'
 
 import { ProductsComponent } from './products/products.component';
