@@ -21,11 +21,13 @@ export class IndexComponent implements OnInit {
   newadd:any;
   addnew1:any;
   addnew2:any;
+  newvalue:any;
 ngOnInit(){
   //UseEffects();
 }
 constructor (
-  public itHoursService:ITHoursService
+  public itHoursService:ITHoursService,
+  public router:Router
  ){
   this.getCategory()
  }
@@ -38,7 +40,9 @@ async getId(cat){
     }
  let productbycategory = await this.itHoursService.executeByGet(product, false);
     console.log(productbycategory)
-     
+     var no = productbycategory.apidata.Data.length -1;
+    var id = productbycategory.apidata.Data[no]._id
+    this.router.navigate(['/product/' + id]);
  }
 async getCategory(){
   var input = {
@@ -50,14 +54,7 @@ async getCategory(){
 
 
 
-    var product = {
-      "modelName": "Product",
-      "findQuery": {
-        "category": "test"
-      }
-    }
-    let productbycategory = await this.itHoursService.executeByGet(product, false);
-    console.log(productbycategory)
+ 
 
 
    var getArticle = {

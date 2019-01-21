@@ -24,6 +24,8 @@ export class ProductComponent {
   newadd:any;
   addnew1:any;
   blockadd:any;
+  categoryid:any = {};
+  dataid:any;
   constructor(
     public itHoursService: ITHoursService,
     private activatedRoute: ActivatedRoute
@@ -62,24 +64,44 @@ export class ProductComponent {
 
     var input = {
       "modelName": "Category"
+
     }
     let raj = await this.itHoursService.executeByGet(input, false);
     console.log(raj)
     this.data = raj.apidata.Data
     for (var i = 0; i < this.data.length; i++) {
+   
       if (this.data[i]._id == this.id) {
         this.productdetails = this.data[i] 
       }
     }
-    var product = {
+
+    var productbyid = {
       "modelName": "Product",
       "findQuery": {
-        "category": this.id
-      }
-    }
-    let productbycategory = await this.itHoursService.executeByGet(product, false);
+        "_id": this.id,
+        },
+        "path":"category"
+   }
+    let productbycategory = await this.itHoursService.executeByGet(productbyid, false);
     console.log(productbycategory)
-
+    
+     this.categoryid = productbycategory.apidata.Data[0].category
+  
+        
+  var newproduct =
+    {
+      "modelName" :"Product",
+      "findQuery":{
+    
+        "category":productbycategory.apidata.Data[0].category,
+        "_id":{
+          "$ne" : this.id
+        }
+    }
+  }
+  let productbynewcategory = await this.itHoursService.executeByGet(newproduct, false);
+  console.log(productbynewcategory)
   
 
    var addArticle = {
