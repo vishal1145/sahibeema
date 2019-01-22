@@ -1,15 +1,15 @@
 
 <header id="header" class="">
-		<div class="header-top">
+		<!-- <div class="header-top">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-sm-6 col-4 no-padding">
-<!--						<div class="header-top-left">
+						<div class="header-top-left">
 							<a href="">
 								
 								
 							</a>
-						</div>-->
+						</div>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
 						<ul>
@@ -26,18 +26,18 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="container main-menu">
 			<div class="row align-items-center justify-content-between d-flex">
-				<div id="logo">
-					<a href="index"><img src="./assets/img/logo.png" alt="" title=""></a>
+				<div id="logo" class="data" >
+					<img src="./assets/img/logo.png" alt="" title="" (click) = indexfun() >
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
-						<li class="menu-active"><a href="">मुख्य पृष्ट</a></li>
-						<li><a href="">वीडियो</a></li>
-						<li><a href="team">हमारे बारे में</a></li>
-						<li class="menu-has-children"><a href="" class="sf-with-ul">सर्विसेज</a>
+						<li class="menu-active data" (click) = indexfun()>मुख्य पृष्ट</li>
+						<li class="data">वीडियो</li>
+						<li class ="data" (click)= myfunction()>हमारे बारे में</li>
+						<li class="menu-has-children sf-with-ul data ">सर्विसेज
 							<ul style="display: none;">
 								<li><a href="">जीवन बीमा</a></li>
 								<li><a href="">कार बीमा</a></li>
@@ -49,7 +49,7 @@
 							</ul>
 						</li>
 						
-						<li><a href="contact">सम्पर्क</a></li>
+						<li class="data" (click) = contactfun()>सम्पर्क</li>
 					</ul>
 				</nav>
 				<!--######## #nav-menu-container -->

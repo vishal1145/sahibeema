@@ -26,6 +26,7 @@ export class ProductComponent {
   blockadd:any;
   categoryid:any = {};
   dataid:any;
+  allimagedata:any;
   constructor(
     public itHoursService: ITHoursService,
     private activatedRoute: ActivatedRoute
@@ -110,11 +111,21 @@ export class ProductComponent {
 let addblock = await this.itHoursService.executeByGet(addArticle, false);
    console.log(addblock)
     this.blockadd = addblock.apidata.Data;
-    this.nameblock = this.blockadd[4].image
+    this.nameblock = this.getImage('product','side',addblock)    // this.blockadd[4].image
     this.newadd = this.blockadd[1].image
-    this.addnew1 = this.blockadd[2].image
+    this.addnew1 = this.blockadd[3].image
+    }
+    getImage(pagename,area,allimages){
 
+      console.log(allimages)
+    this.allimagedata = allimages.apidata.Data
+     for (var i = 0; i< this.allimagedata.length;i++){
+       if (this.allimagedata[i].page==pagename && this.allimagedata[i].area == area ){
+         return this.allimagedata[i].image
+       }
+     }
+    
+    }
 
-   }
 }
 
