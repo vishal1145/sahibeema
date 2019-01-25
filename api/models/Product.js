@@ -9,6 +9,7 @@ var ProductSchema = new mongoose.Schema({
         mediaurl:String
     },
     highlights :[],
+    published :Boolean,
     category:{type:mongoose.Schema.Types.ObjectId,ref: 'Category'},
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }

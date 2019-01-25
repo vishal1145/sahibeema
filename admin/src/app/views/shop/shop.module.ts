@@ -27,7 +27,7 @@ import { StarRatingModule } from 'angular-star-rating';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { SharedModule } from '../../shared/shared.module'
-
+import {ITCommonModule} from 'providers/common.module'
 import { ProductsComponent } from './products/products.component';
 import { ShopService } from './shop.service';
 import { ShopRoutes } from './shop.routing';
@@ -38,6 +38,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
+    ITCommonModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
