@@ -9,6 +9,7 @@ export const rootRouterConfig: Routes = [
     redirectTo: 'home', 
     pathMatch: 'full' 
   },
+
   {
     path: 'home',
     loadChildren: './views/home/home.module#HomeModule',
@@ -25,6 +26,7 @@ export const rootRouterConfig: Routes = [
       }
     ]
   },
+
   {
     path: '', 
     component: AdminLayoutComponent,
@@ -86,7 +88,7 @@ export const rootRouterConfig: Routes = [
         data: { title: 'Drag and Drop', breadcrumb: 'DND'}
       },
       {
-        path: 'inbox', 
+        path: 'article', 
         loadChildren: './views/app-inbox/app-inbox.module#AppInboxModule', 
         data: { title: 'Inbox', breadcrumb: 'INBOX'}
       },
@@ -96,7 +98,7 @@ export const rootRouterConfig: Routes = [
         data: { title: 'Calendar', breadcrumb: 'CALENDAR'}
       },
       {
-        path: 'chat', 
+        path: 'advertisement', 
         loadChildren: './views/app-chats/app-chats.module#AppChatsModule', 
         data: { title: 'Chat', breadcrumb: 'CHAT'}
       },
@@ -106,9 +108,9 @@ export const rootRouterConfig: Routes = [
         data: { title: 'CRUDs', breadcrumb: 'CRUDs'}
       },
       {
-        path: 'shop', 
+        path: 'product', 
         loadChildren: './views/shop/shop.module#ShopModule', 
-        data: { title: 'Shop', breadcrumb: 'SHOP'}
+        data: { title: 'Product', breadcrumb: 'SHOP'}
       },
       {
         path: 'icons', 

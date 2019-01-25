@@ -436,9 +436,9 @@ export class NavigationService {
     {
       name: 'Products',
       type: 'link',
-      tooltip: 'Shop',
+      tooltip: 'Product',
       icon: 'shopping_cart',
-      state: 'shop',
+      state: 'product',
       // sub: [
       //   { name: 'PRODUCTS', state: '' },
       //   { name: 'PRODUCT DETAILS', state: 'products/5a9ae2106f155194e5c95d67' },
@@ -451,7 +451,7 @@ export class NavigationService {
       type: 'link',
       tooltip: 'Inbox',
       icon: 'inbox',
-       state: 'inbox',
+       state: 'article',
       // badges: [{ color: 'primary', value: '4' }],
     },
     {
@@ -459,7 +459,7 @@ export class NavigationService {
       type: 'link',
       tooltip: 'Chat',
       icon: 'chat',
-      state: 'chat',
+      state: 'advertisement',
       // badges: [{ color: 'warn', value: '1' }]
     },
     // {

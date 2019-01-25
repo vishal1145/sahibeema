@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
+import { AddProductComponent } from './addproduct/addProduct.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 export const ShopRoutes: Routes = [{
@@ -14,8 +15,8 @@ export const ShopRoutes: Routes = [{
     component: ProductDetailsComponent,
     data: { title: 'Detail', breadcrumb: 'Detail' }
   }, {
-    path: 'cart',
-    component: CartComponent,
+    path: 'addproduct',
+    component: AddProductComponent,
     data: { title: 'Cart', breadcrumb: 'CART' }
   }, {
     path: 'checkout',

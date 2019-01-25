@@ -33,6 +33,7 @@ import { ShopService } from './shop.service';
 import { ShopRoutes } from './shop.routing';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
+import { AddProductComponent } from './addproduct/addProduct.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
@@ -67,7 +68,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
   declarations: [
     ProductsComponent, 
     ProductDetailsComponent, 
-    CartComponent, CheckoutComponent
+    CartComponent, CheckoutComponent,
+    AddProductComponent
   ],
   providers: [ShopService]
 })

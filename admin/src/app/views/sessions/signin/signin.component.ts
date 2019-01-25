@@ -40,7 +40,7 @@ export class SigninComponent implements OnInit {
     }
     var res = await this.itHourService.executeByGet(input,false);
     if(res.apidata.Data.length!=0){
-      this.router.navigate(['/shop']);
+      this.router.navigate(['/product']);
     }
    this.submitButton.disabled = true;
     this.progressBar.mode = 'indeterminate';

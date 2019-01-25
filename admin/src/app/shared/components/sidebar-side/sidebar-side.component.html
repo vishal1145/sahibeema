@@ -1,33 +1,33 @@
 <div class="sidebar-panel">
   <div id="scroll-area" [perfectScrollbar] class="navigation-hold" fxLayout="column">
     <!-- App Logo -->
-    <div class="branding default-bg">
-      <img src="assets/images/fav.png" alt="" class="app-logo">
+    <div class="branding default-bg" >
+      <img src="assets/images/sahi_logo.png" alt="" class="app-logo" style="height:48px">
       <!-- Two different logos for dark and light themes -->
-      <img 
+      <!-- <img 
       src="assets/images/logo-text-white.png" 
       alt="" 
       class="app-logo-text"
-      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') !== -1">
-      <img 
+      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') !== -1"> -->
+      <!-- <img 
       src="assets/images/logo-text.png" 
       alt="" 
       class="app-logo-text"
-      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') === -1">
+      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') === -1"> -->
     </div>
 
     <!-- Sidebar user -->
     <div class="app-user">
       <div class="app-user-photo">
-        <img src="assets/images/face-7.jpg" alt="">
+        <img src="assets/images/fav.png" alt="">
       </div>
       <span class="app-user-name mb-05">
         <mat-icon class="icon-xs text-muted">lock</mat-icon> 
-        Watson Joyce
+        Administrator
       </span>
       <!-- Small buttons -->
       <div class="app-user-controls">
-        <button 
+        <!-- <button 
         class="text-muted"
         mat-icon-button 
         mat-xs-button
@@ -49,7 +49,7 @@
         matTooltip="Sign Out"
         routerLink="/sessions/signin">
           <mat-icon>exit_to_app</mat-icon>
-        </button>
+        </button> -->
         <mat-menu #appUserMenu="matMenu">
             <button mat-menu-item routerLink="/profile/overview">
               <mat-icon>account_box</mat-icon>

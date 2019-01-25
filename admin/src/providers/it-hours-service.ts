@@ -54,8 +54,8 @@ export class ITHoursService {
         headers.append('DeviceId', '12345');
         return headers;
     }
+ 
   
-
     //ShowErrorAlert() {
     //    $("#error").fadeTo(2000, 500).slideUp(500, function () {
     //        $("#error").slideUp(500);
@@ -79,7 +79,50 @@ export class ITHoursService {
 
         return toSend;
     }
+    
+    
+    getyoutubeid(url, opts) {
+        //function (url, opts) {
+            if (opts == undefined) {
+                opts = { fuzzy: true };
+            }
 
+            if (/youtu\.?be/.test(url)) {
+
+                // Look first for known patterns
+                var i;
+                var patterns = [
+                    /youtu\.be\/([^#\&\?]{11})/,  // youtu.be/<id>
+                    /\?v=([^#\&\?]{11})/,         // ?v=<id>
+                    /\&v=([^#\&\?]{11})/,         // &v=<id>
+                    /embed\/([^#\&\?]{11})/,      // embed/<id>
+                    /\/v\/([^#\&\?]{11})/         // /v/<id>
+                ];
+
+                // If any pattern matches, return the ID
+                for (i = 0; i < patterns.length; ++i) {
+                    if (patterns[i].test(url)) {
+                        return patterns[i].exec(url)[1];
+                    }
+                }
+
+                if (opts.fuzzy) {
+                    // If that fails, break it apart by certain characters and look 
+                    // for the 11 character key
+                    var tokens = url.split(/[\/\&\?=#\.\s]/g);
+                    for (i = 0; i < tokens.length; ++i) {
+                        if (/^[^#\&\?]{11}$/.test(tokens[i])) {
+                            return tokens[i];
+                        }
+                    }
+                }
+            }
+
+            return null;
+
+    }
+    
+    
     prepareRequestObject(prcId: string, keyvaluepair: string) {
         var inputData: any = {};
         inputData.PRCID = "VALUSR";
@@ -119,7 +162,16 @@ export class ITHoursService {
            return { isapisuccess: false, apidata: null}
     
         }
-
+   async  executeByUpdate(inputData: any, showload: boolean = true) {
+            var sharedCRUD = this.getCRUDSharedUrl() + "/UPDATE"
+              const apiresponse =  await this.http.post(sharedCRUD, inputData).toPromise();
+              console.log(apiresponse.json());
+              if( apiresponse )
+                return { isapisuccess: true, apidata: apiresponse.json()}
+              else
+               return { isapisuccess: false, apidata: null}
+        
+            }
     async executeByGet(inputData: any, showload: boolean = true) {
           var sharedCRUD = this.getCRUDSharedUrl() + "/GET";
           const apiresponse =  await this.http.post(sharedCRUD, inputData).toPromise();

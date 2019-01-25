@@ -62,16 +62,17 @@
           </div>
           <!-- View change buttons and cart -->
           <span fxFlex></span>
-          <div [fxHide.lt-md]="true">
+          <!-- <div [fxHide.lt-md]="true">
             <button mat-icon-button [color]="viewMode === 'list-view' ? 'primary' : ''" (click)="viewMode = 'list-view'">
               <mat-icon>format_list_bulleted</mat-icon>
             </button>
             <button mat-icon-button [color]="viewMode === 'grid-view' ? 'primary' : ''" (click)="viewMode = 'grid-view'">
               <mat-icon>apps</mat-icon>
             </button>
-          </div>
+          </div> -->
+       
           <span fxFlex="20px"></span>
-          <button mat-raised-button color="primary" routerLink="/shop/cart">
+          <button mat-raised-button color="primary" [routerLink]="['/product/addproduct']">
             <mat-icon>add_box</mat-icon> Add Product
           </button>
         </div>
@@ -87,9 +88,11 @@
               <div *ngIf="product?.badge?.text" class="product-badge mat-elevation-z7" [ngStyle]="{background: product?.badge?.color || '#f44336'}">
                 <span>{{product?.badge?.text}}</span>
               </div>
+            
               <div class="featured-img" [routerLink]="['/shop/products/', product._id]">
                 <img [src]="product.media.mediaurl" alt="">
               </div>
+            
               <div class="info-wrap p-1">
                 <div class="main-info" style="min-height: 0">
                   <h3 class="title" [routerLink]="['/shop/products/', product._id]">{{product.name}}</h3>
@@ -168,4 +171,56 @@
   
     </div>
   </mat-sidenav-container>
+</div>
+
+
+
+
+<div id="conformvideo" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          
+
+        
+          <div class="modal-body">
+             
+               <div class="row">
+
+                  <!-- <div class="col-md-6">
+                      <select class="countryDropDown" name="dsfdsf" style="background-color: #999999; color: white; padding: 11px 5px;border-radius: 3px;margin-bottom: 15px;" [(ngModel)]="selectcategory" (change)="sscategory(selectcategory)">
+                          <option *ngFor="let category of categories" [ngValue]="category._id">
+                              {{category.title}}
+                          </option>
+                      </select>
+                  </div> -->
+                
+
+              </div> 
+
+           
+      
+
+              <div class="row" >
+                  <div class="col-md-12 form-group is-empty">
+                      <textarea class="form-control" type="text"  placeholder="Enter Video title Here" [(ngModel)]="Title"></textarea>
+                  </div>
+              </div>
+              <div class="row" *ngIf="embedmode">
+                  <div class="col-md-12 form-group is-empty">
+                      <textarea class="form-control" *ngIf="embedmode" placeholder="Enter youtube link Here" [(ngModel)]="youtubelinkmodel" (ngModelChange)="updateSrc($event)" rows="2" cols="50"></textarea>
+                     
+                  </div>
+              </div>
+
+             
+
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" (click)="Confirmation('1')">yes</button>
+                      <button type="button" class="btn btn-secondary" (click)="Confirmation('0')">No</button>
+                  </div>
+              </div>
+
+          
+      </div>
+  </div>
 </div>

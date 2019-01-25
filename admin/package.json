@@ -51,6 +51,7 @@
     "perfect-scrollbar": "1.4.0",
     "rxjs": "6.1.0",
     "rxjs-compat": "6.1.0",
+    "underscore": "^1.9.1",
     "web-animations-js": "2.3.1",
     "zone.js": "0.8.26"
   },

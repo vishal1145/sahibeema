@@ -9,7 +9,7 @@ import { ITHoursService } from 'providers/it-hours-service';
   selector: 'app-chats',
   templateUrl: './app-chats.component.html',
   styleUrls: ['./app-chats.component.css'],
-  providers :[ITHoursService]
+  providers: [ITHoursService]
 })
 export class AppChatsComponent implements OnInit, OnDestroy {
   isMobile;
@@ -17,7 +17,10 @@ export class AppChatsComponent implements OnInit, OnDestroy {
   isSidenavOpen: Boolean = true;
   public viewMode: string = 'grid-view';
   public currentPage: any;
-  products : any[]
+  prodId: any;
+  image: any;
+  products: any[]
+  currentFile: any = '';
   @ViewChild(MatSidenav) public sideNav: MatSidenav;
 
   activeChatUser = {
@@ -30,9 +33,9 @@ export class AppChatsComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private media: ObservableMedia, 
+    private media: ObservableMedia,
     public chatService: ChatService,
-    public itHourService : ITHoursService
+    public itHourService: ITHoursService
   ) {
     console.log(chatService.chats)
     this.user = chatService.user
@@ -68,11 +71,66 @@ export class AppChatsComponent implements OnInit, OnDestroy {
   toggleSideNav() {
     this.sideNav.opened = !this.sideNav.opened;
   }
- async getProducts(){
-    var input ={
-      "modelName":"Advertisement"
+  async getProducts() {
+    var input = {
+      "modelName": "Advertisement"
     }
-    var res = await this.itHourService.executeByGet(input,false);
+    var res = await this.itHourService.executeByGet(input, false);
     this.products = res.apidata.Data
+  }
+
+  setFile(element: any, id) {
+    // $("#auth").show();
+    this.prodId = id
+    var self = this;
+    this.currentFile = element.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function (event: any) {
+      self.image = event.target.result;
+    }
+    reader.readAsDataURL(element.target.files[0]);
+    this.uploadToAws()
+  }
+
+  uploadToAws() {
+    var self = this;
+    var fileName = this.currentFile.name;
+    var fileName1 = this.itHourService.generateUUID() + fileName.substring(fileName.indexOf('.'), fileName.length);
+    var photoKey = fileName1;
+    photoKey = 'Quacck/' + '123' + "/" + photoKey;
+    this.itHourService.getAWSObj().upload({
+      Key: photoKey,
+      Body: this.currentFile,
+      ACL: 'public-read'
+    }, function (err: any, data: any) {
+      if (err) {
+        return alert('There was an error uploading your Image: ');
+      }
+      self.products.push(data.Location);
+      self.uploadToServer(data.Location);
+      console.log("upload file");
+    });
+  }
+
+
+  async   uploadToServer(url: string) {
+    // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
+    var input = {
+      "modelName": "Advertisement",
+      "findQuery": {
+        "_id": this.prodId
+      },
+      "updateQuery": {
+        "$set": {
+          "image": url
+        }
+      }
+    }
+    let res = await this.itHourService.executeByUpdate(input, false);
+    // $("#auth").hide();
+    if (res.isapisuccess && res.apidata && res.apidata.Data) {
+
+      console.log("call image");
+    }
   }
 }
