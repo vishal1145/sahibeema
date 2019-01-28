@@ -11,6 +11,8 @@ import { TeamComponent} from './team/team.component';
 import { ContactComponent} from './contact/contact.component';
 import { ArticleComponent} from './article/article.component';
 import { ArticlesingleComponent} from './articlesingle/articlesingle.component';
+import{ITCommonModule} from '../providers/common.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { ArticlesingleComponent} from './articlesingle/articlesingle.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ITCommonModule,
     HttpModule
   ],
   providers: [],

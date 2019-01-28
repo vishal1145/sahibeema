@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgZone } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ITHoursService } from '../../providers/it-hours-service';
-
+import { DomSanitizer } from '@angular/platform-browser';
 declare var $: any;
 
 @Component({
@@ -30,7 +30,8 @@ export class ProductComponent {
   allimagedata:any;
   constructor(
     public itHoursService: ITHoursService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private sanitizer: DomSanitizer
   ) {
 
     // this.activatedRoute.queryParams.subscribe(params => {

@@ -20,6 +20,9 @@ export class ArticleComponent implements OnInit  {
   value:any;
   postproduct:any;
   single:any;
+  image:any;
+  mediaurl:any;
+  newvalue:any;
   constructor(
     
     private _ngZone: NgZone,
@@ -50,6 +53,7 @@ async getArticles(){
      this.articledata =  articles.apidata.Data;
      this.postproduct =  this.articledata.slice(4,8)
      this.single = this.postproduct[0].heading
+     this.image =  this.postproduct[0].image
      this.newarticle = this.articledata.slice(9,13) 
      
      var sameProduct = {
@@ -59,6 +63,17 @@ async getArticles(){
     let res = await this.itHoursService.executeByGet(sameProduct, false);
     console.log(res)
     this.value = res.apidata.Data
+  
+
+    var input = {
+      "modelName": "Product",
+
+    }
+    let addres = await this.itHoursService.executeByGet(input, false);
+    console.log(addres)
+    this.newvalue = addres.apidata.Data
+    
+    this.mediaurl = this.newvalue[0].media.mediaurl
      
 
 
