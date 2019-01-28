@@ -17,8 +17,14 @@ export const ShopRoutes: Routes = [{
   }, {
     path: 'addproduct',
     component: AddProductComponent,
-    data: { title: 'Cart', breadcrumb: 'CART' }
-  }, {
+    data: { title: 'Cart', breadcrumb: 'Add Product' }
+  },
+  {
+    path: 'updateproduct/:id',
+    component: AddProductComponent,
+    data: { title: 'Cart', breadcrumb: 'Update Product' }
+  },
+   {
     path: 'checkout',
     component: CheckoutComponent,
     data: { title: 'Checkout', breadcrumb: 'CHECKOUT' }

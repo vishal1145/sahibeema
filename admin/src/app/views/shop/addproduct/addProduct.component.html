@@ -1,7 +1,7 @@
 <mat-card class="p-0">
     <mat-card-content>
         <form [formGroup]="basicForm">
-            <h2 class="card-title-text">Add Products</h2>
+            <h2 class="card-title-text" >Add Products</h2>
             <div style="margin-top:25px">
                 <mat-radio-group name="category" formControlName="category" *ngFor="let cat of categories">
                     <mat-radio-button style="margin-right:10px" value="{{cat._id}}">{{cat.title}}</mat-radio-button>
@@ -14,10 +14,10 @@
             <div fxLayout="row wrap">
 
                 <div fxFlex="50%" fxFlex.gt-xs="50">
-                        <mat-form-field class="full-width">
-                                <input matInput name="firstname" formControlName="firstname" placeholder="Enter Youtube Link Here"
-                                    value="" (ngModelChange)=updateSrc(basicForm.controls.firstname.value)>
-                            </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <input matInput name="firstname" formControlName="firstname" placeholder="Enter Youtube Link Here"
+                            value="" (ngModelChange)=updateSrc(basicForm.controls.firstname.value)>
+                    </mat-form-field>
                     <iframe *ngIf="youtubelink" width="100%" height="350" [src]="youtubelink" frameborder="0" gesture="media"
                         allow="encrypted-media" allowfullscreen></iframe>
                 </div>
@@ -28,44 +28,55 @@
 
                         <input matInput name="headline" formControlName="headline" placeholder="Headlines" value="">
                     </mat-form-field>
-              <div   *ngIf="headlines.length != 0">
-                    <mat-form-field class="full-width" style="margin-left:15px" *ngFor="let head of data">
+                    <div *ngIf="headlines.length != 0">
+                        <div fxLayout="row wrap" *ngFor="let head of data; let i = index;">
+                            <div fxFlex="95%" fxFlex.gt-xs="95">
+                                <mat-form-field class="full-width" style="margin-left:15px">
 
-                        <input matInput value="{{head}}">
-                    </mat-form-field>
-                    </div>
-                </div>
-                <div fxFlex="5%" fxFlex.gt-xs="5">
-                    <i class="material-icons" (click)="addHeadlines()">
-                        add
-                    </i>
-                </div>
-                <div fxFlex="100" fxFlex.gt-xs="100" class="pr-1">
-                    <div class="pb-1">
+                                    <input matInput value="{{head}}">
 
-                        <div class="row" *ngIf="uploaderprogress">
-
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploaderprogress + '%' }"></div>
+                                </mat-form-field>
                             </div>
-
+                            <div fxFlex="5%" fxFlex.gt-xs="5" (click) = "changeData(i)">
+                                <i class="material-icons" style="cursor:pointer;">
+                                    remove_circle_outline
+                                </i>
+                            </div>
                         </div>
 
-                        <!-- <small *ngIf="basicForm.controls['username'].hasError('minlength') && basicForm.controls['username'].touched"
+                    </div>
+                </div>
+                    <div fxFlex="5%" fxFlex.gt-xs="5" (click)="addHeadlines()">
+                        <i class="material-icons" style="cursor:pointer;" >
+                            add
+                        </i>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-xs="100" class="pr-1">
+                        <div class="pb-1">
+
+                            <div class="row" *ngIf="uploaderprogress">
+
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploaderprogress + '%' }"></div>
+                                </div>
+
+                            </div>
+
+                            <!-- <small *ngIf="basicForm.controls['username'].hasError('minlength') && basicForm.controls['username'].touched"
                             class="form-error-msg"> 
                             {{basicForm.controls['username'].errors.minlength.requiredLength}} characters </small> -->
-                        <!-- <small *ngIf="basicForm.controls['username'].hasError('maxlength') && basicForm.controls['username'].touched"
+                            <!-- <small *ngIf="basicForm.controls['username'].hasError('maxlength') && basicForm.controls['username'].touched"
                             class="form-error-msg"> 
                             {{basicForm.controls['username'].errors.maxlength.requiredLength}} characters </small> -->
-                    </div>
+                        </div>
 
-                    <div class="pb-1">
-                       
-                        <!-- <small *ngIf="basicForm.controls['firstname'].hasError('required') && basicForm.controls['firstname'].touched"
+                        <div class="pb-1">
+
+                            <!-- <small *ngIf="basicForm.controls['firstname'].hasError('required') && basicForm.controls['firstname'].touched"
                             class="form-error-msg"> First name is required </small> -->
-                    </div>
+                        </div>
 
-                    <!-- <div class="pb-1">
+                        <!-- <div class="pb-1">
                         <mat-form-field class="full-width">
                             <input 
                             matInput
@@ -78,9 +89,9 @@
                         </mat-form-field>
                         <mat-datepicker #appDatepicker></mat-datepicker>
                     </div> -->
-                </div>
+                    </div>
 
-                <!-- <div fxFlex="100" fxFlex.gt-xs="50">
+                    <!-- <div fxFlex="100" fxFlex.gt-xs="50">
 
 
 
@@ -89,9 +100,10 @@
                             class="form-error-msg"> You must agree to the terms and conditions </small>
                     </div>
                 </div> -->
-            </div>
-            <button mat-raised-button color="primary" (click) = "uploadToServer()" [routerLink] = "['/product']">Submit</button>&nbsp;
-            <button mat-raised-button color="primary" (click) = "uploadToServer1()" [routerLink] = "['/product']">Save And Publish</button>
+                </div>
+                <button mat-raised-button color="primary" (click)="uploadToServer()" [routerLink]="['/product']">Submit</button>&nbsp;
+                <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/product']">Save
+And Publish</button>
         </form>
     </mat-card-content>
 </mat-card>

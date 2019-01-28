@@ -24,7 +24,7 @@ export class AddProductComponent implements OnInit {
   vvideotype: any;
   headlines:any=[];
   data:any = [];
-
+  productid:any ;
   constructor(
     public itHourService:ITHoursService,
     private sanitizer: DomSanitizer
@@ -99,6 +99,24 @@ export class AddProductComponent implements OnInit {
     }
     var res = await this.itHourService.executeByPost(input,false);
     console.log(res);
+  }
+
+  async uploadToServer1(){
+    var input = {
+      "modelName":"Product",
+      "title": this.basicForm.value.username,
+      "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
+      "highlights": this.headlines,
+      "category": this.basicForm.value.category,
+      "published":true
+    }
+    var res = await this.itHourService.executeByPost(input,false);
+    console.log(res);
+  }
+  changeData(index){
+ this.data.splice(index,1)
+ this.headlines = this.data.slice()
+ this.headlines.reverse();
   }
 
 }
