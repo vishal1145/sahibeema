@@ -8,15 +8,16 @@ import { UseEffects} from '../effect'
 @Component({
   selector: 'app-index',
   templateUrl: 'index.component.html',
-  providers: [ITHoursService]
+  providers: [ITHoursService] 
 })
 
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit  {
   //constructor( private _ngZone: NgZone,private activatedRoute: ActivatedRoute, private router: Router,) .
   data:any=[];
   newartical:any=[];
   blockadd:any;
   newblock:any;
+  half_article:any;
   nameblock:any;
   newadd:any;
   addnew1:any;
@@ -64,6 +65,7 @@ async getCategory(){
 let articles = await this.itHoursService.executeByGet(getArticle, false);
    console.log(articles)
    this.newblock = articles.apidata.Data;
+   this.half_article = this.newblock.slice(0,4)
 
 
    var addArticle = {
@@ -77,6 +79,12 @@ let addblock = await this.itHoursService.executeByGet(addArticle, false);
     this.addnew1 = this.blockadd[2].image
    
  }
+
+
+ article(){
+
+  this.router.navigate(['article']);
+}
 
  getImage(pagename,area,allimages){
 

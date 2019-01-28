@@ -3330,6 +3330,7 @@ h6 {
 .related-videos .slick-prev:before, .related-videos .slick-next:before{color:rgba(27,127,204,.8)}
 .companies .slick-prev:before, .companies .slick-next:before{color:rgba(27,127,204,.8)}
  .data{    cursor: pointer; }
+ .leftside{ float: left;}
  .box-data-value{
 	height: 60px;
 	margin-left: 20px; 

@@ -24,6 +24,7 @@ export class ProductComponent {
   newadd:any;
   addnew1:any;
   blockadd:any;
+  half_article:any;
   categoryid:any = {};
   dataid:any;
   allimagedata:any;
@@ -62,6 +63,7 @@ export class ProductComponent {
   let articles = await this.itHoursService.executeByGet(getArticle, false);
      console.log(articles)
      this.newblock = articles.apidata.Data;
+     this.half_article = this.newblock.slice(0,4)
 
     var input = {
       "modelName": "Category"

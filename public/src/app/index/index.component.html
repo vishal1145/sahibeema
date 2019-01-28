@@ -17,7 +17,7 @@
                     </a>
                     <a href="http://protossofttech.com/sahibeema/#" class="product"><img src="../.././assets/img/3.png">
                         <h5>स्वास्थ्य बीमा</h5>
-                    </a>
+                    </a> 
                     <a href="http://protossofttech.com/sahibeema/#" class="product"><img src="../.././assets/img/4.png">
                         <h5>घर बीमा</h5>
                     </a>
@@ -221,7 +221,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-12" style="padding: 0">
                 <div class="main-title">
-                    <h1>नए लेख - <span style="font-size: 16px; font-weight:normal">इंश्योरेंस पॉलिसीस से जुडी
+                    <h1 class="data" (click) = "article()">नए लेख - <span style="font-size: 16px; font-weight:normal">इंश्योरेंस पॉलिसीस से जुडी
                             महत्वपूर्ण जानकारियाँ</span></h1>
                     <!--<span class="main-title-line"></span>-->
                 </div>
@@ -229,7 +229,7 @@
         </div>
 
         <div class="row new-articles">
-            <div class=" single-blog" *ngFor="let funart of newblock">
+            <div class=" single-blog" *ngFor="let funart of half_article">
                 <div class="single-blog-item">
                     <div class="thumb">
                         <img class="img-fluid w-100" src={{funart.image}} alt="">
