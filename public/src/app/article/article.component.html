@@ -215,19 +215,19 @@
 				</div>
 				<div class="col-lg-4 sidebar-widgets">
 					<div class="widget-wrap">
-						<div class="single-sidebar-widget popular-post-widget">
-							<h4 class="popular-title">Popular Posts</h4>
+						<div class="single-sidebar-widget popular-post-widget" >
+							<h4 class="popular-title">{{single}}</h4>
 							<div class="popular-post-list">
-								<div class="single-post-list d-flex flex-row align-items-center">
+								<div class="single-post-list d-flex flex-row align-items-center" *ngFor = "let newpost of postproduct" >
 									<div class="thumb">
-										<img class="img-fluid" src="./assets/img/blog/pp1.jpg" alt="">
+										<img class="img-fluid" src={{newpost.image}} alt="">
 									</div>
 									<div class="details">
-										<a href="blog-single.html"><h6>Space The Final Frontier</h6></a>
-										<p>02 Hours ago</p>
+										<a href="blog-single.html"><h6>{{newpost.posttitle}}</h6></a>
+										<p>{{newpost.time}}</p>
 									</div>
 								</div>
-								<div class="single-post-list d-flex flex-row align-items-center">
+								<!-- <div class="single-post-list d-flex flex-row align-items-center">
 									<div class="thumb">
 										<img class="img-fluid" src="./assets/img/blog/pp2.jpg" alt="">
 									</div>
@@ -235,7 +235,7 @@
 										<a href="blog-single.html"><h6>The Amazing Hubble</h6></a>
 										<p>02 Hours ago</p>
 									</div>
-								</div>
+								</div> 
 								<div class="single-post-list d-flex flex-row align-items-center">
 									<div class="thumb">
 										<img class="img-fluid" src="./assets/img/blog/pp3.jpg" alt="">
@@ -253,7 +253,7 @@
 										<a href="blog-single.html"><h6>Asteroids telescope</h6></a>
 										<p>02 Hours ago</p>
 									</div>
-								</div>
+								</div>-->
 							</div>
 						</div>
 						<div class="single-sidebar-widget ads-widget">
