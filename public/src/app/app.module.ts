@@ -10,6 +10,7 @@ import { ProductComponent} from './product/product.component';
 import { TeamComponent} from './team/team.component';
 import { ContactComponent} from './contact/contact.component';
 import { ArticleComponent} from './article/article.component';
+import { ArticlesingleComponent} from './articlesingle/articlesingle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { ArticleComponent} from './article/article.component';
     ProductComponent,
     TeamComponent,
     ContactComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticlesingleComponent
   ],
   imports: [
     BrowserModule,
