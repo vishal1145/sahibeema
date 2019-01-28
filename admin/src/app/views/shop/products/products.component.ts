@@ -101,7 +101,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
      this.categories = res.apidata.Data
    // this.categories = _.filter(res.apidata.Data, function (num) { });
 
-     this.categories.unshift({ _id: '', title: 'Please select one category' });
+    //  this.categories.unshift({ _id: '', title: 'Please select one category' });
    
   }
   async  getProducts(){
@@ -240,9 +240,9 @@ else{
 //   console.log(res)
 //   $('#conformvideo').hide()
 // }
-updateSrc(url) {
-  url = this.itHourService.getyoutubeid(url, { fuzzy: false })
-  if (url && url.length == 11)
-      this.youtubelink.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + url));
-}
+// updateSrc(url) {
+//   url = this.itHourService.getyoutubeid(url, { fuzzy: false })
+//   if (url && url.length == 11)
+//       this.youtubelink.push(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + url));
+// }
 }
