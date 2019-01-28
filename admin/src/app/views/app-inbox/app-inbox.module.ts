@@ -6,6 +6,7 @@ import {
   MatIconModule,
   MatButtonModule,
   MatToolbarModule,
+  MatCardModule,
   MatSidenavModule,
   MatMenuModule,
   MatInputModule,
@@ -20,6 +21,7 @@ import { QuillModule } from 'ngx-quill';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from './../../shared/shared.module';
 import { AppInboxComponent } from './app-inbox.component';
+import { AddArticleComponent } from './addArticles/addArticle.component';
 import { MailComposeComponent } from './mail-compose.component';
 import { InboxRoutes } from "./app-inbox.routing";
 
@@ -31,6 +33,7 @@ import { InboxRoutes } from "./app-inbox.routing";
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    MatCardModule,
     MatSidenavModule,
     MatMenuModule,
     MatInputModule,
@@ -45,7 +48,7 @@ import { InboxRoutes } from "./app-inbox.routing";
     SharedModule,
     RouterModule.forChild(InboxRoutes)
   ],
-  declarations: [AppInboxComponent, MailComposeComponent],
+  declarations: [AppInboxComponent, MailComposeComponent,AddArticleComponent],
   entryComponents: [MailComposeComponent]
 })
 export class AppInboxModule { }

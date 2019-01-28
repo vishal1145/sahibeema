@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
+import { QuillModule } from 'ngx-quill';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { 
   MatIconModule,
@@ -49,6 +50,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MatMenuModule,
     MatSlideToggleModule,
     MatChipsModule,
+    QuillModule,
     MatCheckboxModule,
     MatRadioModule,
     MatRippleModule,

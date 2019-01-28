@@ -6,6 +6,10 @@ var ArticleSchema = new mongoose.Schema({
 image:String,
 posttitle : String,
 description : String,
+published :{
+    type : Boolean,
+    default : false
+},
 likes: [{
     userid : {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     like_time : { type: Date, default: Date.now },

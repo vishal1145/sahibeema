@@ -90,7 +90,7 @@ export const rootRouterConfig: Routes = [
       {
         path: 'article', 
         loadChildren: './views/app-inbox/app-inbox.module#AppInboxModule', 
-        data: { title: 'Inbox', breadcrumb: 'INBOX'}
+        data: { title: 'Article', breadcrumb: 'INBOX'}
       },
       {
         path: 'calendar', 

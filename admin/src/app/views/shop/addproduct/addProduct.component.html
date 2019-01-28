@@ -101,6 +101,12 @@
                     </div>
                 </div> -->
                 </div>
+                <quill-editor 
+                theme="snow" 
+                name = "description"
+                formControlName="description" 
+                (onContentChanged)="onContentChanged()" 
+                onSelectionChanged="onSelectionChanged()"></quill-editor><br/>
                 <button mat-raised-button color="primary" (click)="uploadToServer()" [routerLink]="['/product']">Submit</button>&nbsp;
                 <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/product']">Save
 And Publish</button>

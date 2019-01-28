@@ -6,11 +6,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 declare var $:any;
 @Component({
   selector: 'app-basic-form',
-  templateUrl: './addProduct.component.html',
-  styleUrls: ['./addProduct.component.css'],
+  templateUrl: './addArticle.component.html',
+  styleUrls: ['./addArticle.component.css'],
   providers:[ITHoursService]
 })
-export class AddProductComponent implements OnInit {
+export class AddArticleComponent implements OnInit {
   formData = {}
   console = console;
   basicForm: FormGroup;
@@ -25,6 +25,11 @@ export class AddProductComponent implements OnInit {
   headlines:any=[];
   data:any = [];
   productid:any ;
+  description :any = '';
+  currentFile:any ='';
+  image :any;
+  articles:any = []
+  
   constructor(
     public itHourService:ITHoursService,
     private sanitizer: DomSanitizer
@@ -54,7 +59,6 @@ export class AddProductComponent implements OnInit {
         Validators.required,
         Validators.email
       ]),
-      
       website: new FormControl('', CustomValidators.url),
       date: new FormControl(),
       cardno: new FormControl('', [
@@ -93,34 +97,61 @@ export class AddProductComponent implements OnInit {
      this.data.reverse()
   }
 
-   async uploadToServer(){
-    var input = {
-      "modelName":"Product",
-      "title": this.basicForm.value.username,
-      "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
-      "highlights": this.headlines,
-      "category": this.basicForm.value.category
-    }
-    var res = await this.itHourService.executeByPost(input,false);
-    console.log(res);
-  }
-
-  async uploadToServer1(){
-    var input = {
-      "modelName":"Product",
-      "title": this.basicForm.value.username,
-      "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
-      "highlights": this.headlines,
-      "category": this.basicForm.value.category,
-      "published":true
-    }
-    var res = await this.itHourService.executeByPost(input,false);
-    console.log(res);
-  }
   changeData(index){
  this.data.splice(index,1)
  this.headlines = this.data.slice()
  this.headlines.reverse();
+  }
+  onContentChanged(){
+    this.description =  this.basicForm.value.description;
+  }
+  onSelectionChanged(){}
+
+  setFile(element: any) {
+    // $("#auth").show();
+    var self = this;
+    this.currentFile = element.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function (event: any) {
+      self.image = event.target.result;
+    }
+    reader.readAsDataURL(element.target.files[0]);
+    this.uploadToAws()
+  }
+
+  uploadToAws() {
+    var self = this;
+    var fileName = this.currentFile.name;
+    var fileName1 = this.itHourService.generateUUID() + fileName.substring(fileName.indexOf('.'), fileName.length);
+    var photoKey = fileName1;
+    photoKey = 'Quacck/' + '123' + "/" + photoKey;
+    this.itHourService.getAWSObj().upload({
+      Key: photoKey,
+      Body: this.currentFile,
+      ACL: 'public-read'
+    }, function (err: any, data: any) {
+      if (err) {
+        return alert('There was an error uploading your Image: ');
+      }
+      self.articles.push(data.Location);
+    });
+  }
+  
+  async   uploadToServer(url: string) {
+    // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
+    var input = {
+      "modelName": "Article",
+       "posttitle"  :this.basicForm.value.username,
+       "description": this.description,
+       "image": this.articles[this.articles.length-1]
+
+    }
+    let res = await this.itHourService.executeByUpdate(input, false);
+    // $("#auth").hide();
+    if (res.isapisuccess && res.apidata && res.apidata.Data) {
+
+      console.log("call image");
+    }
   }
 
 }
