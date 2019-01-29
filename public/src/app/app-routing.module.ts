@@ -15,7 +15,7 @@ const routes: Routes = [
 { path: 'team', component: TeamComponent },
 { path: 'contact', component: ContactComponent },
 { path: 'article', component: ArticleComponent },
-{ path: 'articlesingle', component: ArticlesingleComponent }
+{ path: 'articlesingle/:article_id', component: ArticlesingleComponent }
 ];
 
 @NgModule({

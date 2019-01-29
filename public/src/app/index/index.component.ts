@@ -37,7 +37,7 @@ async getId(cat){
    var product = {
       "modelName": "Product",
       "findQuery": {
-        "category": cat._id
+        "category": cat._id 
       }
     }
  let productbycategory = await this.itHoursService.executeByGet(product, false);

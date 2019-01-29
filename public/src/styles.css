@@ -3338,6 +3338,7 @@ h6 {
 	border-radius: 34px;
 	margin-top: 27px;
   }
+  .newvalue{width: 100px !important; height: 60px;}
   .back-data{
     background-color:#fff;
     -webkit-box-shadow: 0px 2px 10px 0px rgba(168,161,168,1);

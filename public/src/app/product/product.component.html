@@ -94,7 +94,7 @@
                                                                 <h4 class="category-title">{{highlights}}</h4>
                                                                 <ul class="cat-list bullet-list" >
                                                                         <li *ngFor="let id of value">
-                                                                                <p>{{id.description}} </p>
+                                                                               {{id.description}} 
                                                                         </li>
                                                                         <!-- <li>
                                                                                 <p>ऑटो बीमा प्रीमियम पर 55% तक बचा सकते
@@ -250,7 +250,7 @@
                                                                                         <div class="single-news card"
                                                                                                 style="width: 100%; display: inline-block;">
                                                                                                 <iframe class="card-top-img"
-                                                                                                        src="https://www.youtube.com/embed/f6ojOPq1o1I"
+                                                                                                       [src]="mediaurl | safe"
                                                                                                         frameborder="0"
                                                                                                         allowfullscreen=""></iframe>
                                                                                                 <div class="card-body">
@@ -280,7 +280,7 @@
                                                                                         <div class="single-news card"
                                                                                                 style="width: 100%; display: inline-block;">
                                                                                                 <iframe class="card-top-img"
-                                                                                                        src="https://www.youtube.com/embed/f6ojOPq1o1I"
+                                                                                                        [src]="mediaurl | safe"
                                                                                                         frameborder="0"
                                                                                                         allowfullscreen=""></iframe>
                                                                                                 <div class="card-body">
@@ -307,7 +307,7 @@
                                                                                         <div class="single-news card"
                                                                                                 style="width: 100%; display: inline-block;">
                                                                                                 <iframe class="card-top-img"
-                                                                                                        src="https://www.youtube.com/embed/f6ojOPq1o1I"
+                                                                                                [src]="mediaurl | safe"
                                                                                                         frameborder="0"
                                                                                                         allowfullscreen=""></iframe>
                                                                                                 <div class="card-body">
