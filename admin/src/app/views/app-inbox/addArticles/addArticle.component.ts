@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 import { ITHoursService } from 'providers/it-hours-service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AppLoaderService } from '../../../shared/services/app-loader/app-loader.service';
+
 declare var $:any;
 @Component({
   selector: 'app-basic-form',
@@ -32,9 +34,10 @@ export class AddArticleComponent implements OnInit {
   
   constructor(
     public itHourService:ITHoursService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private loader: AppLoaderService
   ) {
-    this.getCategories()
+  
    }
 
   ngOnInit() {
@@ -79,12 +82,7 @@ export class AddArticleComponent implements OnInit {
       })
     })
   }
-  
-  async getCategories(){
-    var res = await this.itHourService.executeByGet({"modelName":"Category"},false);
-    this.categories = res.apidata.Data
- console.log(this.basicForm)
-  }
+
  
   updateSrc(url) {
     url = this.itHourService.getyoutubeid(url, { fuzzy: false })
@@ -110,6 +108,7 @@ export class AddArticleComponent implements OnInit {
   setFile(element: any) {
     // $("#auth").show();
     var self = this;
+    this.loader.open();
     this.currentFile = element.target.files[0];
     var reader = new FileReader();
     reader.onload = function (event: any) {
@@ -134,6 +133,7 @@ export class AddArticleComponent implements OnInit {
         return alert('There was an error uploading your Image: ');
       }
       self.articles.push(data.Location);
+      self.loader.close();
     });
   }
   
@@ -146,7 +146,25 @@ export class AddArticleComponent implements OnInit {
        "image": this.articles[this.articles.length-1]
 
     }
-    let res = await this.itHourService.executeByUpdate(input, false);
+    let res = await this.itHourService.executeByPost(input, false);
+    // $("#auth").hide();
+    if (res.isapisuccess && res.apidata && res.apidata.Data) {
+
+      console.log("call image");
+    }
+  }
+
+  async   uploadToServer1(url: string) {
+    // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
+    var input = {
+      "modelName": "Article",
+       "posttitle"  :this.basicForm.value.username,
+       "description": this.description,
+       "image": this.articles[this.articles.length-1],
+       "published":true
+
+    }
+    let res = await this.itHourService.executeByPost(input, false);
     // $("#auth").hide();
     if (res.isapisuccess && res.apidata && res.apidata.Data) {
 

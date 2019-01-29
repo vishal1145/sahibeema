@@ -16,6 +16,7 @@
                 </div>
              </div> 
              <input type ="file" value = "choose Image"  (change) = "setFile($event)" style = "margin:15px">
+         
              <quill-editor 
              theme="snow" 
              name = "description"
@@ -23,8 +24,8 @@
              (onContentChanged)="onContentChanged()" 
              onSelectionChanged="onSelectionChanged()"></quill-editor><br/>
            
-                <button mat-raised-button color="primary" (click)="uploadToServer()" [routerLink]="['/product']">Submit</button>&nbsp;
-                <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/product']">Save
+                <button mat-raised-button color="primary" (click)="uploadToServer()" [routerLink]="['/article']">Submit</button>&nbsp;
+                <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/article']">Save
 And Publish</button>
         </form>
     </mat-card-content>

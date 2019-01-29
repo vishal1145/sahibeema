@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { 
   MatIconModule,
   MatButtonModule,
@@ -45,6 +46,7 @@ import { InboxRoutes } from "./app-inbox.routing";
     NgxPaginationModule,
     FlexLayoutModule,
     QuillModule,
+
     SharedModule,
     RouterModule.forChild(InboxRoutes)
   ],
