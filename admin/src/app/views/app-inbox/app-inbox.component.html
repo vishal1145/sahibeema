@@ -144,7 +144,7 @@
             </button>
           </div>
           <span fxFlex="20px"></span>
-          <button mat-raised-button color="primary" routerLink="/article/addarticle">
+          <button mat-raised-button color="primary" routerLink="/article/addarticle/-1">
             <mat-icon>add_box</mat-icon> Add Article
           </button>
         </div>
@@ -169,7 +169,7 @@
                   <p class="text-muted p-line">{{product?.posttitle}}</p>
                   <p class="text-muted p-line">
                     <strong>Category:</strong> {{product?.description}}</p>
-               
+                    <button mat-raised-button color="primary"  [routerLink]="['/article/updatearticle/',product._id]">Update</button>
                 </div>
               
   

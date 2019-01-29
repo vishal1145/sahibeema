@@ -4,7 +4,7 @@ import { CustomValidators } from 'ng2-validation';
 import { ITHoursService } from 'providers/it-hours-service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AppLoaderService } from '../../../shared/services/app-loader/app-loader.service';
-
+import {Router, ActivatedRoute, Params} from '@angular/router';
 declare var $:any;
 @Component({
   selector: 'app-basic-form',
@@ -26,18 +26,25 @@ export class AddArticleComponent implements OnInit {
   vvideotype: any;
   headlines:any=[];
   data:any = [];
-  productid:any ;
+  articleid:any ;
   description :any = '';
   currentFile:any ='';
   image :any;
   articles:any = []
-  
+  isShow:Boolean = false;
   constructor(
     public itHourService:ITHoursService,
     private sanitizer: DomSanitizer,
-    private loader: AppLoaderService
+    private loader: AppLoaderService,
+    private activatedRoute: ActivatedRoute
   ) {
-  
+    if( this.activatedRoute.snapshot.params.id){
+      this.articleid = this.activatedRoute.snapshot.params.id
+      if(this.articleid == -1){
+        this.isShow = true
+      }
+      this.getArticle()
+   }
    }
 
   ngOnInit() {
@@ -172,4 +179,12 @@ export class AddArticleComponent implements OnInit {
     }
   }
 
+ async getArticle(){
+  if(this.activatedRoute.snapshot.params.id){
+    var res = await this.itHourService.executeByGet({"modelName":"Article","findQuery":{_id:this.articleid}},false);
+    var data= res.apidata.Data
+    this.basicForm.controls['username'].setValue(data[0].posttitle);
+    this.basicForm.controls['description'].setValue(data[0].description);
+   }
+  }
 }
