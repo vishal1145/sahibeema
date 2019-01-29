@@ -18,6 +18,7 @@ export class ArticlesingleComponent implements OnInit {
   newpost:any =[];
   newvalue:any;
   mediaurl:any;
+  idtext:any;
 constructor(
       private _ngZone: NgZone,
       private activatedRoute: ActivatedRoute,
@@ -49,6 +50,13 @@ constructor(
           let addres = await this.itHoursService.executeByGet(input, false);
           this.newvalue = addres.apidata.Data
           this.mediaurl = this.newvalue[0].media.mediaurl
+
+          var postdata ={
+            "modelName" : "ArticleCategory"
+          }
+            var postcategories = await this.itHoursService.executeByGet(postdata, false)
+            console.log(postcategories)
+            this.idtext = postcategories.apidata.Data
       }
   
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgZone } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ITHoursService } from '../../providers/it-hours-service';
@@ -33,7 +33,8 @@ export class ProductComponent {
   constructor(
     public itHoursService: ITHoursService,
     private activatedRoute: ActivatedRoute,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
+    public router: Router
   ) {
 
     // this.activatedRoute.queryParams.subscribe(params => {
@@ -48,7 +49,10 @@ export class ProductComponent {
     category: this.id
   }
 
+  article() {
 
+    this.router.navigate(['article']);
+  }
   async getProduct() {
     var input = {
       "modelName": "Product",
@@ -58,11 +62,7 @@ export class ProductComponent {
     console.log(res)
     this.value = res.apidata.Data      
  this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);      
-      //this.openCity(index);
-      //var data = param.content
-      //var removeHtml = this._sanitizer.sanitize(SecurityContext.HTML, data);
-      // this.bindiContentClick = removeHtml;
-      //this.bindiContentClick.parent().addClass("whileactive1");
+   
     
     this.highlights = this.value[0].highlights[0]
     this.mediaurl = this.value[0].media.mediaurl

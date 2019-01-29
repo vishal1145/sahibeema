@@ -285,14 +285,14 @@
 
                     <div class="single-sidebar-widget post-category-widget">
                         <h4 class="category-title">Post Catgories</h4>
-                        <ul class="cat-list">
+                        <ul class="cat-list" *ngFor ="let myfunc of idtext">
                             <li>
                                 <a href="#" class="d-flex justify-content-between">
-                                    <p>Technology</p>
+                                    <p>{{myfunc.name}}</p>
                                     <p>37</p>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="d-flex justify-content-between">
                                     <p>Lifestyle</p>
                                     <p>24</p>
@@ -327,7 +327,7 @@
                                     <p>Adventure</p>
                                     <p>44</p>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="single-sidebar-widget ads-widget">

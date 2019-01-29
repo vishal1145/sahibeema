@@ -24,6 +24,7 @@ export class ArticleComponent implements OnInit {
   mediaurl: any;
   _htmlProperty1: any = [];
   newvalue: any;
+  idtext:any;
   newpost:any =[];
   constructor(
     private _ngZone: NgZone,
@@ -90,5 +91,13 @@ export class ArticleComponent implements OnInit {
         if(newarticle.apidata.Data[i])
         this.newpost.push(newarticle.apidata.Data[i]);
       }
+
+  var postdata ={
+    "modelName" : "ArticleCategory"
+  }
+    var postcategories = await this.itHoursService.executeByGet(postdata, false)
+    console.log(postcategories)
+    this.idtext = postcategories.apidata.Data
+
   }
 }
