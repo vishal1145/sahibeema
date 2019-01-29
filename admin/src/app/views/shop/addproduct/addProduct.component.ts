@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 import { ITHoursService } from 'providers/it-hours-service';
 import { DomSanitizer } from '@angular/platform-browser';
+import {Router, ActivatedRoute, Params} from '@angular/router';
+
 declare var $:any;
 @Component({
   selector: 'app-basic-form',
@@ -16,6 +18,7 @@ export class AddProductComponent implements OnInit {
   basicForm: FormGroup;
   categories : any = [];
   Title:any;
+  product :any ;
   uploaderprogress :any = 0;
   selectcategory : any = '';
   embedmode = false;
@@ -24,12 +27,23 @@ export class AddProductComponent implements OnInit {
   vvideotype: any;
   headlines:any=[];
   data:any = [];
+  description :any = [];
   productid:any ;
+  isShow : Boolean = false;
   constructor(
     public itHourService:ITHoursService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private activatedRoute: ActivatedRoute
   ) {
-    this.getCategories()
+    this.getCategories();
+    
+   if( this.activatedRoute.snapshot.params.id){
+      this.productid = this.activatedRoute.snapshot.params.id
+      if(this.productid == -1){
+        this.isShow = true
+      }
+      this.getProduct()
+   }
    }
 
   ngOnInit() {
@@ -80,6 +94,7 @@ export class AddProductComponent implements OnInit {
     var res = await this.itHourService.executeByGet({"modelName":"Category"},false);
     this.categories = res.apidata.Data
  console.log(this.basicForm)
+
   }
  
   updateSrc(url) {
@@ -92,17 +107,43 @@ export class AddProductComponent implements OnInit {
      this.data = this.headlines.slice();
      this.data.reverse()
   }
+  onContentChanged(){
+    this.description =  this.basicForm.value.description;
+  }
+  onSelectionChanged(){}
 
    async uploadToServer(){
+     if(this.isShow){
     var input = {
       "modelName":"Product",
       "title": this.basicForm.value.username,
       "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
       "highlights": this.headlines,
-      "category": this.basicForm.value.category
+      "category": this.basicForm.value.category,
+      "description" : this.description
     }
     var res = await this.itHourService.executeByPost(input,false);
     console.log(res);
+  }
+    if(!this.isShow){
+    var input1 = {
+      "modelName" :"Product",
+      "findQuery":{
+        _id: this.productid
+      },
+      "updateQuery":{
+        "$set":{
+        "title": this.basicForm.value.username,
+      "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
+      "highlights": this.headlines,
+      "category": this.basicForm.value.category,
+      "description" : this.description 
+      }}
+    }
+    var res1 = await this.itHourService.executeByUpdate(input1,false);
+    console.log(res1);
+    }
+    
   }
 
   async uploadToServer1(){
@@ -112,7 +153,8 @@ export class AddProductComponent implements OnInit {
       "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
       "highlights": this.headlines,
       "category": this.basicForm.value.category,
-      "published":true
+      "published":true,
+      "description" : this.description
     }
     var res = await this.itHourService.executeByPost(input,false);
     console.log(res);
@@ -121,6 +163,20 @@ export class AddProductComponent implements OnInit {
  this.data.splice(index,1)
  this.headlines = this.data.slice()
  this.headlines.reverse();
+  }
+
+  async getProduct(){
+    if(this.activatedRoute.snapshot.params.id){
+      var res = await this.itHourService.executeByGet({"modelName":"Product","findQuery":{_id:this.productid}},false);
+      var data= res.apidata.Data
+      this.basicForm.controls['username'].setValue(data[0].title);
+      this.basicForm.controls['firstname'].setValue(data[0].media.mediaurl);
+      this.headlines = data[0].highlights
+      this.data = this.headlines.reverse()
+      console.log( this.data)
+      this. basicForm.controls['description'].setValue(data[0].description);
+      this. basicForm.controls['category'].setValue(data[0].category)
+     }
   }
 
 }

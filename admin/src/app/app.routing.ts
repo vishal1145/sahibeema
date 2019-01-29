@@ -110,7 +110,7 @@ export const rootRouterConfig: Routes = [
       {
         path: 'product', 
         loadChildren: './views/shop/shop.module#ShopModule', 
-        data: { title: 'Product', breadcrumb: 'SHOP'}
+        data: { title: 'Product', breadcrumb: 'PRODUCT'}
       },
       {
         path: 'icons', 

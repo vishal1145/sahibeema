@@ -10,7 +10,13 @@ export const InboxRoutes: Routes = [
     component: AppInboxComponent,
     data: { title: 'Article' }
   }, {
-    path: 'addarticle',
+    path: 'addarticle/:id',
+    component: AddArticleComponent,
+    data: { title: 'Article', breadcrumb: 'Article' }
+  
+  },
+  {
+    path: 'updatearticle/:id',
     component: AddArticleComponent,
     data: { title: 'Article', breadcrumb: 'Article' }
   
