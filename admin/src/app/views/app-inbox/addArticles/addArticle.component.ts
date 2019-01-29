@@ -137,7 +137,7 @@ export class AddArticleComponent implements OnInit {
     });
   }
   
-  async   uploadToServer(url: string) {
+  async   uploadToServer() {
     // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
     var input = {
       "modelName": "Article",
@@ -154,7 +154,7 @@ export class AddArticleComponent implements OnInit {
     }
   }
 
-  async   uploadToServer1(url: string) {
+  async   uploadToServer1() {
     // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
     var input = {
       "modelName": "Article",
