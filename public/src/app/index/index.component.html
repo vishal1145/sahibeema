@@ -135,21 +135,21 @@
                     <!--<span class="main-title-line"></span>-->
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-news card">
-                            <iframe class="card-top-img"  [src]="mediaurl | safe" height="280"
+                    <div class="col-lg-6 col-md-6" *ngFor = "let prod of value">
+                        <div class="single-news card" >
+                            <iframe class="card-top-img"  [src]=" prod.media.mediaurl| safe" height="280"
                                 frameborder="0" allowfullscreen=""></iframe>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="">
-                                        इंश्योरेंस क्या है ... और क्यों लेना चाहिये ?
+                                     {{prod.title}}
                                     </a>
                                 </h4>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
+                    <!-- <div class="col-lg-6 col-md-6">
                         <div class="single-news card">
                             <iframe class="card-top-img" [src]="mediaurl | safe" height="280"
                                 frameborder="0" allowfullscreen=""></iframe>
@@ -162,7 +162,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-3" style="padding-right: 0">
@@ -234,7 +234,7 @@
                     <div class="thumb">
                         <img class="img-fluid w-100" src={{funart.image}} alt="">
                     </div>
-                    <p class="date">10 Jan 2018</p>
+                    <p class="date">{{funart.date | date : 'dd MMM yyyy'}}</p>
                     <h4>
                         <a href="#">{{funart.posttitle}}</a>
                     </h4>

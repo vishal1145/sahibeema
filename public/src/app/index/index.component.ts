@@ -24,8 +24,8 @@ export class IndexComponent implements OnInit {
   addnew2: any;
   newvalue: any;
   allimagedata: any;
-  value: any;
-  mediaurl: any;
+  value: any = [];
+  mediaurl: any=[];
   ngOnInit() {
     //UseEffects();
   }
@@ -67,8 +67,13 @@ export class IndexComponent implements OnInit {
     let articles = await this.itHoursService.executeByGet(getArticle, false);
     console.log(articles)
     this.newblock = articles.apidata.Data;
+  
     this.half_article = this.newblock.slice(0, 4)
-
+    for(var i=0;i<this.half_article.length;i++){
+      this.half_article[i].date = new Date(this.half_article[i].created_at)
+    }
+    console.log( this.half_article)
+    
 
 
     var Provideo = {
@@ -77,8 +82,10 @@ export class IndexComponent implements OnInit {
     }
     let resdata = await this.itHoursService.executeByGet(Provideo, false);
     console.log(resdata)
-    this.value = resdata.apidata.Data
-    this.mediaurl = this.value[0].media.mediaurl
+    this.value.push(resdata.apidata.Data[resdata.apidata.Data.length-1])
+    this.value.push(resdata.apidata.Data[resdata.apidata.Data.length-2])
+    
+
 
 
     var addArticle = {

@@ -30,6 +30,7 @@ export class AddArticleComponent implements OnInit {
   description :any = '';
   currentFile:any ='';
   image :any;
+  articleimage:any;
   articles:any = []
   isShow:Boolean = false;
   constructor(
@@ -146,6 +147,7 @@ export class AddArticleComponent implements OnInit {
   
   async   uploadToServer() {
     // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
+   if(this.isShow){
     var input = {
       "modelName": "Article",
        "posttitle"  :this.basicForm.value.username,
@@ -154,15 +156,29 @@ export class AddArticleComponent implements OnInit {
 
     }
     let res = await this.itHourService.executeByPost(input, false);
-    // $("#auth").hide();
-    if (res.isapisuccess && res.apidata && res.apidata.Data) {
-
-      console.log("call image");
-    }
   }
+  if(!this.isShow){
+    var input11 = {
+      "modelName": "Article",
+      "findQuery":{
+        _id: this.articleid
+      },
+      "updateQuery":{
+      "$set":{
+        "image": this.image,
+       "posttitle"  :this.basicForm.value.username,
+       "description": this.description,
+       "published":false
+    }}}
+    let res11 = await this.itHourService.executeByUpdate(input11, false);
+    console.log(res11)
+    // $("#auth").hide();
+    
+  }}
 
   async   uploadToServer1() {
     // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
+    if(this.isShow){
     var input = {
       "modelName": "Article",
        "posttitle"  :this.basicForm.value.username,
@@ -172,11 +188,23 @@ export class AddArticleComponent implements OnInit {
 
     }
     let res = await this.itHourService.executeByPost(input, false);
+  }
     // $("#auth").hide();
-    if (res.isapisuccess && res.apidata && res.apidata.Data) {
-
-      console.log("call image");
+    if(!this.isShow){
+      var input11 = {
+        "$set":{
+        "modelName": "Article",
+         "posttitle"  :this.basicForm.value.username,
+         "description": this.description,
+         "image": this.articles[this.articles.length-1],
+         "published":true
+      }}
+      let res11 = await this.itHourService.executeByUpdate(input11, false);
+      console.log(res11)
+      // $("#auth").hide();
+      
     }
+  
   }
 
  async getArticle(){
@@ -185,6 +213,7 @@ export class AddArticleComponent implements OnInit {
     var data= res.apidata.Data
     this.basicForm.controls['username'].setValue(data[0].posttitle);
     this.basicForm.controls['description'].setValue(data[0].description);
+    this.image = data[0].image
    }
   }
 }

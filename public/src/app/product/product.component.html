@@ -131,7 +131,7 @@
                                                                 <div class="slick-track" style="opacity: 1; width: 3312px; transform: translate3d(-828px, 0px, 0px);">
                                                                         <div class="slick-slide slick-cloned"
                                                                                 data-slick-index="-4" aria-hidden="true"
-                                                                                tabindex="-1" style="width: 207px;">
+                                                                                tabindex="-1" style="width: 207px;" *ngFor = "let rel of productbynewcategory" >
                                                                                 <div>
                                                                                         <div class="single-news card"
                                                                                                 style="width: 100%; display: inline-block;">
@@ -305,9 +305,9 @@
                                                                                 style="width: 280px;">
                                                                                 <div>
                                                                                         <div class="single-news card"
-                                                                                                style="width: 100%; display: inline-block;">
+                                                                                                style="width: 100%; display: inline-block;" >
                                                                                                 <iframe class="card-top-img"
-                                                                                                [src]="mediaurl | safe"
+                                                                                                [src]="rel.media.mediaurl | safe"
                                                                                                         frameborder="0"
                                                                                                         allowfullscreen=""></iframe>
                                                                                                 <div class="card-body">
@@ -1004,7 +1004,7 @@
 					<div class="thumb">
                                             <img class="img-fluid w-100" src="{{funart.image}}" alt="">
 					</div>
-					<p class="date">10 Jan 2018</p>
+					<p class="date">{{funart.date | date : 'dd MMM yyyy'}}</p>
 					<h4>
 						<a href="#">{{funart.posttitle}}</a>
 					</h4>

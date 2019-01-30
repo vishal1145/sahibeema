@@ -20,13 +20,14 @@ export class ProductComponent {
   id: any;
    newblock:any;
   productdetails:any;
-  mediaurl: any;
+  mediaurl: any ;
   nameblock:any;
   newadd:any;
   addnew1:any;
   blockadd:any;
   half_article:any;
   categoryid:any = {};
+ productbynewcategory:any =[];
   dataid:any;
   allimagedata:any;
   _htmlProperty1:any;
@@ -53,42 +54,11 @@ export class ProductComponent {
 
     this.router.navigate(['article']);
   }
+
+
   async getProduct() {
-    var input = {
-      "modelName": "Product",
 
-    }
-    let res = await this.itHoursService.executeByGet(input, false);
-    console.log(res)
-    this.value = res.apidata.Data      
- this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);      
-   
     
-    this.highlights = this.value[0].highlights[0]
-    this.mediaurl = this.value[0].media.mediaurl
-
-    var getArticle = {
-      "modelName":"Article"
-  }
-  let articles = await this.itHoursService.executeByGet(getArticle, false);
-     console.log(articles)
-     this.newblock = articles.apidata.Data;
-     this.half_article = this.newblock.slice(0,4)
-
-    var input = {
-      "modelName": "Category"
-
-    }
-    let raj = await this.itHoursService.executeByGet(input, false);
-    console.log(raj)
-    this.data = raj.apidata.Data
-    for (var i = 0; i < this.data.length; i++) {
-   
-      if (this.data[i]._id == this.id) {
-        this.productdetails = this.data[i] 
-      }
-    }
-
     var productbyid = {
       "modelName": "Product",
       "findQuery": {
@@ -101,20 +71,63 @@ export class ProductComponent {
     
      this.categoryid = productbycategory.apidata.Data[0].category
   
+
+     var input = {
+      "modelName": "Product",
+      "findQuery":{
+   "category" :this.categoryid._id
+      }
+    }
+    let res = await this.itHoursService.executeByGet(input, false);
+    console.log(res)
+    this.value = res.apidata.Data      
+ this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);      
+   
+    
+    this.highlights = this.value[0].highlights[0]
+    this.mediaurl = this.value[this.value.length-1].media.mediaurl
+
+
+    var getArticle = {
+      "modelName":"Article"
+  }
+  let articles = await this.itHoursService.executeByGet(getArticle, false);
+     console.log(articles)
+     this.newblock = articles.apidata.Data;
+     this.half_article = this.newblock.slice(0,4)
+     for(var i=0;i<this.half_article.length;i++){
+      this.half_article[i].date = new Date(this.half_article[i].created_at)
+    }
+    console.log( this.half_article)
+
+    var input11 = {
+      "modelName": "Category"
+
+    }
+    let raj = await this.itHoursService.executeByGet(input11, false);
+    console.log(raj)
+    this.data = raj.apidata.Data
+    for (var i = 0; i < this.data.length; i++) {
+   
+      if (this.data[i]._id == this.id) {
+        this.productdetails = this.data[i] 
+      }
+    }
+
+  
         
   var newproduct =
     {
       "modelName" :"Product",
       "findQuery":{
     
-        "category":productbycategory.apidata.Data[0].category,
+        "category":this.categoryid._id,
         "_id":{
           "$ne" : this.id
         }
     }
   }
-  let productbynewcategory = await this.itHoursService.executeByGet(newproduct, false);
-  console.log(productbynewcategory)
+  this.productbynewcategory = await this.itHoursService.executeByGet(newproduct, false);
   
 
    var addArticle = {

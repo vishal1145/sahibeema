@@ -137,7 +137,8 @@ export class AddProductComponent implements OnInit {
       "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
       "highlights": this.headlines,
       "category": this.basicForm.value.category,
-      "description" : this.description 
+      "description" : this.description, 
+      "published" : false
       }}
     }
     var res1 = await this.itHourService.executeByUpdate(input1,false);
@@ -147,6 +148,7 @@ export class AddProductComponent implements OnInit {
   }
 
   async uploadToServer1(){
+    if(this.isShow){
     var input = {
       "modelName":"Product",
       "title": this.basicForm.value.username,
@@ -159,6 +161,25 @@ export class AddProductComponent implements OnInit {
     var res = await this.itHourService.executeByPost(input,false);
     console.log(res);
   }
+  if(!this.isShow){
+    var input1 = {
+      "modelName" :"Product",
+      "findQuery":{
+        _id: this.productid
+      },
+      "updateQuery":{
+        "$set":{
+        "title": this.basicForm.value.username,
+      "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
+      "highlights": this.headlines,
+      "category": this.basicForm.value.category,
+      "description" : this.description, 
+      "published" : true
+      }}
+    }
+    var res = await this.itHourService.executeByUpdate(input1,false);
+    console.log(res);
+  }}
   changeData(index){
  this.data.splice(index,1)
  this.headlines = this.data.slice()

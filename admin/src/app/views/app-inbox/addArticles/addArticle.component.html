@@ -9,14 +9,19 @@
             <div fxLayout="row wrap">
 
                 <div fxFlex="100%" fxFlex.gt-xs="100">
-                    <mat-form-field class="full-width" style="margin-top:25px">
+                    <mat-form-field class="full-width" style="margin-top:25px" *ngIf = "isShow">
+                        <input matInput name="username" formControlName="username" placeholder="Title" value="">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" style="margin-top:25px" *ngIf = "!isShow">
                         <input matInput name="username" formControlName="username" placeholder="Title" value="basicForm.controls['username']">
                     </mat-form-field>
 
                 </div>
              </div> 
-             <input type ="file" value = "choose Image"  (change) = "setFile($event)" style = "margin:15px">
-         
+             <div fxLayout="row wrap">
+                    <img *ngIf = "!isShow" src="articleimage" width=10% height=10% />
+                 <input type ="file" value = "choose Image"  (change) = "setFile($event)" style = "margin:15px">
+             </div>
              <quill-editor 
              theme="snow" 
              name = "description"
