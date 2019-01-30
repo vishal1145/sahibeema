@@ -7,6 +7,7 @@ import { ContactComponent} from './contact/contact.component';
 import { ArticleComponent} from './article/article.component';
 import { ArticlesingleComponent} from './articlesingle/articlesingle.component';
 import { CategoryComponent} from './category/category.component';
+import { AboutComponent} from './about/about.component';
 
 
 const routes: Routes = [ 
@@ -18,6 +19,7 @@ const routes: Routes = [
 { path: 'article', component: ArticleComponent },
 { path: 'articlesingle/:article_id', component: ArticlesingleComponent },
 { path: 'category/:beema_id', component: CategoryComponent },
+{ path: 'about', component: AboutComponent },
 ];
 
 @NgModule({

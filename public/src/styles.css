@@ -3346,4 +3346,16 @@ h6 {
   -moz-box-shadow: 0px 2px 10px 0px rgba(168,161,168,1);
   box-shadow: 0px 2px 10px 0px rgba(168,161,168,1);
     }
+
+    .banner-area{min-height: 280px}
+            .about-content{margin-top: 24px}
+            .slick-dots{bottom: -48px}
+            .svm-item{background: #fff; margin-bottom: 20px}
+            .svm-item .svm-icon{width: 200px; height:200px; text-align: center; background: #eee; display: inline-block; line-height: 200px; float: left }
+            .svm-item .svm-icon img{height: 80px}
+            .svm-item .svm-detail{width: calc(100% - 200px); padding:25px; margin-left: 200px}
+            .svm-item .svm-detail h4{margin-bottom: 15px}
+            .imgview .img{height: 200px}
+            .imgview {position: relative; display: inline-block}
+            .imgview .lens{position: absolute; bottom: 0; right:0; background: rgba(0,0,0,0.4); padding: 15px}
    

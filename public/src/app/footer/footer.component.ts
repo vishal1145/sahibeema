@@ -13,8 +13,12 @@ export class FooterComponent  implements OnInit  {
  }
  ngOnInit(){   
 }
- myfunction(){
-    this.router.navigate(['team']);
+indexfun(){
+    this.router.navigate(['about']);
+  }
+    funcall(){
+      this.router.navigate(['team']);
+    
   } 
   }
 

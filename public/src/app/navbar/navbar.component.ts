@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit  {
   }
   
   myfunction(){
-     this.router.navigate(['team']);
+     this.router.navigate(['about']);
   }
   contactfun(){
     this.router.navigate(['contact']);
