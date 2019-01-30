@@ -18,19 +18,19 @@ export class ProductComponent {
   value: any = [];
   highlights: any;
   id: any;
-   newblock:any;
-  productdetails:any;
-  mediaurl: any ;
-  nameblock:any;
-  newadd:any;
-  addnew1:any;
-  blockadd:any;
-  half_article:any;
-  categoryid:any = {};
- productbynewcategory:any =[];
-  dataid:any;
-  allimagedata:any;
-  _htmlProperty1:any;
+  newblock: any;
+  productdetails: any;
+  mediaurl: any;
+  nameblock: any;
+  newadd: any;
+  addnew1: any;
+  blockadd: any;
+  half_article: any;
+  categoryid: any = {};
+  rel_prod: any = [];
+  dataid: any;
+  allimagedata: any;
+  _htmlProperty1: any;
   constructor(
     public itHoursService: ITHoursService,
     private activatedRoute: ActivatedRoute,
@@ -58,47 +58,47 @@ export class ProductComponent {
 
   async getProduct() {
 
-    
+
     var productbyid = {
       "modelName": "Product",
       "findQuery": {
         "_id": this.id,
-        },
-        "path":"category"
-   }
+      },
+      "path": "category"
+    }
     let productbycategory = await this.itHoursService.executeByGet(productbyid, false);
     console.log(productbycategory)
-    
-     this.categoryid = productbycategory.apidata.Data[0].category
-  
 
-     var input = {
+    this.categoryid = productbycategory.apidata.Data[0].category
+
+
+    var input = {
       "modelName": "Product",
-      "findQuery":{
-   "category" :this.categoryid._id
+      "findQuery": {
+        "category": this.categoryid._id
       }
     }
     let res = await this.itHoursService.executeByGet(input, false);
     console.log(res)
-    this.value = res.apidata.Data      
- this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);      
-   
-    
+    this.value = res.apidata.Data
+    this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);
+
+
     this.highlights = this.value[0].highlights[0]
-    this.mediaurl = this.value[this.value.length-1].media.mediaurl
+    this.mediaurl = this.value[this.value.length - 1].media.mediaurl
 
 
     var getArticle = {
-      "modelName":"Article"
-  }
-  let articles = await this.itHoursService.executeByGet(getArticle, false);
-     console.log(articles)
-     this.newblock = articles.apidata.Data;
-     this.half_article = this.newblock.slice(0,4)
-     for(var i=0;i<this.half_article.length;i++){
+      "modelName": "Article"
+    }
+    let articles = await this.itHoursService.executeByGet(getArticle, false);
+    console.log(articles)
+    this.newblock = articles.apidata.Data;
+    this.half_article = this.newblock.slice(0, 4)
+    for (var i = 0; i < this.half_article.length; i++) {
       this.half_article[i].date = new Date(this.half_article[i].created_at)
     }
-    console.log( this.half_article)
+    console.log(this.half_article)
 
     var input11 = {
       "modelName": "Category"
@@ -108,49 +108,50 @@ export class ProductComponent {
     console.log(raj)
     this.data = raj.apidata.Data
     for (var i = 0; i < this.data.length; i++) {
-   
+
       if (this.data[i]._id == this.id) {
-        this.productdetails = this.data[i] 
+        this.productdetails = this.data[i]
       }
     }
 
-  
-        
-  var newproduct =
-    {
-      "modelName" :"Product",
-      "findQuery":{
-    
-        "category":this.categoryid._id,
-        "_id":{
-          "$ne" : this.id
-        }
-    }
-  }
-  this.productbynewcategory = await this.itHoursService.executeByGet(newproduct, false);
-  
 
-   var addArticle = {
-		"modelName":"Advertisement"
-}
-let addblock = await this.itHoursService.executeByGet(addArticle, false);
-   console.log(addblock)
+
+    var newproduct =
+    {
+      "modelName": "Product",
+      "findQuery": {
+
+        "category": this.categoryid._id,
+        "_id": {
+          "$ne": this.id
+        }
+      }
+    }
+    let productbynewcategory = await this.itHoursService.executeByGet(newproduct, false);
+    this.rel_prod = productbynewcategory.apidata.Data
+
+    var addArticle = {
+      "modelName": "Advertisement"
+    }
+    let addblock = await this.itHoursService.executeByGet(addArticle, false);
+    console.log(addblock)
     this.blockadd = addblock.apidata.Data;
-    this.nameblock = this.getImage('product','side',addblock)    // this.blockadd[4].image
+    this.nameblock = this.getImage('product', 'side', addblock)    // this.blockadd[4].image
     this.newadd = this.blockadd[1].image
     this.addnew1 = this.blockadd[3].image
-    }
-    getImage(pagename,area,allimages){
+  }
+  
+  getImage(pagename, area, allimages) {
 
-      console.log(allimages)
+    console.log(allimages)
     this.allimagedata = allimages.apidata.Data
-     for (var i = 0; i< this.allimagedata.length;i++){
-       if (this.allimagedata[i].page==pagename && this.allimagedata[i].area == area ){
-         return this.allimagedata[i].image
-       }
-     }
-    
+    for (var i = 0; i < this.allimagedata.length; i++) {
+      if (this.allimagedata[i].page == pagename && this.allimagedata[i].area == area) {
+        return this.allimagedata[i].image
+      }
     }
+
+  }
 
 }
 
