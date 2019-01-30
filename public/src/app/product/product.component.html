@@ -89,32 +89,14 @@
 
 
                                                         <div class="single-sidebar-widget post-category-widget">
-                                                                <h4 class="category-title">{{highlights}}</h4>
-                                                                <ul class="cat-list bullet-list">
-                                                                        <li *ngFor="let id of value">
-                                                                                {{id.description}}
+                                                                <h4 class="category-title" *ngIf = "highlights">Highlights</h4>
+                                                                <h4 class="category-title" *ngIf = "!highlights">No highlights</h4>
+                                                                <ul class="cat-list bullet-list" *ngIf = "highlights">
+                                                                        <li *ngFor="let highlight of highlights" >
+                                                                                {{highlight}}
                                                                         </li>
-                                                                        <!-- <li>
-                                                                                <p>ऑटो बीमा प्रीमियम पर 55% तक बचा सकते
-                                                                                        हैं</p>
-                                                                        </li>
-                                                                        <li>
-                                                                                <p>नीति बाजार आपके लिए काफी आसान बनाता
-                                                                                        है</p>
-                                                                        </li>
-                                                                        <li>
-                                                                                <p>ऐड-ऑन प्राप्त कर सकते हैं।</p>
-                                                                        </li>
-                                                                        <li>
-                                                                                <p>ऑटो बीमा प्रीमियम पर 55% तक बचा सकते
-                                                                                        हैं</p>
-                                                                        </li>
-                                                                        <li>
-                                                                                <p>नीति बाजार आपके लिए काफी आसान बनाता
-                                                                                        है</p>
-                                                                        </li> -->
-
                                                                 </ul>
+
                                                         </div>
 
                                                 </div>
@@ -141,14 +123,9 @@
                                                                                                         allowfullscreen=""></iframe>
                                                                                                 <div class="card-body">
                                                                                                         <h4 class="card-title">
-                                                                                                                <a href="http://protossofttech.com/sahibeema/product.html#"
+                                                                                                                <a [href]="'product/'+rel._id"
                                                                                                                         tabindex="0">
-                                                                                                                        इंश्योरेंस
-                                                                                                                        कितने
-                                                                                                                        तरह
-                                                                                                                        का
-                                                                                                                        होता
-                                                                                                                        है?
+                                                                                                                     {{rel.title}}
                                                                                                                 </a>
                                                                                                         </h4>
 

@@ -13,6 +13,8 @@ declare var $: any;
 
 export class CategoryComponent implements OnInit  {
   addproduct:any;
+  id:any;
+  category:any;
     constructor( 
       private _ngZone: NgZone,
       private activatedRoute: ActivatedRoute,
@@ -20,7 +22,11 @@ export class CategoryComponent implements OnInit  {
       public itHoursService: ITHoursService
        
        ) {
+        this.activatedRoute.params.subscribe((params: Params) => {
+          this.id = params['beema_id'];
+        });
        this.getProduct()
+ 
        }
     
        ngOnInit() {
@@ -30,12 +36,26 @@ export class CategoryComponent implements OnInit  {
       async getProduct() {
       var input = {
         "modelName": "Product",
-        
+        "findQuery":{
+          "category":this.id
+        }
         
       }
       let addres = await this.itHoursService.executeByGet(input, false);
       console.log(addres)
       this.addproduct = addres.apidata.Data
+
+      var input11 = {
+        "modelName": "Category",
+        "findQuery" : {
+          _id:this.id
+        }
+        
+        
+      }
+      let categ = await this.itHoursService.executeByGet(input11, false);
+     this.category = categ.apidata.Data[0].title
+  
       
 
     }

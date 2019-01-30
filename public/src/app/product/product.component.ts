@@ -42,7 +42,7 @@ export class ProductComponent {
     //   this.id = params['beema_id'];
     // });
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.id = params['beema_id'];
+      this.id = params['data_id'];
     });
     this.getProduct()
   }
@@ -68,9 +68,9 @@ export class ProductComponent {
     }
     let productbycategory = await this.itHoursService.executeByGet(productbyid, false);
     console.log(productbycategory)
-
+    this.mediaurl = productbycategory.apidata.Data[0].media.mediaurl
     this.categoryid = productbycategory.apidata.Data[0].category
-
+    this.highlights  = productbycategory.apidata.Data[0].highlights;
 
     var input = {
       "modelName": "Product",
@@ -81,12 +81,12 @@ export class ProductComponent {
     let res = await this.itHoursService.executeByGet(input, false);
     console.log(res)
     this.value = res.apidata.Data
+
     this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);
 
 
-    this.highlights = this.value[0].highlights[0]
-    this.mediaurl = this.value[this.value.length - 1].media.mediaurl
-
+    //this.highlights = this.value[0].highlights[0]
+    
 
     var getArticle = {
       "modelName": "Article"
@@ -140,7 +140,7 @@ export class ProductComponent {
     this.newadd = this.blockadd[1].image
     this.addnew1 = this.blockadd[3].image
   }
-  
+
   getImage(pagename, area, allimages) {
 
     console.log(allimages)
