@@ -373,7 +373,7 @@
                             </div>
                             <div class="projects_text">
                                 <h4>
-                                    <img src={{text.icon}}><a [href]="'product/' + text._id">{{text.title}}
+                                    <img src={{text.icon}}><a (click)="getId(text)">{{text.title}}
                                     </a>
                                 </h4>
 

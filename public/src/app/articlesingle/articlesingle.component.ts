@@ -48,6 +48,7 @@ constructor(
             "modelName": "Product",
           }
           let addres = await this.itHoursService.executeByGet(input, false);
+          console.log(addres)
           this.newvalue = addres.apidata.Data
           this.mediaurl = this.newvalue[0].media.mediaurl
 

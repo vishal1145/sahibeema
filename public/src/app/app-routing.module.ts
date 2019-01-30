@@ -6,16 +6,18 @@ import { TeamComponent} from './team/team.component';
 import { ContactComponent} from './contact/contact.component';
 import { ArticleComponent} from './article/article.component';
 import { ArticlesingleComponent} from './articlesingle/articlesingle.component';
+import { CategoryComponent} from './category/category.component';
 
 
 const routes: Routes = [ 
   { path: '', redirectTo: 'index',pathMatch:'full' }, 
 { path: 'index', component: IndexComponent },
-{ path: 'product/:beema_id', component: ProductComponent },
+{ path: 'product/:data_id', component: ProductComponent },
 { path: 'team', component: TeamComponent },
 { path: 'contact', component: ContactComponent },
 { path: 'article', component: ArticleComponent },
-{ path: 'articlesingle/:article_id', component: ArticlesingleComponent }
+{ path: 'articlesingle/:article_id', component: ArticlesingleComponent },
+{ path: 'category/:beema_id', component: CategoryComponent },
 ];
 
 @NgModule({

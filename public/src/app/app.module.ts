@@ -12,6 +12,7 @@ import { ContactComponent} from './contact/contact.component';
 import { ArticleComponent} from './article/article.component';
 import { ArticlesingleComponent} from './articlesingle/articlesingle.component';
 import{ITCommonModule} from '../providers/common.module';
+import { CategoryComponent} from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import{ITCommonModule} from '../providers/common.module';
     TeamComponent,
     ContactComponent,
     ArticleComponent,
-    ArticlesingleComponent
+    ArticlesingleComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

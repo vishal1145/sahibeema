@@ -42,11 +42,11 @@ export class IndexComponent implements OnInit {
         "category": cat._id
       }
     }
-    let productbycategory = await this.itHoursService.executeByGet(product, false);
-    console.log(productbycategory)
-    var no = productbycategory.apidata.Data.length - 1;
-    var id = productbycategory.apidata.Data[no]._id
-    this.router.navigate(['/product/' + id]);
+    // let productbycategory = await this.itHoursService.executeByGet(product, false);
+    // console.log(productbycategory)
+    // var no = productbycategory.apidata.Data.length - 1;
+    // var id = productbycategory.apidata.Data[no]._id
+    this.router.navigate(['/category/' + cat._id]);
   }
   async getCategory() {
     var input = {
