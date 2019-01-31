@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { NgZone } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ITHoursService } from '../../providers/it-hours-service';
+import { Title }     from '@angular/platform-browser';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 declare var $: any;
 
 @Component({
-  selector: 'app-article',
+  selector: 'app-article app-root',
   templateUrl: 'article.component.html',
   providers: [ITHoursService]
 })
@@ -31,10 +32,15 @@ export class ArticleComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     public itHoursService: ITHoursService,
+    private titleService: Title,
     private _sanitizer: DomSanitizer
   ) {
     this.getArticles();
    
+  }
+
+  public setTitle( newTitle: string) {
+  
   }
   ngOnInit() {
 
@@ -83,6 +89,8 @@ export class ArticleComponent implements OnInit {
     let addres = await this.itHoursService.executeByGet(input, false);
     this.newvalue = addres.apidata.Data
     this.mediaurl = this.newvalue[0].media.mediaurl
+    this.titleService.setTitle('article');
+
 
 
     var newinput ={

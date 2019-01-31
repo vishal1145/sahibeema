@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NgZone } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ITHoursService } from '../../providers/it-hours-service';
-
+import { Title }     from '@angular/platform-browser';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 declare var $: any;
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product app-root',
+  
   templateUrl: 'product.component.html',
   providers: [ITHoursService]
 })
@@ -36,6 +37,7 @@ export class ProductComponent {
     public itHoursService: ITHoursService,
     private activatedRoute: ActivatedRoute,
     private _sanitizer: DomSanitizer,
+    private titleService: Title,
     public router: Router
   ) {
 
@@ -46,6 +48,9 @@ export class ProductComponent {
       this.id = params['data_id'];
     });
     this.getProduct()
+  }
+  public setTitle( newTitle: string) {
+  
   }
   findQuery = {
     category: this.id
@@ -69,8 +74,9 @@ export class ProductComponent {
     }
     let productbycategory = await this.itHoursService.executeByGet(productbyid, false);
     console.log(productbycategory)
-    this.mediaurl = productbycategory.apidata.Data[0].media.mediaurl
+    this.mediaurl = productbycategory.apidata.Data[0].media.mediaurl 
     this.categoryid = productbycategory.apidata.Data[0].category
+    this.titleService.setTitle('उत्पाद');
     this.highlights  = productbycategory.apidata.Data[0].highlights;
     if(this.highlights.length!=0){
       this.isShow = true

@@ -3,11 +3,12 @@ import { NgZone } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ITHoursService } from '../../providers/it-hours-service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Title }     from '@angular/platform-browser';
 
 declare var $: any;
 
 @Component({
-  selector: 'app-article',
+  selector: 'app-article app-root',
   templateUrl: 'articlesingle.component.html',
   providers: [ITHoursService] 
 })
@@ -26,6 +27,7 @@ constructor(
       private activatedRoute: ActivatedRoute,
       private router: Router,
       private _sanitizer: DomSanitizer,
+      private titleService: Title,
       public itHoursService: ITHoursService
        ){
         this.activatedRoute.params.subscribe((params: Params) => {
@@ -33,7 +35,9 @@ constructor(
         });
         this.getArticles();
        }
-
+       public setTitle( newTitle: string) {
+  
+      }
 
       ngOnInit() {
       }
@@ -64,6 +68,7 @@ constructor(
             var postcategories = await this.itHoursService.executeByGet(postdata, false)
             console.log(postcategories)
             this.idtext = postcategories.apidata.Data
+            this.titleService.setTitle('articlesingle');
 
             
           var input1 ={
