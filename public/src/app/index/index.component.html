@@ -236,7 +236,7 @@
                     </div>
                     <p class="date">{{funart.date | date : 'dd MMM yyyy'}}</p>
                     <h4>
-                        <a href="#">{{funart.posttitle}}</a>
+                        <a [href]="'/articlesingle/'+funart._id">{{funart.posttitle}}</a>
                     </h4>
                     <p>
                         {{funart.description}}

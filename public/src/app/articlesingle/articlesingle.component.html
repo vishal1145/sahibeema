@@ -24,7 +24,7 @@
 
                     <div class="col-lg-12 col-md-12 ">
                         <div class="feature-img">
-                            <img class="img-fluid" src="./assets/img/blog/feature-img1.jpg" alt="">
+                            <img class="img-fluid" src="one_art.image" alt="">
                         </div>
                         <a class="posts-title" href="">
                             <h3>Astronomy Binoculars A Great Alternative</h3>
@@ -56,7 +56,7 @@
 
                                 <div class="col-md-3">
 
-                                    <p class="leftside"><span class="lnr lnr-calendar-full"></span> 12 Dec, 2017 </p>
+                                    <p class="leftside"><span class="lnr lnr-calendar-full"></span> {{one_art.date | date:"dd MMM yyyy"}} </p>
                                 </div>
 
 
@@ -227,7 +227,7 @@
                                     <img class="img-fluid newvalue" src={{newpost.image}} alt="">
                                 </div>
                                 <div class="details">
-                                    <a href="">
+                                    <a [href]="'/articlesingle/'+newpost._id">
                                         <h6>{{newpost.posttitle}}</h6>
                                     </a>
                                     <p>{{newpost.time}}</p>

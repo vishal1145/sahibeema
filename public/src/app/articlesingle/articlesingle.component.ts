@@ -14,7 +14,8 @@ declare var $: any;
 
 
 export class ArticlesingleComponent implements OnInit {
-    
+    id:any;
+    one_art:any = {};
   newpost:any =[];
   newvalue:any;
   mediaurl:any;
@@ -25,6 +26,9 @@ constructor(
       private router: Router,
       public itHoursService: ITHoursService
        ){
+        this.activatedRoute.params.subscribe((params: Params) => {
+          this.id = params['article_id'];
+        });
         this.getArticles();
        }
 
@@ -58,6 +62,17 @@ constructor(
             var postcategories = await this.itHoursService.executeByGet(postdata, false)
             console.log(postcategories)
             this.idtext = postcategories.apidata.Data
+
+            
+          var input1 ={
+            "modelName" : "Article",
+            "findQuery" : {
+            _id : this.id
+            }
+          }
+            var one_art = await this.itHoursService.executeByGet(input1, false)
+            this.one_art.date = new Date(one_art.apidata.Data[0].created_at)
+            this.one_art.image = one_art.apidata.Data[0].image
       }
   
   }
