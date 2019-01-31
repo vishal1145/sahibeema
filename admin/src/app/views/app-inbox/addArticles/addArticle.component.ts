@@ -165,7 +165,7 @@ export class AddArticleComponent implements OnInit {
       },
       "updateQuery":{
       "$set":{
-        "image": this.image,
+        "image": this.articles[this.articles.length-1],
        "posttitle"  :this.basicForm.value.username,
        "description": this.description,
        "published":false
@@ -192,13 +192,17 @@ export class AddArticleComponent implements OnInit {
     // $("#auth").hide();
     if(!this.isShow){
       var input11 = {
-        "$set":{
         "modelName": "Article",
-         "posttitle"  :this.basicForm.value.username,
+        "findQuery":{
+            _id:this.articleid
+        },
+        "updateQuery":{
+        "$set":{
+        "posttitle"  :this.basicForm.value.username,
          "description": this.description,
          "image": this.articles[this.articles.length-1],
          "published":true
-      }}
+      }}}
       let res11 = await this.itHourService.executeByUpdate(input11, false);
       console.log(res11)
       // $("#auth").hide();
