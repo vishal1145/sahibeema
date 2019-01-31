@@ -5,7 +5,7 @@ webpackJsonp([1,4],{
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -37,8 +37,8 @@ AboutComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -148,8 +148,8 @@ var _a, _b, _c, _d, _e;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticlesingleComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -242,8 +242,8 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -319,7 +319,7 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -351,8 +351,8 @@ ContactComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IndexComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -471,8 +471,8 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -505,6 +505,7 @@ let ProductComponent = class ProductComponent {
         //constructor( private _ngZone: NgZone,private activatedRoute: ActivatedRoute, private router: Router,)
         this.data = [];
         this.value = [];
+        this.isShow = false;
         this.categoryid = {};
         this.rel_prod = [];
         this.findQuery = {
@@ -535,6 +536,9 @@ let ProductComponent = class ProductComponent {
             this.mediaurl = productbycategory.apidata.Data[0].media.mediaurl;
             this.categoryid = productbycategory.apidata.Data[0].category;
             this.highlights = productbycategory.apidata.Data[0].highlights;
+            if (this.highlights.length != 0) {
+                this.isShow = true;
+            }
             var input = {
                 "modelName": "Product",
                 "findQuery": {
@@ -618,7 +622,7 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_it_hours_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_it_hours_service__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TeamComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -705,347 +709,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 484:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_index_component__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_product_component__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__team_team_component__ = __webpack_require__(310);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__contact_contact_component__ = __webpack_require__(307);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__article_article_component__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__articlesingle_articlesingle_component__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__category_category_component__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__about_about_component__ = __webpack_require__(303);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-const routes = [
-    { path: '', redirectTo: 'index', pathMatch: 'full' },
-    { path: 'index', component: __WEBPACK_IMPORTED_MODULE_2__index_index_component__["a" /* IndexComponent */] },
-    { path: 'product/:data_id', component: __WEBPACK_IMPORTED_MODULE_3__product_product_component__["a" /* ProductComponent */] },
-    { path: 'team', component: __WEBPACK_IMPORTED_MODULE_4__team_team_component__["a" /* TeamComponent */] },
-    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_5__contact_contact_component__["a" /* ContactComponent */] },
-    { path: 'article', component: __WEBPACK_IMPORTED_MODULE_6__article_article_component__["a" /* ArticleComponent */] },
-    { path: 'articlesingle/:article_id', component: __WEBPACK_IMPORTED_MODULE_7__articlesingle_articlesingle_component__["a" /* ArticlesingleComponent */] },
-    { path: 'category/:beema_id', component: __WEBPACK_IMPORTED_MODULE_8__category_category_component__["a" /* CategoryComponent */] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_9__about_about_component__["a" /* AboutComponent */] },
-];
-let AppRoutingModule = class AppRoutingModule {
-};
-AppRoutingModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
-        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(routes)],
-        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]]
-    }), 
-    __metadata('design:paramtypes', [])
-], AppRoutingModule);
-//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/app-routing.module.js.map
-
-/***/ }),
-
-/***/ 485:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-let AppComponent = class AppComponent {
-    constructor() {
-        this.title = 'client';
-    }
-};
-AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
-        selector: 'app-root',
-        template: __webpack_require__(647),
-        styles: [__webpack_require__(645)],
-    }), 
-    __metadata('design:paramtypes', [])
-], AppComponent);
-//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/app.component.js.map
-
-/***/ }),
-
-/***/ 486:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing_module__ = __webpack_require__(484);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(485);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__footer_footer_component__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__navbar_navbar_component__ = __webpack_require__(488);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__index_index_component__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__product_product_component__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__team_team_component__ = __webpack_require__(310);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__contact_contact_component__ = __webpack_require__(307);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__article_article_component__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__articlesingle_articlesingle_component__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_common_module__ = __webpack_require__(489);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__category_category_component__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about_about_component__ = __webpack_require__(303);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let AppModule = class AppModule {
-};
-AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__index_index_component__["a" /* IndexComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__product_product_component__["a" /* ProductComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__team_team_component__["a" /* TeamComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__article_article_component__["a" /* ArticleComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__articlesingle_articlesingle_component__["a" /* ArticlesingleComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__category_category_component__["a" /* CategoryComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__about_about_component__["a" /* AboutComponent */]
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_13__providers_common_module__["a" /* ITCommonModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* HttpModule */]
-        ],
-        providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
-    }), 
-    __metadata('design:paramtypes', [])
-], AppModule);
-//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/app.module.js.map
-
-/***/ }),
-
-/***/ 487:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-let FooterComponent = class FooterComponent {
-    constructor(_ngZone, activatedRoute, router) {
-        this._ngZone = _ngZone;
-        this.activatedRoute = activatedRoute;
-        this.router = router;
-    }
-    ngOnInit() {
-    }
-    indexfun() {
-        this.router.navigate(['about']);
-    }
-    funcall() {
-        this.router.navigate(['team']);
-    }
-};
-FooterComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
-        selector: 'app-footer-cmp',
-        template: __webpack_require__(652)
-    }), 
-    __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === 'function' && _c) || Object])
-], FooterComponent);
-var _a, _b, _c;
-//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/footer.component.js.map
-
-/***/ }),
-
-/***/ 488:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(49);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-let NavbarComponent = class NavbarComponent {
-    constructor(_ngZone, activatedRoute, router) {
-        this._ngZone = _ngZone;
-        this.activatedRoute = activatedRoute;
-        this.router = router;
-    }
-    ngOnInit() {
-    }
-    myfunction() {
-        this.router.navigate(['about']);
-    }
-    contactfun() {
-        this.router.navigate(['contact']);
-    }
-    indexfun() {
-        this.router.navigate(['index']);
-    }
-};
-NavbarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
-        selector: 'app-navbar-cmp',
-        template: __webpack_require__(654)
-    }), 
-    __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === 'function' && _c) || Object])
-], NavbarComponent);
-var _a, _b, _c;
-//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/navbar.component.js.map
-
-/***/ }),
-
-/***/ 489:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_safeurl__ = __webpack_require__(490);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ITCommonModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-let ITCommonModule = class ITCommonModule {
-};
-ITCommonModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_1__providers_safeurl__["a" /* SafePipe */]
-        ],
-        imports: [],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_1__providers_safeurl__["a" /* SafePipe */]
-        ]
-    }), 
-    __metadata('design:paramtypes', [])
-], ITCommonModule);
-//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/common.module.js.map
-
-/***/ }),
-
-/***/ 490:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(61);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SafePipe; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-let SafePipe = class SafePipe {
-    //today: any;
-    constructor(sanitizer, _ngZone) {
-        this.sanitizer = sanitizer;
-        this._ngZone = _ngZone;
-        //  this.today = moment.utc(new Date());
-    }
-    transform(url) {
-        return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    }
-};
-SafePipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Pipe */])({
-        name: 'safe'
-    }), 
-    __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */]) === 'function' && _b) || Object])
-], SafePipe);
-var _a, _b;
-//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/safeurl.js.map
-
-/***/ }),
-
-/***/ 50:
+/***/ 38:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1319,6 +983,369 @@ var _a;
 
 /***/ }),
 
+/***/ 484:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_index_component__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_product_component__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__team_team_component__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__contact_contact_component__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__article_article_component__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__articlesingle_articlesingle_component__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__category_category_component__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__about_about_component__ = __webpack_require__(303);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+const routes = [
+    { path: '', redirectTo: 'index', pathMatch: 'full' },
+    { path: 'index', component: __WEBPACK_IMPORTED_MODULE_2__index_index_component__["a" /* IndexComponent */] },
+    { path: 'product/:data_id', component: __WEBPACK_IMPORTED_MODULE_3__product_product_component__["a" /* ProductComponent */] },
+    { path: 'team', component: __WEBPACK_IMPORTED_MODULE_4__team_team_component__["a" /* TeamComponent */] },
+    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_5__contact_contact_component__["a" /* ContactComponent */] },
+    { path: 'article', component: __WEBPACK_IMPORTED_MODULE_6__article_article_component__["a" /* ArticleComponent */] },
+    { path: 'articlesingle/:article_id', component: __WEBPACK_IMPORTED_MODULE_7__articlesingle_articlesingle_component__["a" /* ArticlesingleComponent */] },
+    { path: 'category/:beema_id', component: __WEBPACK_IMPORTED_MODULE_8__category_category_component__["a" /* CategoryComponent */] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_9__about_about_component__["a" /* AboutComponent */] },
+];
+let AppRoutingModule = class AppRoutingModule {
+};
+AppRoutingModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
+        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(routes)],
+        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]]
+    }), 
+    __metadata('design:paramtypes', [])
+], AppRoutingModule);
+//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/app-routing.module.js.map
+
+/***/ }),
+
+/***/ 485:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+let AppComponent = class AppComponent {
+    constructor() {
+        this.title = 'client';
+    }
+};
+AppComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+        selector: 'app-root',
+        template: __webpack_require__(647),
+        styles: [__webpack_require__(645)],
+    }), 
+    __metadata('design:paramtypes', [])
+], AppComponent);
+//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/app.component.js.map
+
+/***/ }),
+
+/***/ 486:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing_module__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(485);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__footer_footer_component__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__navbar_navbar_component__ = __webpack_require__(488);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__index_index_component__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__product_product_component__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__team_team_component__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__contact_contact_component__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__article_article_component__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__articlesingle_articlesingle_component__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_common_module__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__category_category_component__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__about_about_component__ = __webpack_require__(303);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let AppModule = class AppModule {
+};
+AppModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__index_index_component__["a" /* IndexComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__product_product_component__["a" /* ProductComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__team_team_component__["a" /* TeamComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__article_article_component__["a" /* ArticleComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__articlesingle_articlesingle_component__["a" /* ArticlesingleComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__category_category_component__["a" /* CategoryComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__about_about_component__["a" /* AboutComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_13__providers_common_module__["a" /* ITCommonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* HttpModule */]
+        ],
+        providers: [],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+    }), 
+    __metadata('design:paramtypes', [])
+], AppModule);
+//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/app.module.js.map
+
+/***/ }),
+
+/***/ 487:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_providers_it_hours_service__ = __webpack_require__(38);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator.throw(value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments)).next());
+    });
+};
+
+
+
+
+let FooterComponent = class FooterComponent {
+    constructor(_ngZone, activatedRoute, router, itHourService) {
+        this._ngZone = _ngZone;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.itHourService = itHourService;
+        this.cat = [];
+        this.getCategory();
+    }
+    ngOnInit() {
+    }
+    indexfun() {
+        this.router.navigate(['about']);
+    }
+    funcall() {
+        this.router.navigate(['team']);
+    }
+    getCategory() {
+        return __awaiter(this, void 0, void 0, function* () {
+            var input = {
+                "modelName": "Category"
+            };
+            var res = yield this.itHourService.executeByGet(input, false);
+            this.cat = res.apidata.Data;
+        });
+    }
+};
+FooterComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+        selector: 'app-footer-cmp',
+        template: __webpack_require__(652),
+        providers: [__WEBPACK_IMPORTED_MODULE_2_providers_it_hours_service__["a" /* ITHoursService */]]
+    }), 
+    __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_providers_it_hours_service__["a" /* ITHoursService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2_providers_it_hours_service__["a" /* ITHoursService */]) === 'function' && _d) || Object])
+], FooterComponent);
+var _a, _b, _c, _d;
+//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/footer.component.js.map
+
+/***/ }),
+
+/***/ 488:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(50);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+let NavbarComponent = class NavbarComponent {
+    constructor(_ngZone, activatedRoute, router) {
+        this._ngZone = _ngZone;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+    }
+    ngOnInit() {
+    }
+    myfunction() {
+        this.router.navigate(['about']);
+    }
+    contactfun() {
+        this.router.navigate(['contact']);
+    }
+    indexfun() {
+        this.router.navigate(['index']);
+    }
+};
+NavbarComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
+        selector: 'app-navbar-cmp',
+        template: __webpack_require__(654)
+    }), 
+    __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === 'function' && _c) || Object])
+], NavbarComponent);
+var _a, _b, _c;
+//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/navbar.component.js.map
+
+/***/ }),
+
+/***/ 489:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_safeurl__ = __webpack_require__(490);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ITCommonModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+let ITCommonModule = class ITCommonModule {
+};
+ITCommonModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_1__providers_safeurl__["a" /* SafePipe */]
+        ],
+        imports: [],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_1__providers_safeurl__["a" /* SafePipe */]
+        ]
+    }), 
+    __metadata('design:paramtypes', [])
+], ITCommonModule);
+//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/common.module.js.map
+
+/***/ }),
+
+/***/ 490:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(61);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SafePipe; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+let SafePipe = class SafePipe {
+    //today: any;
+    constructor(sanitizer, _ngZone) {
+        this.sanitizer = sanitizer;
+        this._ngZone = _ngZone;
+        //  this.today = moment.utc(new Date());
+    }
+    transform(url) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    }
+};
+SafePipe = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Pipe */])({
+        name: 'safe'
+    }), 
+    __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgZone */]) === 'function' && _b) || Object])
+], SafePipe);
+var _a, _b;
+//# sourceMappingURL=D:/ClientSource/sahibeema/public/src/safeurl.js.map
+
+/***/ }),
+
 /***/ 645:
 /***/ (function(module, exports) {
 
@@ -1371,7 +1398,7 @@ module.exports = "<section class=\"banner-area relative\" id=\"home\" style=\"ba
 /***/ 652:
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer-area \">\r\n\t\t<div class=\"container\">\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-lg-3  col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget\">\r\n\t\t\t\t\t\t<h6>कंपनी </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t\t<li class =\"data\" (click) = indexfun()>हमारे बारे में</li>\r\n\t\t\t\t\t\t\t<li><a href=\"\">जॉब्स </a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"\">न्यूज़ रूम </a></li>\r\n\t\t\t\t\t\t\t<li class =\"data\"><a (click) = funcall()>हमारी टीम </a></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget newsletter\">\r\n\t\t\t\t\t\t<h6>हमारे इंश्योरेंस सर्विसेज </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t<li><a href=\"\">जीवन बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">कार बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">स्वास्थ्य बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">घर बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">यात्रा बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">मोटर साइकिल बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">अन्य बीमा</a></li>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget newsletter\">\r\n\t\t\t\t\t\t<h6>FAQs </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t<li><a href=\"\">जीवन बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">कार बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">स्वास्थ्य बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">घर बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">यात्रा बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">मोटर साइकिल बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">अन्य बीमा</a></li>\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget newsletter\">\r\n\t\t\t\t\t\t<h6>सम्पर्क  </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t<li>लोकेशन : बी-१५० , ट्रिडेंट बिल्डिंग, मुंबई </li>\r\n                                                        <li>ईमेल : info@sahibeema.com</li>\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"footer-bottom d-flex justify-content-between align-items-center flex-wrap\">\r\n\t\t\t\t<p class=\"col-lg-8 col-sm-12 footer-text m-0\">\r\n                                    <img src=\"./assets/img/logo.png\">&nbsp;&nbsp;&nbsp;&nbsp;\r\nCopyright ©<script>document.write(new Date().getFullYear());</script>2019 All rights reserved | Subsidiary of <a href=\"http://protossofttech.com/sahibeema/#\" target=\"_blank\">Sahi Solutions</a>\r\n<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->\r\n</p>\r\n\t\t\t\t<div class=\"footer-social d-flex align-items-center\">\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-facebook\"></i></a>\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-twitter\"></i></a>\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-dribbble\"></i></a>\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-behance\"></i></a>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</footer>\r\n"
+module.exports = "<footer class=\"footer-area \">\r\n\t\t<div class=\"container\">\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-lg-3  col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget\">\r\n\t\t\t\t\t\t<h6>कंपनी </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t\t<li class =\"data\" (click) = indexfun()>हमारे बारे में</li>\r\n\t\t\t\t\t\t\t<li><a href=\"\">जॉब्स </a></li>\r\n\t\t\t\t\t\t\t<li><a href=\"\">न्यूज़ रूम </a></li>\r\n\t\t\t\t\t\t\t<li class =\"data\"><a (click) = funcall()>हमारी टीम </a></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget newsletter\">\r\n\t\t\t\t\t\t<h6>हमारे इंश्योरेंस सर्विसेज </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t<li *ngFor = \"let category of cat\"><a [href]=\"'/category/'+category._id\">{{category.title}}</a></li>\r\n\t\t\t\t\t\t\t\t<!-- <li><a href=\"\">कार बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">स्वास्थ्य बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">घर बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">यात्रा बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">मोटर साइकिल बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">अन्य बीमा</a></li>\r\n\t\t\t\t\t\t\t -->\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget newsletter\">\r\n\t\t\t\t\t\t<h6>FAQs </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t<li><a href=\"\">जीवन बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">कार बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">स्वास्थ्य बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">घर बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">यात्रा बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">मोटर साइकिल बीमा</a></li>\r\n\t\t\t\t\t\t\t\t<li><a href=\"\">अन्य बीमा</a></li>\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-3 col-md-6\">\r\n\t\t\t\t\t<div class=\"single-footer-widget newsletter\">\r\n\t\t\t\t\t\t<h6>सम्पर्क  </h6>\r\n\t\t\t\t\t\t<ul class=\"footer-nav\">\r\n\t\t\t\t\t\t\t<li>लोकेशन : बी-१५० , ट्रिडेंट बिल्डिंग, मुंबई </li>\r\n                                                        <li>ईमेल : info@sahibeema.com</li>\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"footer-bottom d-flex justify-content-between align-items-center flex-wrap\">\r\n\t\t\t\t<p class=\"col-lg-8 col-sm-12 footer-text m-0\">\r\n                                    <img src=\"./assets/img/logo.png\">&nbsp;&nbsp;&nbsp;&nbsp;\r\nCopyright ©<script>document.write(new Date().getFullYear());</script>2019 All rights reserved | Subsidiary of <a href=\"http://protossofttech.com/sahibeema/#\" target=\"_blank\">Sahi Solutions</a>\r\n<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->\r\n</p>\r\n\t\t\t\t<div class=\"footer-social d-flex align-items-center\">\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-facebook\"></i></a>\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-twitter\"></i></a>\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-dribbble\"></i></a>\r\n\t\t\t\t\t<a href=\"\"><i class=\"fa fa-behance\"></i></a>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</footer>\r\n"
 
 /***/ }),
 
@@ -1392,7 +1419,7 @@ module.exports = "\r\n<header id=\"header\" class=\"\">\r\n\t\t<!-- <div class=\
 /***/ 655:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"banner-area relative\" id=\"home\" style=\"background-image: url('./assets/img/single-blog.jpg')\">\r\n        <div class=\"container\">\r\n                <div class=\"row d-flex align-items-center justify-content-center\">\r\n                        <div class=\"about-content col-lg-8 col-md-8 col-sm-12\">\r\n                                <h1 class=\"text-white text-uppercase\">\r\n                                        <span style=\"border-radius: 4px; padding: 15px; background: #fff; margin-right: 10px\"><img\r\n                                                        src={{categoryid.icon}} style=\"height: 56px\"></span>\r\n                                        {{categoryid.title}}\r\n\r\n                                </h1>\r\n                                <p class=\"text-white link-nav\"><a href=\"\">मुख्य\r\n                                                पृष्ट </a>\r\n                                        <span class=\"lnr lnr-arrow-right\"></span>\r\n                                        <a href=\"\">\r\n                                                सर्विसेज </a>\r\n                                        <span class=\"lnr lnr-arrow-right\"></span>\r\n                                        <a href=\"\">\r\n                                                {{categoryid.title}}</a>\r\n                                </p>\r\n                        </div>\r\n                        <div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12 home-banner-ad\" style=\"padding-right: 0\">\r\n                                <div class=\"banner-ads slick-initialized slick-slider slick-dotted\">\r\n                                        <div class=\"slick-list draggable\">\r\n                                                <div class=\"slick-track\" style=\"opacity: 1; width: 1095px; transform: translate3d(0px, 0px, 0px);\">\r\n                                                        <div class=\"slick-slide slick-current slick-active\"\r\n                                                                data-slick-index=\"0\" aria-hidden=\"false\" role=\"tabpanel\"\r\n                                                                id=\"slick-slide00\" style=\"width: 365px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"ad\" style=\"width: 100%; display: inline-block;\">\r\n                                                                                <a href=\"\" tabindex=\"0\"><img class=\"img-fluid\"\r\n                                                                                                src={{nameblock}}></a>\r\n                                                                        </div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"1\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide01\" style=\"width: 365px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"ad\" style=\"width: 100%; display: inline-block;\">\r\n                                                                                <a href=\"\" tabindex=\"-1\"><img src=\"./assets/img/ad_4.jpeg\"></a>\r\n                                                                        </div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"2\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide02\" style=\"width: 365px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"ad\" style=\"width: 100%; display: inline-block;\">\r\n                                                                                <a href=\"\" tabindex=\"-1\"><img src=\"./assets/img/ad_4.jpeg\"></a>\r\n                                                                        </div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <ul class=\"slick-dots\" style=\"display: block;\" role=\"tablist\">\r\n                                                <li class=\"slick-active\" role=\"presentation\"><button type=\"button\" role=\"tab\"\r\n                                                                id=\"slick-slide-control00\" aria-controls=\"slick-slide00\"\r\n                                                                aria-label=\"1 of 3\" tabindex=\"0\" aria-selected=\"true\">1</button></li>\r\n                                                <li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control01\"\r\n                                                                aria-controls=\"slick-slide01\" aria-label=\"2 of 3\"\r\n                                                                tabindex=\"-1\">2</button></li>\r\n                                                <li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control02\"\r\n                                                                aria-controls=\"slick-slide02\" aria-label=\"3 of 3\"\r\n                                                                tabindex=\"-1\">3</button></li>\r\n                                        </ul>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<section class=\"post-content-area single-post-area\" style=\"padding: 20px 0\">\r\n        <div class=\"container\">\r\n                <div class=\"row\">\r\n                        <div class=\"col-lg-9 posts-list\">\r\n                                <div class=\"single-post row\">\r\n                                        <div class=\"col-lg-7\" style=\"padding-left: 0\">\r\n                                                <!-- <img src={{mediaurl}} /> -->\r\n                                                <div class=\"video-frame\" style=\"width: 105%;\">\r\n                                                        <iframe class=\"card-top-img\" [src]=\"mediaurl | safe\"\r\n                                                                frameborder=\"0\" allowfullscreen=\"\"></iframe>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-5\">\r\n                                                <div class=\"widget-wrap\">\r\n\r\n\r\n                                                        <div class=\"single-sidebar-widget post-category-widget\">\r\n                                                                <h4 class=\"category-title\" *ngIf = \"highlights\">Highlights</h4>\r\n                                                                <h4 class=\"category-title\" *ngIf = \"!highlights\">No highlights</h4>\r\n                                                                <ul class=\"cat-list bullet-list\" *ngIf = \"highlights\">\r\n                                                                        <li *ngFor=\"let highlight of highlights\" >\r\n                                                                                {{highlight}}\r\n                                                                        </li>\r\n                                                                </ul>\r\n\r\n                                                        </div>\r\n\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"clearfix\"></div>\r\n                                        <br>\r\n                                        <div class=\"col-md-12\" style=\"margin-top: 30px;margin-left: -1.5rem;\">\r\n                                                <div class=\"related-videos slick-initialized slick-slider\" style=\"margin-bottom: 15px;\">\r\n                                                       <button\r\n                                                                class=\"slick-prev slick-arrow\" aria-label=\"Previous\"\r\n                                                                type=\"button\" style=\"display: block;margin-top: -2rem\">Previous</button> \r\n                                                        <div class=\"slick-list draggable\">\r\n                                                                <div class=\"slick-track\" style=\"opacity: 1; width: 3312px;\">\r\n\r\n                                                                        <div class=\"slick-slide slick-active\"\r\n                                                                                data-slick-index=\"1\" aria-hidden=\"false\"\r\n                                                                                style=\"width: 280px; \" *ngFor=\"let rel of rel_prod\">\r\n                                                                                <div>\r\n                                                                                        <div class=\"single-news card\"\r\n                                                                                                style=\"width: 100%; display: inline-block;\">\r\n                                                                                                <iframe class=\"card-top-img\"\r\n                                                                                                        [src]=\"rel.media.mediaurl | safe\"\r\n                                                                                                        frameborder=\"0\"\r\n                                                                                                        allowfullscreen=\"\"></iframe>\r\n                                                                                                <div class=\"card-body\">\r\n                                                                                                        <h4 class=\"card-title\">\r\n                                                                                                                <a [href]=\"'product/'+rel._id\"\r\n                                                                                                                        tabindex=\"0\">\r\n                                                                                                                     {{rel.title}}\r\n                                                                                                                </a>\r\n                                                                                                        </h4>\r\n\r\n                                                                                                </div>\r\n                                                                                        </div>\r\n                                                                                </div>\r\n                                                                        </div>\r\n\r\n\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <button class=\"slick-next slick-arrow\" aria-label=\"Next\" type=\"button\"\r\n                                                                style=\"display: block; margin-top:-2rem\">Next</button>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12\" style=\"padding-left: 0\">\r\n                                                <div class=\"row  mb-30\">\r\n                                                        <div class=\"col-12\">\r\n                                                                <img class=\"img-fluid\" src=\"./assets/img/ad_1.jpg\" alt=\"\">\r\n                                                        </div>\r\n\r\n\r\n\r\n\r\n                                                </div>\r\n                                        </div>\r\n\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n                        <div class=\"col-lg-3 sidebar-widgets\" style=\"padding-right: 0\">\r\n                                <img src={{newadd}} class=\"img-fluid\" style=\"border:1px solid #f5f5f5; width: 100%\">\r\n                                <img src={{addnew1}} class=\"img-fluid\" style=\"border:1px solid #f5f5f5; width: 100%\">\r\n\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"section-companies\" style=\"background: #fff\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>कार इंश्योरेंस के प्रकार</h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"padding: 0\">\r\n                                <div class=\"table-responsive\">\r\n                                        <table class=\"table table-striped table-bordered\">\r\n                                                <thead>\r\n                                                        <tr>\r\n                                                                <th>क्रमांक </th>\r\n                                                                <th>पॉलिसी कंपनी </th>\r\n                                                                <th> </th>\r\n                                                        </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                        <tr>\r\n                                                                <td>1</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>2</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>3</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>4</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                </tbody>\r\n                                        </table>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"section-companies\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>भारत की दस बड़ी कार इंश्योरेंस कंपनी </h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n                <br>\r\n                <br>\r\n                <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"padding: 0\">\r\n                                <div class=\"companies slick-initialized slick-slider\"><button class=\"slick-prev slick-arrow slick-disabled\"\r\n                                                aria-label=\"Previous\" type=\"button\" aria-disabled=\"true\" style=\"display: block;\">Previous</button>\r\n                                        <div class=\"slick-list draggable\">\r\n                                                <div class=\"slick-track\" style=\"opacity: 1; width: 1900px; transform: translate3d(0px, 0px, 0px);\">\r\n                                                        <div class=\"slick-slide slick-current slick-active\"\r\n                                                                data-slick-index=\"0\" aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/1 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"1\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/2.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"2\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/3 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"3\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/4 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"4\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/5.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"5\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/6 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"6\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/7.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"7\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/8.png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"8\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/9.png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"9\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/10.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <button class=\"slick-next slick-arrow\" aria-label=\"Next\" type=\"button\" style=\"display: block;\"\r\n                                                aria-disabled=\"false\">Next</button>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"section-companies\" style=\"background: #fff; padding-bottom: 0\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>कार इंश्योरेंस से जुड़े मह्त्वपूर्ण नंबर्स </h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n                <br>\r\n                <br>\r\n                <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"padding: 0\">\r\n                                <div class=\"table-responsive\">\r\n                                        <table class=\"table table-striped table-bordered\">\r\n                                                <thead>\r\n                                                        <tr>\r\n                                                                <th>क्रमांक </th>\r\n                                                                <th>पॉलिसी कंपनी </th>\r\n                                                                <th>नंबर </th>\r\n                                                        </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                        <tr>\r\n                                                                <td>1</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>2</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>3</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>4</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                </tbody>\r\n                                        </table>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"recent-completed-project\">\r\n        <div class=\"container\">\r\n                <div class=\"row justify-content-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>और जानिये </h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"filters project-filter\">\r\n                                        <ul>\r\n                                                <li class=\"active\" data-filter=\".all\">सभी इंश्योरेंस</li>\r\n                                                <li data-filter=\".brand\">यात्रा </li>\r\n                                                <li data-filter=\".creative\">कार </li>\r\n\r\n                                        </ul>\r\n                                </div>\r\n                                <div class=\"projects_inner row\" id=\"lightgallery\" style=\"position: relative; height: 525px;\">\r\n                                        <div class=\"col-lg-3 col-sm-6 web all creative\" *ngFor=\"let text of data\">\r\n\r\n                                                <div class=\"projects_item\" style=\"height: 231px;\">\r\n                                                        <img class=\"img-fluid w-100\" src={{text.image}} alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src={{text.icon}}><a href=\"\">{{text.title}}\r\n                                                                        </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <!-- <div class=\"col-lg-3 col-sm-6 brand all brand\" data-src=\"../.././assets/img/products/service-4.jpg\"\r\n                                                style=\"position: absolute; left: 24.9573%; top: 0px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-4.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/5.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">ट्रेवल\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div> \r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-3.jpg\"\r\n                                                style=\"position: absolute; left: 50%; top: 0px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-3.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/3.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">हेल्थ\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-5.jpg\"\r\n                                                style=\"position: absolute; left: 74.9573%; top: 0px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-5.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/1.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">लाइफ\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-6.jpg\"\r\n                                                style=\"position: absolute; left: 0%; top: 262px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-6.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/6.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">मोटर\r\n                                                                                साइकिल इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-7.jpg\"\r\n                                                style=\"position: absolute; left: 24.9573%; top: 262px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-7.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/4.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">होम\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-8.jpg\"\r\n                                                style=\"position: absolute; left: 50%; top: 262px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-8.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/7.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">अन्य\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>-->\r\n\r\n\r\n\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"latest-blog-area\">\r\n        <div class=\"container\">\r\n                <div class=\"row justify-content-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1 class=\"data\" (click)=\"article()\">नए लेख - <span style=\"font-size: 16px; font-weight:normal\">इंश्योरेंस\r\n                                                        पॉलिसीस से जुडी महत्वपूर्ण जानकारियाँ</span></h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row new-articles\">\r\n                        <div class=\" single-blog\" *ngFor=\"let funart of half_article\">\r\n                                <div class=\"single-blog-item\">\r\n                                        <div class=\"thumb\">\r\n                                                <img class=\"img-fluid w-100\" src=\"{{funart.image}}\" alt=\"\">\r\n                                        </div>\r\n                                        <p class=\"date\">{{funart.date | date : 'dd MMM yyyy'}}</p>\r\n                                        <h4>\r\n                                                <a href=\"#\">{{funart.posttitle}}</a>\r\n                                        </h4>\r\n                                        <p>\r\n                                                {{funart.description}}\r\n                                        </p>\r\n                                        <div class=\"meta-bottom d-flex justify-content-between\">\r\n                                                <p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n                                                <p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n                                        </div>\r\n                                </div>\r\n                        </div>\r\n                        <!--<div class=\" single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n\t\t\t\t\t\t<img class=\"img-fluid w-100\" src=\"./assets/img/b2.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">टर्म एंड लाइफ इंश्योरेंस पालिसी में अंतर</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\" single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n                                            <img class=\"img-fluid w-100\" src=\"./assets/img/cat-widget2.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">पॉलिसी सेटलमेंट के सुझाव और सही चुनाव</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n\t\t\t\t\t\t<img class=\"img-fluid w-100\" src=\"./assets/img/b4.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">टर्म एंड लाइफ इंश्योरेंस पालिसी में अंतर</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n                             <div class=\" single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n                                            <img class=\"img-fluid w-100\" src=\"./assets/img/cat-widget2.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">पॉलिसी सेटलमेंट के सुझाव और सही चुनाव</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div> -->\r\n                </div>\r\n\r\n\r\n        </div>\r\n</section>\r\n\r\n<section class=\"testimonial-area feedback\" style=\"height: 377px;\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>आपके फीडबैक </h1>\r\n\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n\r\n                        <div class=\"col-md-4\">\r\n                                <div class=\"media back-data\" style=\"width: 360px;height: 204px;\">\r\n                                        <img class=\"mr-3 box-data-value\" src=\"./assets/img/user1.png\" alt=\"Generic placeholder image\">\r\n                                        <div class=\"media-body\">\r\n\r\n                                                <p style=\"margin-top:20px\">\r\n                                                        Accessories Here you can find the best computer accessory for\r\n                                                        your laptop, monitor,\r\n                                                        printer, scanner, speaker, projector,\r\n                                                        hardware.\r\n                                                </p>\r\n                                                <h5>Mark Alviro Wiens</h5>\r\n\r\n                                                <p> CEO at Google</p>\r\n\r\n                                        </div>\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-md-4\">\r\n                                <div class=\"media back-data\" style=\"width: 360px;height: 204px;\">\r\n                                        <img class=\"mr-3 box-data-value\" src=\"./assets/img/user2.png\" alt=\"Generic placeholder image\">\r\n                                        <div class=\"media-body\">\r\n\r\n                                                <p style=\"margin-top:20px\">\r\n                                                        Accessories Here you can find the best computer accessory for\r\n                                                        your laptop, monitor,\r\n                                                        printer, scanner, speaker, projector,\r\n                                                        hardware.\r\n                                                </p>\r\n                                                <h5>Lina Harrington</h5>\r\n\r\n                                                <p> CEO at Google</p>\r\n\r\n                                        </div>\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"col-md-4\">\r\n                                <div class=\"media back-data\" style=\"width: 360px;height: 204px;\">\r\n                                        <img class=\"mr-3 box-data-value\" src=\"./assets/img/user1.png\" alt=\"Generic placeholder image\">\r\n                                        <div class=\"media-body\">\r\n\r\n                                                <p style=\"margin-top:20px\">\r\n                                                        Accessories Here you can find the best computer accessory for\r\n                                                        your laptop, monitor,\r\n                                                        printer, scanner, speaker, projector,\r\n                                                        hardware.\r\n                                                </p>\r\n                                                <h5>Mark Alviro Wiens</h5>\r\n\r\n                                                <p> CEO at Google</p>\r\n\r\n                                        </div>\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n\r\n                        <!--  <div class=\"single-testimonial item d-flex flex-row\">\r\n                                        <div class=\"thumb\">\r\n                                            <img src=\"./assets/img/user2.png\" alt=\"\" style=\"width: auto; height: 60px\">\r\n                                        </div>\r\n                                        <div class=\"desc\">\r\n                                            <p>\r\n                                                Accessories Here you can find the best computer accessory for your laptop, monitor,\r\n                                                printer, scanner, speaker, projector,\r\n                                                hardware.\r\n                                            </p>\r\n                                            <h4 mt-30>Lina Harrington</h4>\r\n                                            <p class=\"mb-0\">CEO at Google</p>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"single-testimonial item d-flex flex-row\">\r\n                                        <div class=\"thumb\">\r\n                                            <img src=\"./assets/img/user1.png\" alt=\"\" style=\"width: auto; height: 60px\">\r\n                                        </div>\r\n                                        <div class=\"desc\">\r\n                                            <p>\r\n                                                Accessories Here you can find the best computer accessory for your laptop, monitor,\r\n                                                printer, scanner, speaker, projector,\r\n                                                hardware.\r\n                                            </p>\r\n                                            <h4 mt-30>Mark Alviro Wiens</h4>\r\n                                            <p class=\"mb-0\">CEO at Google</p>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"single-testimonial item d-flex flex-row\">\r\n                                        <div class=\"thumb\">\r\n                                            <img src=\"./assets/img/user2.png\" alt=\"\" style=\"width: auto; height: 60px\">\r\n                                        </div>\r\n                                        <div class=\"desc\">\r\n                                            <p>\r\n                                                Accessories Here you can find the best computer accessory for your laptop, monitor,\r\n                                                printer, scanner, speaker, projector,\r\n                                                hardware.\r\n                                            </p>\r\n                                            <h4 mt-30>Lina Harrington</h4>\r\n                                            <p class=\"mb-0\">CEO at Google</p>\r\n                                        </div>\r\n                                    </div>-->\r\n\r\n                </div>\r\n        </div>\r\n</section>"
+module.exports = "<section class=\"banner-area relative\" id=\"home\" style=\"background-image: url('./assets/img/single-blog.jpg')\">\r\n        <div class=\"container\">\r\n                <div class=\"row d-flex align-items-center justify-content-center\">\r\n                        <div class=\"about-content col-lg-8 col-md-8 col-sm-12\">\r\n                                <h1 class=\"text-white text-uppercase\">\r\n                                        <span style=\"border-radius: 4px; padding: 15px; background: #fff; margin-right: 10px\"><img\r\n                                                        src={{categoryid.icon}} style=\"height: 56px\"></span>\r\n                                        {{categoryid.title}}\r\n\r\n                                </h1>\r\n                                <p class=\"text-white link-nav\"><a href=\"\">मुख्य\r\n                                                पृष्ट </a>\r\n                                        <span class=\"lnr lnr-arrow-right\"></span>\r\n                                        <a href=\"\">\r\n                                                सर्विसेज </a>\r\n                                        <span class=\"lnr lnr-arrow-right\"></span>\r\n                                        <a href=\"\">\r\n                                                {{categoryid.title}}</a>\r\n                                </p>\r\n                        </div>\r\n                        <div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12 home-banner-ad\" style=\"padding-right: 0\">\r\n                                <div class=\"banner-ads slick-initialized slick-slider slick-dotted\">\r\n                                        <div class=\"slick-list draggable\">\r\n                                                <div class=\"slick-track\" style=\"opacity: 1; width: 1095px; transform: translate3d(0px, 0px, 0px);\">\r\n                                                        <div class=\"slick-slide slick-current slick-active\"\r\n                                                                data-slick-index=\"0\" aria-hidden=\"false\" role=\"tabpanel\"\r\n                                                                id=\"slick-slide00\" style=\"width: 365px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"ad\" style=\"width: 100%; display: inline-block;\">\r\n                                                                                <a href=\"\" tabindex=\"0\"><img class=\"img-fluid\"\r\n                                                                                                src={{nameblock}}></a>\r\n                                                                        </div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"1\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide01\" style=\"width: 365px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"ad\" style=\"width: 100%; display: inline-block;\">\r\n                                                                                <a href=\"\" tabindex=\"-1\"><img src=\"./assets/img/ad_4.jpeg\"></a>\r\n                                                                        </div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"2\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide02\" style=\"width: 365px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"ad\" style=\"width: 100%; display: inline-block;\">\r\n                                                                                <a href=\"\" tabindex=\"-1\"><img src=\"./assets/img/ad_4.jpeg\"></a>\r\n                                                                        </div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <ul class=\"slick-dots\" style=\"display: block;\" role=\"tablist\">\r\n                                                <li class=\"slick-active\" role=\"presentation\"><button type=\"button\" role=\"tab\"\r\n                                                                id=\"slick-slide-control00\" aria-controls=\"slick-slide00\"\r\n                                                                aria-label=\"1 of 3\" tabindex=\"0\" aria-selected=\"true\">1</button></li>\r\n                                                <li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control01\"\r\n                                                                aria-controls=\"slick-slide01\" aria-label=\"2 of 3\"\r\n                                                                tabindex=\"-1\">2</button></li>\r\n                                                <li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control02\"\r\n                                                                aria-controls=\"slick-slide02\" aria-label=\"3 of 3\"\r\n                                                                tabindex=\"-1\">3</button></li>\r\n                                        </ul>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<section class=\"post-content-area single-post-area\" style=\"padding: 20px 0\">\r\n        <div class=\"container\">\r\n                <div class=\"row\">\r\n                        <div class=\"col-lg-9 posts-list\">\r\n                                <div class=\"single-post row\">\r\n                                        <div class=\"col-lg-7\" style=\"padding-left: 0\">\r\n                                                <!-- <img src={{mediaurl}} /> -->\r\n                                                <div class=\"video-frame\" style=\"width: 105%;\">\r\n                                                        <iframe class=\"card-top-img\" [src]=\"mediaurl | safe\"\r\n                                                                frameborder=\"0\" allowfullscreen=\"\"></iframe>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-5\">\r\n                                                <div class=\"widget-wrap\">\r\n\r\n\r\n                                                        <div class=\"single-sidebar-widget post-category-widget\">\r\n                                                                <h4 class=\"category-title\" *ngIf = \"isShow\">Highlights</h4>\r\n                                                                <h4 class=\"category-title\" *ngIf = \"!isShow\">No highlights</h4>\r\n                                                                <ul class=\"cat-list bullet-list\" style =\"    overflow: scroll;\r\n                                                                height: 335px;\" *ngIf = \"highlights\">\r\n                                                                        <li *ngFor=\"let highlight of highlights\" >\r\n                                                                                {{highlight}}\r\n                                                                        </li>\r\n                                                                </ul>\r\n\r\n                                                        </div>\r\n\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"clearfix\"></div>\r\n                                        <br>\r\n                                        <div class=\"col-md-12\" style=\"margin-top: 30px;margin-left: -1.5rem;\">\r\n                                                <div class=\"related-videos slick-initialized slick-slider\" style=\"margin-bottom: 15px;\">\r\n                                                       <button\r\n                                                                class=\"slick-prev slick-arrow\" aria-label=\"Previous\"\r\n                                                                type=\"button\" style=\"display: block;margin-top: -2rem\">Previous</button> \r\n                                                        <div class=\"slick-list draggable\">\r\n                                                                <div class=\"slick-track\" style=\"opacity: 1; width: 3312px;\">\r\n\r\n                                                                        <div class=\"slick-slide slick-active\"\r\n                                                                                data-slick-index=\"1\" aria-hidden=\"false\"\r\n                                                                                style=\"width: 280px; \" *ngFor=\"let rel of rel_prod\">\r\n                                                                                <div>\r\n                                                                                        <div class=\"single-news card\"\r\n                                                                                                style=\"width: 100%; display: inline-block;\">\r\n                                                                                                <iframe class=\"card-top-img\"\r\n                                                                                                        [src]=\"rel.media.mediaurl | safe\"\r\n                                                                                                        frameborder=\"0\"\r\n                                                                                                        allowfullscreen=\"\"></iframe>\r\n                                                                                                <div class=\"card-body\">\r\n                                                                                                        <h4 class=\"card-title\">\r\n                                                                                                                <a [href]=\"'product/'+rel._id\"\r\n                                                                                                                        tabindex=\"0\">\r\n                                                                                                                     {{rel.title}}\r\n                                                                                                                </a>\r\n                                                                                                        </h4>\r\n\r\n                                                                                                </div>\r\n                                                                                        </div>\r\n                                                                                </div>\r\n                                                                        </div>\r\n\r\n\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <button class=\"slick-next slick-arrow\" aria-label=\"Next\" type=\"button\"\r\n                                                                style=\"display: block; margin-top:-2rem\">Next</button>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-12\" style=\"padding-left: 0\">\r\n                                                <div class=\"row  mb-30\">\r\n                                                        <div class=\"col-12\">\r\n                                                                <img class=\"img-fluid\" src=\"./assets/img/ad_1.jpg\" alt=\"\">\r\n                                                        </div>\r\n\r\n\r\n\r\n\r\n                                                </div>\r\n                                        </div>\r\n\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n                        <div class=\"col-lg-3 sidebar-widgets\" style=\"padding-right: 0\">\r\n                                <img src={{newadd}} class=\"img-fluid\" style=\"border:1px solid #f5f5f5; width: 100%\">\r\n                                <img src={{addnew1}} class=\"img-fluid\" style=\"border:1px solid #f5f5f5; width: 100%\">\r\n\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"section-companies\" style=\"background: #fff\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>कार इंश्योरेंस के प्रकार</h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"padding: 0\">\r\n                                <div class=\"table-responsive\">\r\n                                        <table class=\"table table-striped table-bordered\">\r\n                                                <thead>\r\n                                                        <tr>\r\n                                                                <th>क्रमांक </th>\r\n                                                                <th>पॉलिसी कंपनी </th>\r\n                                                                <th> </th>\r\n                                                        </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                        <tr>\r\n                                                                <td>1</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>2</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>3</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>4</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                </tbody>\r\n                                        </table>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"section-companies\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>भारत की दस बड़ी कार इंश्योरेंस कंपनी </h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n                <br>\r\n                <br>\r\n                <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"padding: 0\">\r\n                                <div class=\"companies slick-initialized slick-slider\"><button class=\"slick-prev slick-arrow slick-disabled\"\r\n                                                aria-label=\"Previous\" type=\"button\" aria-disabled=\"true\" style=\"display: block;\">Previous</button>\r\n                                        <div class=\"slick-list draggable\">\r\n                                                <div class=\"slick-track\" style=\"opacity: 1; width: 1900px; transform: translate3d(0px, 0px, 0px);\">\r\n                                                        <div class=\"slick-slide slick-current slick-active\"\r\n                                                                data-slick-index=\"0\" aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/1 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"1\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/2.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"2\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/3 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"3\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/4 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"4\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/5.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide slick-active\" data-slick-index=\"5\"\r\n                                                                aria-hidden=\"false\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/6 (1).png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"6\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/7.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"7\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/8.png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"8\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/9.png\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                        <div class=\"slick-slide\" data-slick-index=\"9\" aria-hidden=\"true\"\r\n                                                                tabindex=\"-1\" style=\"width: 190px;\">\r\n                                                                <div>\r\n                                                                        <div class=\"company\" style=\"width: 100%; display: inline-block;\"><img\r\n                                                                                        src=\"./assets/img/10.jpg\"></div>\r\n                                                                </div>\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <button class=\"slick-next slick-arrow\" aria-label=\"Next\" type=\"button\" style=\"display: block;\"\r\n                                                aria-disabled=\"false\">Next</button>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"section-companies\" style=\"background: #fff; padding-bottom: 0\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>कार इंश्योरेंस से जुड़े मह्त्वपूर्ण नंबर्स </h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n                <br>\r\n                <br>\r\n                <div class=\"row\">\r\n                        <div class=\"col-md-12\" style=\"padding: 0\">\r\n                                <div class=\"table-responsive\">\r\n                                        <table class=\"table table-striped table-bordered\">\r\n                                                <thead>\r\n                                                        <tr>\r\n                                                                <th>क्रमांक </th>\r\n                                                                <th>पॉलिसी कंपनी </th>\r\n                                                                <th>नंबर </th>\r\n                                                        </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                        <tr>\r\n                                                                <td>1</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>2</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>3</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                        <tr>\r\n                                                                <td>4</td>\r\n                                                                <td>-</td>\r\n                                                                <td>-</td>\r\n                                                        </tr>\r\n                                                </tbody>\r\n                                        </table>\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"recent-completed-project\">\r\n        <div class=\"container\">\r\n                <div class=\"row justify-content-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>और जानिये </h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"filters project-filter\">\r\n                                        <ul>\r\n                                                <li class=\"active\" data-filter=\".all\">सभी इंश्योरेंस</li>\r\n                                                <li data-filter=\".brand\">यात्रा </li>\r\n                                                <li data-filter=\".creative\">कार </li>\r\n\r\n                                        </ul>\r\n                                </div>\r\n                                <div class=\"projects_inner row\" id=\"lightgallery\" style=\"position: relative; height: 525px;\">\r\n                                        <div class=\"col-lg-3 col-sm-6 web all creative\" *ngFor=\"let text of data\">\r\n\r\n                                                <div class=\"projects_item\" style=\"height: 231px;\">\r\n                                                        <img class=\"img-fluid w-100\" src={{text.image}} alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src={{text.icon}}><a href=\"\">{{text.title}}\r\n                                                                        </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <!-- <div class=\"col-lg-3 col-sm-6 brand all brand\" data-src=\"../.././assets/img/products/service-4.jpg\"\r\n                                                style=\"position: absolute; left: 24.9573%; top: 0px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-4.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/5.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">ट्रेवल\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div> \r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-3.jpg\"\r\n                                                style=\"position: absolute; left: 50%; top: 0px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-3.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/3.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">हेल्थ\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-5.jpg\"\r\n                                                style=\"position: absolute; left: 74.9573%; top: 0px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-5.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/1.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">लाइफ\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-6.jpg\"\r\n                                                style=\"position: absolute; left: 0%; top: 262px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-6.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/6.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">मोटर\r\n                                                                                साइकिल इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-7.jpg\"\r\n                                                style=\"position: absolute; left: 24.9573%; top: 262px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-7.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/4.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">होम\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>\r\n                                        <div class=\"col-lg-3 col-sm-6 all\" data-src=\"../.././assets/img/products/service-8.jpg\"\r\n                                                style=\"position: absolute; left: 50%; top: 262px;\">\r\n                                                <div class=\"projects_item\">\r\n                                                        <img class=\"img-fluid w-100\" src=\"../.././assets/img/service-8.jpg\"\r\n                                                                alt=\"\">\r\n                                                        <div class=\"icon\">\r\n                                                                <img class=\"img-fluid\" src=\"../.././assets/img/icon.png\"\r\n                                                                        alt=\"\">\r\n                                                        </div>\r\n                                                        <div class=\"projects_text\">\r\n                                                                <h4>\r\n                                                                        <img src=\"../.././assets/img/7.png\"><a href=\"http://protossofttech.com/sahibeema/portfolio-details.html\">अन्य\r\n                                                                                इंश्योरेंस </a>\r\n                                                                </h4>\r\n\r\n                                                        </div>\r\n                                                </div>\r\n                                        </div>-->\r\n\r\n\r\n\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n        </div>\r\n</section>\r\n\r\n\r\n\r\n\r\n<section class=\"latest-blog-area\">\r\n        <div class=\"container\">\r\n                <div class=\"row justify-content-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1 class=\"data\" (click)=\"article()\">नए लेख - <span style=\"font-size: 16px; font-weight:normal\">इंश्योरेंस\r\n                                                        पॉलिसीस से जुडी महत्वपूर्ण जानकारियाँ</span></h1>\r\n                                        <!--<span class=\"main-title-line\"></span>-->\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row new-articles\">\r\n                        <div class=\" single-blog\" *ngFor=\"let funart of half_article\">\r\n                                <div class=\"single-blog-item\">\r\n                                        <div class=\"thumb\">\r\n                                                <img class=\"img-fluid w-100\" src=\"{{funart.image}}\" alt=\"\">\r\n                                        </div>\r\n                                        <p class=\"date\">{{funart.date | date : 'dd MMM yyyy'}}</p>\r\n                                        <h4>\r\n                                                <a href=\"#\">{{funart.posttitle}}</a>\r\n                                        </h4>\r\n                                        <p>\r\n                                                {{funart.description}}\r\n                                        </p>\r\n                                        <div class=\"meta-bottom d-flex justify-content-between\">\r\n                                                <p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n                                                <p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n                                        </div>\r\n                                </div>\r\n                        </div>\r\n                        <!--<div class=\" single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n\t\t\t\t\t\t<img class=\"img-fluid w-100\" src=\"./assets/img/b2.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">टर्म एंड लाइफ इंश्योरेंस पालिसी में अंतर</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\" single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n                                            <img class=\"img-fluid w-100\" src=\"./assets/img/cat-widget2.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">पॉलिसी सेटलमेंट के सुझाव और सही चुनाव</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n\t\t\t\t\t\t<img class=\"img-fluid w-100\" src=\"./assets/img/b4.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">टर्म एंड लाइफ इंश्योरेंस पालिसी में अंतर</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n                             <div class=\" single-blog\">\r\n                                    <div class=\"single-blog-item\">\r\n\t\t\t\t\t<div class=\"thumb\">\r\n                                            <img class=\"img-fluid w-100\" src=\"./assets/img/cat-widget2.jpg\" alt=\"\">\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<p class=\"date\">10 Jan 2018</p>\r\n\t\t\t\t\t<h4>\r\n\t\t\t\t\t\t<a href=\"#\">पॉलिसी सेटलमेंट के सुझाव और सही चुनाव</a>\r\n\t\t\t\t\t</h4>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\tinappropriate behavior ipsum dolor sit amet, consectetur.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"meta-bottom d-flex justify-content-between\">\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-heart\"></span> 15 Likes</p>\r\n\t\t\t\t\t\t<p><span class=\"lnr lnr-bubble\"></span> 02 Comments</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t</div> -->\r\n                </div>\r\n\r\n\r\n        </div>\r\n</section>\r\n\r\n<section class=\"testimonial-area feedback\" style=\"height: 377px;\">\r\n        <div class=\"container\">\r\n                <div class=\"row align-items-center\">\r\n                        <div class=\"col-lg-12\" style=\"padding: 0\">\r\n                                <div class=\"main-title\">\r\n                                        <h1>आपके फीडबैक </h1>\r\n\r\n                                </div>\r\n                        </div>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n\r\n                        <div class=\"col-md-4\">\r\n                                <div class=\"media back-data\" style=\"width: 360px;height: 204px;\">\r\n                                        <img class=\"mr-3 box-data-value\" src=\"./assets/img/user1.png\" alt=\"Generic placeholder image\">\r\n                                        <div class=\"media-body\">\r\n\r\n                                                <p style=\"margin-top:20px\">\r\n                                                        Accessories Here you can find the best computer accessory for\r\n                                                        your laptop, monitor,\r\n                                                        printer, scanner, speaker, projector,\r\n                                                        hardware.\r\n                                                </p>\r\n                                                <h5>Mark Alviro Wiens</h5>\r\n\r\n                                                <p> CEO at Google</p>\r\n\r\n                                        </div>\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n\r\n\r\n                        <div class=\"col-md-4\">\r\n                                <div class=\"media back-data\" style=\"width: 360px;height: 204px;\">\r\n                                        <img class=\"mr-3 box-data-value\" src=\"./assets/img/user2.png\" alt=\"Generic placeholder image\">\r\n                                        <div class=\"media-body\">\r\n\r\n                                                <p style=\"margin-top:20px\">\r\n                                                        Accessories Here you can find the best computer accessory for\r\n                                                        your laptop, monitor,\r\n                                                        printer, scanner, speaker, projector,\r\n                                                        hardware.\r\n                                                </p>\r\n                                                <h5>Lina Harrington</h5>\r\n\r\n                                                <p> CEO at Google</p>\r\n\r\n                                        </div>\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n\r\n                        <div class=\"col-md-4\">\r\n                                <div class=\"media back-data\" style=\"width: 360px;height: 204px;\">\r\n                                        <img class=\"mr-3 box-data-value\" src=\"./assets/img/user1.png\" alt=\"Generic placeholder image\">\r\n                                        <div class=\"media-body\">\r\n\r\n                                                <p style=\"margin-top:20px\">\r\n                                                        Accessories Here you can find the best computer accessory for\r\n                                                        your laptop, monitor,\r\n                                                        printer, scanner, speaker, projector,\r\n                                                        hardware.\r\n                                                </p>\r\n                                                <h5>Mark Alviro Wiens</h5>\r\n\r\n                                                <p> CEO at Google</p>\r\n\r\n                                        </div>\r\n\r\n                                </div>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n\r\n                        <!--  <div class=\"single-testimonial item d-flex flex-row\">\r\n                                        <div class=\"thumb\">\r\n                                            <img src=\"./assets/img/user2.png\" alt=\"\" style=\"width: auto; height: 60px\">\r\n                                        </div>\r\n                                        <div class=\"desc\">\r\n                                            <p>\r\n                                                Accessories Here you can find the best computer accessory for your laptop, monitor,\r\n                                                printer, scanner, speaker, projector,\r\n                                                hardware.\r\n                                            </p>\r\n                                            <h4 mt-30>Lina Harrington</h4>\r\n                                            <p class=\"mb-0\">CEO at Google</p>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"single-testimonial item d-flex flex-row\">\r\n                                        <div class=\"thumb\">\r\n                                            <img src=\"./assets/img/user1.png\" alt=\"\" style=\"width: auto; height: 60px\">\r\n                                        </div>\r\n                                        <div class=\"desc\">\r\n                                            <p>\r\n                                                Accessories Here you can find the best computer accessory for your laptop, monitor,\r\n                                                printer, scanner, speaker, projector,\r\n                                                hardware.\r\n                                            </p>\r\n                                            <h4 mt-30>Mark Alviro Wiens</h4>\r\n                                            <p class=\"mb-0\">CEO at Google</p>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"single-testimonial item d-flex flex-row\">\r\n                                        <div class=\"thumb\">\r\n                                            <img src=\"./assets/img/user2.png\" alt=\"\" style=\"width: auto; height: 60px\">\r\n                                        </div>\r\n                                        <div class=\"desc\">\r\n                                            <p>\r\n                                                Accessories Here you can find the best computer accessory for your laptop, monitor,\r\n                                                printer, scanner, speaker, projector,\r\n                                                hardware.\r\n                                            </p>\r\n                                            <h4 mt-30>Lina Harrington</h4>\r\n                                            <p class=\"mb-0\">CEO at Google</p>\r\n                                        </div>\r\n                                    </div>-->\r\n\r\n                </div>\r\n        </div>\r\n</section>"
 
 /***/ }),
 
