@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { NgZone } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ITHoursService } from '../../providers/it-hours-service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 declare var $: any;
 
@@ -24,6 +25,7 @@ constructor(
       private _ngZone: NgZone,
       private activatedRoute: ActivatedRoute,
       private router: Router,
+      private _sanitizer: DomSanitizer,
       public itHoursService: ITHoursService
        ){
         this.activatedRoute.params.subscribe((params: Params) => {
@@ -73,6 +75,8 @@ constructor(
             var one_art = await this.itHoursService.executeByGet(input1, false)
             this.one_art.date = new Date(one_art.apidata.Data[0].created_at)
             this.one_art.image = one_art.apidata.Data[0].image
+            this.one_art.title = one_art.apidata.Data[0].posttitle
+            this.one_art.description= this._sanitizer.bypassSecurityTrustHtml(one_art.apidata.Data[0].description);
       }
   
   }

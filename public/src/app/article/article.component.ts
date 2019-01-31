@@ -68,10 +68,14 @@ export class ArticleComponent implements OnInit {
 
     var articles = await this.itHoursService.executeByGet(input, false)
     console.log(articles)
+    for(var i=0;i<articles.apidata.Data.length;i++){
+      articles.apidata.Data[i].created_at = new Date( articles.apidata.Data[i].created_at)
+    }
     this.newarticle = articles.apidata.Data;
     for (var i = 0; i < this.newarticle.length; i++) {
       this.newarticle[i].description_new = this._sanitizer.bypassSecurityTrustHtml(this.newarticle[i].description);
     }
+    
 
     var input = {
       "modelName": "Product",
@@ -86,6 +90,7 @@ export class ArticleComponent implements OnInit {
     }
       var newarticle = await this.itHoursService.executeByGet(newinput, false)
       console.log(newarticle)
+     
       //this.newpost = newarticle.apidata.Data;
       for(var i = 0; i<  4; i++ ){
         if(newarticle.apidata.Data[i])

@@ -27,7 +27,7 @@
                             <img class="img-fluid" [src]="one_art.image" alt="">
                         </div>
                         <a class="posts-title" href="">
-                            <h3>Astronomy Binoculars A Great Alternative</h3>
+                            <h3>{{one_art.title}}</h3>
                         </a>
                         <p>Life Insurance, Car Insurance</p>
                         <div class=" meta-details">
@@ -72,25 +72,8 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="excert">
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you should have to spend money
-                            on boot camp when you can get the MCSE study materials yourself at a fraction.
-
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you should have to spend money
-                            on boot camp when you can get the MCSE study materials yourself at a fraction.
-                        </p>
-                        <p class="excert">
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you should have to spend money
-                            on boot camp when you can get the MCSE study materials yourself at a fraction.
-                        </p>
-                        <p class="excert">
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you should have to spend money
-                            on boot camp when you can get the MCSE study materials yourself at a fraction.
-                        </p>
+                        <p  class="excert" [innerHTML]="one_art.description"></p>
+                    
 
                     </div>
                 </div>
