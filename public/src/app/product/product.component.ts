@@ -18,6 +18,7 @@ export class ProductComponent {
   value: any = [];
   highlights: any;
   id: any;
+  isShow:Boolean = false;
   newblock: any;
   productdetails: any;
   mediaurl: any;
@@ -71,6 +72,9 @@ export class ProductComponent {
     this.mediaurl = productbycategory.apidata.Data[0].media.mediaurl
     this.categoryid = productbycategory.apidata.Data[0].category
     this.highlights  = productbycategory.apidata.Data[0].highlights;
+    if(this.highlights.length!=0){
+      this.isShow = true
+    }
 
     var input = {
       "modelName": "Product",

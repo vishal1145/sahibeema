@@ -89,9 +89,9 @@
 
 
                                                         <div class="single-sidebar-widget post-category-widget">
-                                                                <h4 class="category-title" *ngIf = "highlights">Highlights</h4>
-                                                                <h4 class="category-title" *ngIf = "!highlights">No highlights</h4>
-                                                                <ul class="cat-list bullet-list" *ngIf = "highlights">
+                                                                <h4 class="category-title" *ngIf = "isShow">Highlights</h4>
+                                                                <h4 class="category-title" *ngIf = "!isShow">No highlights</h4>
+                                                                <ul class="cat-list bullet-list" style ="overflow: auto" *ngIf = "highlights">
                                                                         <li *ngFor="let highlight of highlights" >
                                                                                 {{highlight}}
                                                                         </li>

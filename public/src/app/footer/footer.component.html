@@ -16,14 +16,14 @@
 					<div class="single-footer-widget newsletter">
 						<h6>हमारे इंश्योरेंस सर्विसेज </h6>
 						<ul class="footer-nav">
-							<li><a href="">जीवन बीमा</a></li>
-								<li><a href="">कार बीमा</a></li>
+							<li *ngFor = "let category of cat"><a [href]="'/category/'+category._id">{{category.title}}</a></li>
+								<!-- <li><a href="">कार बीमा</a></li>
 								<li><a href="">स्वास्थ्य बीमा</a></li>
 								<li><a href="">घर बीमा</a></li>
 								<li><a href="">यात्रा बीमा</a></li>
 								<li><a href="">मोटर साइकिल बीमा</a></li>
 								<li><a href="">अन्य बीमा</a></li>
-							
+							 -->
 						</ul>
 						
 					</div>
