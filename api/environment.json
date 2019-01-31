@@ -1,4 +1,5 @@
 {
-    "database":"mongodb://testproject:testproject123@ds027509.mlab.com:27509/testproject",
+    "database":"mongodb://localhost:27017/sahibeema",
+    // "database":"mongodb://157.230.57.197:27017/sahibeema",
     "port":"9010"
 }
