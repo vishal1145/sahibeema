@@ -34,9 +34,12 @@ export class IndexComponent implements OnInit {
     public router: Router
   ) {
     this.getCategory()
+    $('#myModal').show('');
   }
+
+  
   async getId(cat) {
-    var product = {
+    var Product  = {
       "modelName": "Product",
       "findQuery": {
         "category": cat._id
@@ -48,6 +51,16 @@ export class IndexComponent implements OnInit {
     // var id = productbycategory.apidata.Data[no]._id
     this.router.navigate(['/category/' + cat._id]);
   }
+
+
+  clickvideo() {
+    $("#openvideo").show();
+  }
+  closeTrackModel() {
+    $("#openvideo").hide();
+  }
+
+
   async getCategory() {
     var input = {
       "modelName": "Category"

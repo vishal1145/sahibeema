@@ -1974,7 +1974,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         color: #3face4; font-weight: 600; font-size: 18px }
   .single-news .card-body {
     border: 1px solid rgba(0, 0, 0, 0.125);
-    padding: 20px 28px; min-height: 92px; max-height: 92px; overflow: hidden }
+    padding: 20px 28px; min-height: 120px; max-height: 92px; overflow: hidden }
     @media (max-width: 1024px) {
       .single-news .card-body {
         padding: 35px 18px; } }
@@ -3326,7 +3326,7 @@ h6 {
 .related-videos .slick-slide div{padding: 0 5px}
 .related-videos .single-news .card-body .card-title{font-size: 12px;}
 .related-videos .single-news .card-body .card-title a{font-size: 12px;}
-.related-videos .single-news .card-body{padding: 10px 15px; min-height: 54px; max-height: 54px;}
+.related-videos .single-news .card-body{padding: 10px 15px; min-height: 85px; max-height: 54px;}
 .related-videos .slick-prev:before, .related-videos .slick-next:before{color:rgba(27,127,204,.8)}
 .companies .slick-prev:before, .companies .slick-next:before{color:rgba(27,127,204,.8)}
  .data{    cursor: pointer; }
@@ -3347,6 +3347,8 @@ h6 {
   box-shadow: 0px 2px 10px 0px rgba(168,161,168,1);
     }
 
+
+    .button-type{ float: right;background-color: red;color: #fff; border:1px;  }
     
     .banner-area{min-height: 280px}
             .about-content{margin-top: 24px}

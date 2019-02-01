@@ -17,6 +17,7 @@ declare var $: any;
 
 export class ArticleComponent implements OnInit {
   articledata: any = [];
+  data: any = [];
   newarticle: any;
   value: any;
   postproduct: any;
@@ -104,6 +105,14 @@ export class ArticleComponent implements OnInit {
         if(newarticle.apidata.Data[i])
         this.newpost.push(newarticle.apidata.Data[i]);
       }
+
+
+      var input = {
+        "modelName": "Category"
+      }
+      let res = await this.itHoursService.executeByGet(input, false);
+      console.log(res)
+      this.data = res.apidata.Data
 
   var postdata ={
     "modelName" : "ArticleCategory"
