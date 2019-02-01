@@ -6,7 +6,7 @@ var ArticleSchema = new mongoose.Schema({
 image:String,
 posttitle : String,
 description : String,
-category  : {type : mongoose.Schema.Types.ObjectId, ref:'ArticleCategory' },
+category  : {type : mongoose.Schema.Types.ObjectId, ref:'Category' },
 published :{
     type : Boolean,
     default : false
