@@ -4,50 +4,50 @@ import { Subscription } from 'rxjs';
 import { MediaChange, ObservableMedia } from "@angular/flex-layout";
 import { MatSidenav, MatDialog } from '@angular/material';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { AppInboxService } from './app-inbox.service';
-import { MailComposeComponent } from './mail-compose.component';
+// import { AppInboxService } from './app-inbox.service';
+// import { MailComposeComponent } from './mail-compose.component';
 import { ITHoursService } from 'providers/it-hours-service';
 
 @Component({
   selector: 'app-inbox',
-  templateUrl: './app-inbox.component.html',
-  styleUrls: ['./app-inbox.component.css'],
-  providers: [AppInboxService,ITHoursService]
+  templateUrl: './configuration.component.html',
+  // styleUrls: ['./configuration.component.css'],
+  providers: [ITHoursService]
 })
-export class AppInboxComponent implements OnInit, OnDestroy {
+export class ConfigurationComponent implements OnInit, OnDestroy {
   isMobile;
   screenSizeWatcher: Subscription;
   public viewMode: string = 'grid-view';
   public currentPage: any;
   isSidenavOpen: Boolean = true;
   selectToggleFlag = false;
-  products:any[]
+  products: any = []
   @ViewChild(MatSidenav) private sideNav: MatSidenav;
   messages;
 
 
   constructor(private router: Router,
     private media: ObservableMedia,
-    public composeDialog: MatDialog,
     private _sanitizer: DomSanitizer,
-    private inboxService: AppInboxService,
-    public itHourService:ITHoursService) {
-      this.getArticles()
-     }
+    public composeDialog: MatDialog,
+    // private inboxService: AppInboxService,
+    public itHourService: ITHoursService) {
+    this.getArticles()
+  }
 
   ngOnInit() {
     this.inboxSideNavInit();
-    this.messages = this.inboxService.messages;
+    // this.messages = this.inboxService.messages;
   }
   ngOnDestroy() {
-    if(this.screenSizeWatcher) {
+    if (this.screenSizeWatcher) {
       this.screenSizeWatcher.unsubscribe()
     }
   }
-  openComposeDialog() {
-    const dialogRef = this.composeDialog.open(MailComposeComponent);
-    dialogRef.afterClosed().subscribe(result => { });
-  }
+  //   openComposeDialog() {
+  //     // const dialogRef = this.composeDialog.open(MailComposeComponent);
+  //     dialogRef.afterClosed().subscribe(result => { });
+  //   }
   selectToggleAll() {
     this.selectToggleFlag = !this.selectToggleFlag;
     this.messages.forEach((msg) => { msg.selected = this.selectToggleFlag });
@@ -75,14 +75,18 @@ export class AppInboxComponent implements OnInit, OnDestroy {
   toggleSideNav() {
     this.sideNav.opened = !this.sideNav.opened;
   }
-  async  getArticles(){
+  async  getArticles() {
     var input = {
-      "modelName":"Article"
+      "modelName": "Article"
     }
-    var res = await this.itHourService.executeByGet(input,false);
-    this.products = res.apidata.Data
+    var res = await this.itHourService.executeByGet(input, false);
+    for (var i = 0; i < res.apidata.Data.length; i++) {
+      if (res.apidata.Data[i].showhomepage) {
+        this.products.push(res.apidata.Data[i])
+      }
+    }
     for (var i = 0; i < this.products.length; i++) {
       this.products[i].description = this._sanitizer.bypassSecurityTrustHtml(this.products[i].description);
     }
- }
+  }
 }

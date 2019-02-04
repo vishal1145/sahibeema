@@ -116,6 +116,11 @@ export const rootRouterConfig: Routes = [
         path: 'icons', 
         loadChildren: './views/mat-icons/mat-icons.module#MatIconsModule', 
         data: { title: 'Icons', breadcrumb: 'MATICONS'}
+      },
+      {
+        path: 'configuration', 
+        loadChildren: './views/configuration/configuration.module#ConfigurationModule', 
+        data: { title: 'Configuration', breadcrumb: 'CONFIGURATION'}
       }
     ]
   },

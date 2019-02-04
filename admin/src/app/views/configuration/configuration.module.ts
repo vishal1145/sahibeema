@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {ITCommonModule} from 'providers/common.module'
 import { 
   MatIconModule,
   MatButtonModule,
   MatToolbarModule,
-  MatCardModule,
   MatRadioModule,
+  MatCardModule,
   MatSidenavModule,
   MatMenuModule,
   MatInputModule,
@@ -21,12 +21,12 @@ import {
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { QuillModule } from 'ngx-quill';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SharedModule } from './../../shared/shared.module';
-import { AppInboxComponent } from './app-inbox.component';
-import { AddArticleComponent } from './addArticles/addArticle.component';
-import { MailComposeComponent } from './mail-compose.component';
-import { InboxRoutes } from "./app-inbox.routing";
-import {ITCommonModule} from 'providers/common.module'
+import { SharedModule } from '../../shared/shared.module';
+
+import { ConfigurationComponent } from './configuration.component';
+import { AddConfigurationComponent } from './addConfiguration/addConfiguration.component';
+import { ConfigurationRoutes } from "./configuration.routing";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -51,9 +51,9 @@ import {ITCommonModule} from 'providers/common.module'
     QuillModule,
 
     SharedModule,
-    RouterModule.forChild(InboxRoutes)
+     RouterModule.forChild(ConfigurationRoutes)
   ],
-  declarations: [AppInboxComponent, MailComposeComponent,AddArticleComponent],
-  entryComponents: [MailComposeComponent]
+  declarations: [ConfigurationComponent,AddConfigurationComponent],
+  // entryComponents: [MailComposeComponent]
 })
-export class AppInboxModule { }
+export class ConfigurationModule { }

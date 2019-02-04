@@ -1,0 +1,74 @@
+<div >
+  <mat-sidenav-container>
+<div class="shop-wrap" fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Filters -->
+      <!-- Right side -->
+      <div class="full-width">
+        <!-- Search Form -->
+        <div fxLayout="row" fxLayout.lt-sm="column" class="shop-top-toolbar">
+          <button mat-icon-button class="mr-1" (click)="toggleSideNav()"><mat-icon>short_text</mat-icon> </button>
+          <div class="product-search-wrap">
+            <!-- <form [formGroup]="filterForm">
+              <input type="text" name="searchProduct" placeholder="Search product" class="product-search default-bg full-width" [formControl]="filterForm.controls['search']">
+            </form> -->
+          </div>
+          <!-- View change buttons and cart -->
+          <span fxFlex></span>
+          <div [fxHide.lt-md]="true">
+            <button mat-icon-button [color]="viewMode === 'list-view' ? 'primary' : ''" (click)="viewMode = 'list-view'">
+              <mat-icon>format_list_bulleted</mat-icon>
+            </button>
+            <button mat-icon-button [color]="viewMode === 'grid-view' ? 'primary' : ''" (click)="viewMode = 'grid-view'">
+              <mat-icon>apps</mat-icon>
+            </button>
+          </div>
+          <span fxFlex="20px"></span>
+          <button mat-raised-button color="primary" routerLink="/configuration/addconfiguration/-1">
+            <mat-icon>add_box</mat-icon> Add Article
+          </button>
+        </div>
+        <!-- Products container -->
+        <div class="product-container" 
+        [ngClass]="{'list-view': viewMode === 'list-view'}">
+          <!-- Product Box -->
+          <div  
+          class="product-wrap" 
+          *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: currentPage } ; let i = index;"
+          [@animate]="{value:'*',params:{delay: (i*100)+'ms', y:'50px'}}">
+            <div class="product-inner default-bg" >
+              <div *ngIf="product?.badge?.text" class="product-badge mat-elevation-z7" [ngStyle]="{background: product?.badge?.color || '#f44336'}">
+                <span>{{product?.badge?.text}}</span>
+              </div>
+              <div class="featured-img" [routerLink]="['/shop/products/', product._id]">
+                <img [src]="product.image" alt="">
+              </div>
+              <div class="info-wrap p-1">
+                <div class="main-info" style="min-height: 0">
+                  <h3 class="title" [routerLink]="['/shop/products/', product._id]">{{product.name}}</h3>
+                  <p class="text-muted p-line">{{product?.posttitle}}</p>
+                  <span class="text-muted p-line">
+                    <strong>Category:</strong> 
+                    <p  [innerHTML]="product?.description"></p></span>
+                    <button mat-raised-button color="primary"  [routerLink]="['/configuration/updateconfiguration/',product._id]">Update</button>
+                </div>
+              
+  
+                  </div>
+            
+         
+  
+            </div>
+          </div>
+          <!-- End Product -->
+  
+          <div class="products-pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+          </div>
+  
+        </div>
+        <!-- End Products container -->
+      </div>
+  
+    </div>
+  </mat-sidenav-container>
+</div>

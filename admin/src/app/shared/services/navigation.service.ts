@@ -462,13 +462,13 @@ export class NavigationService {
       state: 'advertisement',
       // badges: [{ color: 'warn', value: '1' }]
     },
-    // {
-    //   name: 'CALENDAR',
-    //   type: 'link',
-    //   tooltip: 'Calendar',
-    //   icon: 'date_range',
-    //   state: 'calendar'
-    // },
+    {
+      name: 'Configuration',
+      type: 'link',
+      tooltip: 'Configuration',
+      icon: 'local_post_office',
+      state: 'configuration'
+    },
     // {
     //   name: 'DIALOGS',
     //   type: 'dropDown',

@@ -4,7 +4,7 @@ import { CustomValidators } from 'ng2-validation';
 import { ITHoursService } from 'providers/it-hours-service';
 import { DomSanitizer } from '@angular/platform-browser';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-
+declare var CKEDITOR: any;
 declare var $:any;
 @Component({
   selector: 'app-basic-form',
@@ -27,12 +27,14 @@ export class AddProductComponent implements OnInit {
   vvideotype: any;
   headlines:any=[];
   data:any = [];
+  data1:any
   description :any = [];
   productid:any ;
   isShow : Boolean = false;
   constructor(
     public itHourService:ITHoursService,
     private sanitizer: DomSanitizer,
+
     private activatedRoute: ActivatedRoute
   ) {
     this.getCategories();
@@ -44,6 +46,9 @@ export class AddProductComponent implements OnInit {
       }
       this.getProduct()
    }
+  // CKEDITOR.instances['editor1'].setData();
+
+  // CKEDITOR.instances['editor1'].getData()
    }
 
   ngOnInit() {
@@ -88,6 +93,8 @@ export class AddProductComponent implements OnInit {
         return null;
       })
     })
+    CKEDITOR.replace('editor1');
+ 
   }
   
   async getCategories(){
@@ -113,6 +120,7 @@ export class AddProductComponent implements OnInit {
   onSelectionChanged(){}
 
    async uploadToServer(){
+    this.data1=CKEDITOR.instances['editor1'].getData()
      if(this.isShow){
     var input = {
       "modelName":"Product",
@@ -120,12 +128,13 @@ export class AddProductComponent implements OnInit {
       "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
       "highlights": this.headlines,
       "category": this.basicForm.value.category,
-      "description" : this.description
+      "description" : this.data1
     }
     var res = await this.itHourService.executeByPost(input,false);
     console.log(res);
   }
     if(!this.isShow){
+    CKEDITOR.instances['editor1'].setData(this.data1)
     var input1 = {
       "modelName" :"Product",
       "findQuery":{
@@ -137,7 +146,7 @@ export class AddProductComponent implements OnInit {
       "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
       "highlights": this.headlines,
       "category": this.basicForm.value.category,
-      "description" : this.description, 
+      "description" : this.data1, 
       "published" : false
       }}
     }
@@ -148,6 +157,7 @@ export class AddProductComponent implements OnInit {
   }
 
   async uploadToServer1(){
+    this.data1=CKEDITOR.instances['editor1'].getData()
     if(this.isShow){
     var input = {
       "modelName":"Product",
@@ -156,12 +166,13 @@ export class AddProductComponent implements OnInit {
       "highlights": this.headlines,
       "category": this.basicForm.value.category,
       "published":true,
-      "description" : this.description
+      "description" :this.data1
     }
     var res = await this.itHourService.executeByPost(input,false);
     console.log(res);
   }
   if(!this.isShow){
+    
     var input1 = {
       "modelName" :"Product",
       "findQuery":{
@@ -173,7 +184,7 @@ export class AddProductComponent implements OnInit {
       "media.mediaurl":this.youtubelink.changingThisBreaksApplicationSecurity,
       "highlights": this.headlines,
       "category": this.basicForm.value.category,
-      "description" : this.description, 
+      "description" :this.data1, 
       "published" : true
       }}
     }
@@ -192,8 +203,10 @@ export class AddProductComponent implements OnInit {
       var data= res.apidata.Data
       this.basicForm.controls['username'].setValue(data[0].title);
       this.basicForm.controls['firstname'].setValue(data[0].media.mediaurl);
+      CKEDITOR.instances['editor1'].setData(data[0].description)
       this.headlines = data[0].highlights
       this.data = this.headlines.reverse()
+   
       console.log( this.data)
       this. basicForm.controls['description'].setValue(data[0].description);
       this. basicForm.controls['category'].setValue(data[0].category)

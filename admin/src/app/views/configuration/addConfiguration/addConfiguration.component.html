@@ -10,7 +10,7 @@
                 </mat-radio-group>
 
             </div>
-        
+      
             <div fxLayout="row wrap">
 
                 <div fxFlex="100%" fxFlex.gt-xs="100">
@@ -35,8 +35,8 @@
              (onContentChanged)="onContentChanged()" 
              onSelectionChanged="onSelectionChanged()"></quill-editor><br/>
            
-                <button mat-raised-button color="primary" (click)="uploadToServer()" [routerLink]="['/article']">Submit</button>&nbsp;
-                <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/article']">Save
+                <button mat-raised-button color="primary" (click)="uploadToServer()" [routerLink]="['/configuration']">Submit</button>&nbsp;
+                <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/configuration']">Save
 And Publish</button>
         </form>
     </mat-card-content>
