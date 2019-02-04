@@ -24,6 +24,7 @@ export class IndexComponent implements OnInit {
   addnew2: any;
   newvalue: any;
   allimagedata: any;
+  newarticledata:any;
   value: any = [];
   mediaurl: any=[];
   ngOnInit() {
@@ -53,13 +54,7 @@ export class IndexComponent implements OnInit {
   }
 
 
-  clickvideo() {
-    $("#openvideo").show();
-  }
-  closeTrackModel() {
-    $("#openvideo").hide();
-  }
-
+ 
 
   async getCategory() {
     var input = {
@@ -109,7 +104,7 @@ export class IndexComponent implements OnInit {
     this.blockadd = addblock.apidata.Data;
     this.nameblock = this.getImage('homepage', 'side', addblock) //this.blockadd[4].image
     this.newadd = this.blockadd[1].image
-    this.addnew1 = this.blockadd[2].image
+    this.addnew1 =  this.getImage('homepage','midscreen',addblock)   //this.blockadd[2].image
 
   }
 
@@ -131,7 +126,27 @@ export class IndexComponent implements OnInit {
 
   }
 
+    async addLikes(id){
+    var likesadd = {
+      "modelName": "Article",
+      "findQuery": {
+        _id: id
+       
+      }
+      
+    }
+      var newlikes = await this.itHoursService.executeByGet(likesadd, false)
+      for(var i= 0;i<this.newarticledata.length;i++){
+        if(this.newarticledata[i]._id== id)
+      {
+        this.newarticledata[i].likes.push(newlikes.apidata.Data[0].likes + 1)
+      }
+      }
+     
+
+  }
 }
+              
 
 
 

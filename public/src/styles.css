@@ -1974,7 +1974,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         color: #3face4; font-weight: 600; font-size: 18px }
   .single-news .card-body {
     border: 1px solid rgba(0, 0, 0, 0.125);
-    padding: 20px 28px; min-height: 120px; max-height: 92px; overflow: hidden }
+    padding: 20px 28px; min-height: 92px; max-height: 92px; overflow: hidden }
     @media (max-width: 1024px) {
       .single-news .card-body {
         padding: 35px 18px; } }

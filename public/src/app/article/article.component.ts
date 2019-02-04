@@ -27,6 +27,7 @@ export class ArticleComponent implements OnInit {
   _htmlProperty1: any = [];
   newvalue: any;
   idtext:any;
+  newarticledata:any;
   newpost:any =[];
   constructor(
     private _ngZone: NgZone,
@@ -37,6 +38,8 @@ export class ArticleComponent implements OnInit {
     private _sanitizer: DomSanitizer
   ) {
     this.getArticles();
+   
+    
    
   }
 
@@ -63,24 +66,23 @@ export class ArticleComponent implements OnInit {
    }
 
 
-  articlesingle() {
-    
-  }
+
 
 
   async getArticles() {
-    var input = {
-      "modelName": "Article",
-    }
+     var input = {
+       "modelName": "Article",
+     }
 
-    var articles = await this.itHoursService.executeByGet(input, false)
-    console.log(articles)
-    for(var i=0;i<articles.apidata.Data.length;i++){
-      articles.apidata.Data[i].created_at = new Date( articles.apidata.Data[i].created_at)
-    }
-    this.newarticle = articles.apidata.Data;
-    for (var i = 0; i < this.newarticle.length; i++) {
-      this.newarticle[i].description_new = this._sanitizer.bypassSecurityTrustHtml(this.newarticle[i].description);
+     var articles = await this.itHoursService.executeByGet(input, false)
+     console.log(articles)
+     for(var i=0;i<articles.apidata.Data.length;i++){
+       articles.apidata.Data[i].created_at = new Date( articles.apidata.Data[i].created_at)
+     }
+     this.newarticle = articles.apidata.Data;
+     for (var i = 0; i < this.newarticle.length; i++) {
+       this.newarticle[i].description_new = this._sanitizer.bypassSecurityTrustHtml(this.newarticle[i].description);
+
     }
     
 
@@ -113,6 +115,7 @@ export class ArticleComponent implements OnInit {
       let res = await this.itHoursService.executeByGet(input, false);
       console.log(res)
       this.data = res.apidata.Data
+      
 
   var postdata ={
     "modelName" : "ArticleCategory"
@@ -120,6 +123,38 @@ export class ArticleComponent implements OnInit {
     var postcategories = await this.itHoursService.executeByGet(postdata, false)
     console.log(postcategories)
     this.idtext = postcategories.apidata.Data
+
+  }
+  async catgoriesbase(data){
+    var article = {
+      "modelName": "Article",
+      "findQuery": {
+        "category": data._id
+      }
+    }
+     var dataarticle = await this.itHoursService.executeByGet(article, false)
+     console.log(dataarticle)
+     this.newarticle = dataarticle.apidata.Data
+
+  }
+
+  async addLikes(id){
+    var likesadd = {
+      "modelName": "Article",
+      "findQuery": {
+      _id: id
+       
+      }
+      
+    }
+      var newlikes = await this.itHoursService.executeByGet(likesadd, false)
+      for(var i= 0;i<this.newarticle.length;i++){
+        if(this.newarticle[i]._id== id)
+      {
+        this.newarticle[i].likes.push(newlikes.apidata.Data[0].likes + 1)
+      }
+      }
+     
 
   }
 }
