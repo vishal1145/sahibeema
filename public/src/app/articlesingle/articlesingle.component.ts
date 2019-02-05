@@ -81,6 +81,7 @@ constructor(
             this.one_art.date = new Date(one_art.apidata.Data[0].created_at)
             this.one_art.image = one_art.apidata.Data[0].image
             this.one_art.title = one_art.apidata.Data[0].posttitle
+            
             this.one_art.description= this._sanitizer.bypassSecurityTrustHtml(one_art.apidata.Data[0].description);
       }
   

@@ -146,7 +146,7 @@
                                      {{prod.title}}
                                     </a>
                                 </h4>
-                                <div class ="row"  style="margin-top:10px "> 
+                                <!-- <div class ="row"  style="margin-top:10px "> 
                                     <div class="col-md-6">
                                 <p> <i class="fa fa-thumbs-up" style="font-size: 26px;" aria-hidden="true"></i> </p>
                                   </div>
@@ -154,7 +154,7 @@
                                   <div class="col-md-6">
                                         <button type="button" class="button-type">Subscribe </button>
                                           </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -257,8 +257,10 @@
                         {{funart.description}}
                     </p>
                     <div class="meta-bottom d-flex justify-content-between">
-                        <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                        <p><span class="lnr lnr-bubble" ></span> 02 Comments</p>
+                        	<p><span class="lnr lnr-heart" style="margin-right: 10px;" (click)="addLikes(funart._id)" *ngIf=" funart && funart.likes && funart.likes.length >= 0 "></span>{{funart.likes.length}}</p>
+                            <p><span class="lnr lnr-bubble " *ngIf=" funart && funart.comments && funart.comments.length >= 0 "></span>{{funart.comments.length}}
+                            </p>
+                        
                     </div>
                 </div>
             </div>
@@ -580,28 +582,10 @@
                         </div>
                     </div>
                 </section>
+               
+                    
+                       
 
+                
 
-
-                <div id="myModal" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Subscribe our Newsletter</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email Address">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+               
