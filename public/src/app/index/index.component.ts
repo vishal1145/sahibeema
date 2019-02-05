@@ -24,6 +24,7 @@ export class IndexComponent implements OnInit {
   addnew2: any;
   newvalue: any;
   allimagedata: any;
+  url:any;
   newarticledata:any;
   value: any = [];
   mediaurl: any=[];
@@ -50,11 +51,17 @@ export class IndexComponent implements OnInit {
     // console.log(productbycategory)
     // var no = productbycategory.apidata.Data.length - 1;
     // var id = productbycategory.apidata.Data[no]._id
-    this.router.navigate(['/category/' + cat._id]);
+    this.router.navigate(['/product/' + cat._id]);
   }
 
 
- 
+  openModalForStock(data) {
+    this.url = data.media.mediaurl
+    $("#materialStockModel").show();
+  }
+  closeTrackModel() {
+    $("#materialStockModel").hide();
+  }
 
   async getCategory() {
     var input = {
@@ -90,6 +97,7 @@ export class IndexComponent implements OnInit {
     }
     let resdata = await this.itHoursService.executeByGet(Provideo, false);
     console.log(resdata)
+    
     this.value.push(resdata.apidata.Data[resdata.apidata.Data.length-1])
     this.value.push(resdata.apidata.Data[resdata.apidata.Data.length-2])
     
@@ -136,10 +144,10 @@ export class IndexComponent implements OnInit {
       
     }
       var newlikes = await this.itHoursService.executeByGet(likesadd, false)
-      for(var i= 0;i<this.newarticledata.length;i++){
-        if(this.newarticledata[i]._id== id)
+      for(var i= 0;i<this.half_article.length;i++){
+        if(this.half_article[i]._id== id)
       {
-        this.newarticledata[i].likes.push(newlikes.apidata.Data[0].likes + 1)
+        this.half_article[i].likes.push(newlikes.apidata.Data[0].likes + 1)
       }
       }
      

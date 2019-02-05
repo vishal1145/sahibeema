@@ -23,7 +23,7 @@ export class CategoryComponent implements OnInit  {
       private titleService: Title,
       public itHoursService: ITHoursService
        
-       ) {
+       ) { 
         this.activatedRoute.params.subscribe((params: Params) => {
           this.id = params['beema_id'];
         });
