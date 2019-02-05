@@ -5,9 +5,7 @@ var jwt = require('jsonwebtoken');
 var ArticleSchema = new mongoose.Schema({
 image:String,
 posttitle : String,
-showhomepage:Boolean,
 description : String,
-istwobanner : Boolean,
 category  : {type : mongoose.Schema.Types.ObjectId, ref:'Category' },
 published :{
     type : Boolean,

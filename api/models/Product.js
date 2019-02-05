@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var ProductSchema = new mongoose.Schema({
     title : String,
     description: String,
+    showhomepage:Boolean,
     media:{
         mediatype:String,
         mediaurl:String
