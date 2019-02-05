@@ -121,6 +121,11 @@ export const rootRouterConfig: Routes = [
         path: 'configuration', 
         loadChildren: './views/configuration/configuration.module#ConfigurationModule', 
         data: { title: 'Configuration', breadcrumb: 'CONFIGURATION'}
+      },
+      {
+        path: 'category', 
+        loadChildren: './views/category/category.module#CategoryModule', 
+        data: { title: 'Category', breadcrumb: 'CATEGORY'}
       }
     ]
   },

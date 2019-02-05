@@ -469,17 +469,17 @@ export class NavigationService {
       icon: 'local_post_office',
       state: 'configuration'
     },
-    // {
-    //   name: 'DIALOGS',
-    //   type: 'dropDown',
-    //   tooltip: 'Dialogs',
-    //   icon: 'filter_none',
-    //   state: 'dialogs',
-    //   sub: [
-    //     { name: 'CONFIRM', state: 'confirm' },
+     {
+      name: 'Category',
+      type: 'link',
+      tooltip: 'Category',
+      icon: 'category',
+       state: 'category'
+     //  sub: [
+     //    { name: 'CONFIRM', state: 'confirm' },
     //     { name: 'LOADER', state: 'loader' },
     //   ]
-    // },
+     },
     // {
     //   name: 'MATERIAL',
     //   type: 'dropDown',
