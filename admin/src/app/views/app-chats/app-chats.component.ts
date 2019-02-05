@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { MediaChange, ObservableMedia } from '@angular/flex-layout';
 import { MatSidenav, MatDialog } from '@angular/material';
+import { egretAnimations } from '../../shared/animations/egret-animations';
 import { ChatService } from './chat.service';
 import { ITHoursService } from 'providers/it-hours-service';
 
@@ -9,6 +10,7 @@ import { ITHoursService } from 'providers/it-hours-service';
   selector: 'app-chats',
   templateUrl: './app-chats.component.html',
   styleUrls: ['./app-chats.component.css'],
+  animations: [egretAnimations],
   providers: [ITHoursService]
 })
 export class AppChatsComponent implements OnInit, OnDestroy {

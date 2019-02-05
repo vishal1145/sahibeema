@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MediaChange, ObservableMedia } from "@angular/flex-layout";
+import { egretAnimations } from '../../shared/animations/egret-animations';
 import { MatSidenav, MatDialog } from '@angular/material';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 // import { AppInboxService } from './app-inbox.service';
@@ -11,6 +12,7 @@ import { ITHoursService } from 'providers/it-hours-service';
 @Component({
   selector: 'app-inbox',
   templateUrl: './configuration.component.html',
+  animations: [egretAnimations],
   // styleUrls: ['./configuration.component.css'],
   providers: [ITHoursService]
 })

@@ -6,12 +6,15 @@ import { MatSidenav, MatDialog } from '@angular/material';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { AppInboxService } from './app-inbox.service';
 import { MailComposeComponent } from './mail-compose.component';
+import { egretAnimations } from '../../shared/animations/egret-animations';
 import { ITHoursService } from 'providers/it-hours-service';
+import { AppLoaderService } from '../../shared/services/app-loader/app-loader.service';
 
 @Component({
   selector: 'app-inbox',
   templateUrl: './app-inbox.component.html',
   styleUrls: ['./app-inbox.component.css'],
+  animations: [egretAnimations],
   providers: [AppInboxService,ITHoursService]
 })
 export class AppInboxComponent implements OnInit, OnDestroy {
@@ -30,19 +33,22 @@ export class AppInboxComponent implements OnInit, OnDestroy {
     private media: ObservableMedia,
     public composeDialog: MatDialog,
     private _sanitizer: DomSanitizer,
+    private loader: AppLoaderService,
     private inboxService: AppInboxService,
     public itHourService:ITHoursService) {
+      // this.loader.open();
       this.getArticles()
      }
 
   ngOnInit() {
-    this.inboxSideNavInit();
-    this.messages = this.inboxService.messages;
+  
+    // this.inboxSideNavInit();
+    // this.messages = this.inboxService.messages;
   }
   ngOnDestroy() {
-    if(this.screenSizeWatcher) {
-      this.screenSizeWatcher.unsubscribe()
-    }
+    // if(this.screenSizeWatcher) {
+    //   this.screenSizeWatcher.unsubscribe()
+    // }
   }
   openComposeDialog() {
     const dialogRef = this.composeDialog.open(MailComposeComponent);
@@ -76,13 +82,17 @@ export class AppInboxComponent implements OnInit, OnDestroy {
     this.sideNav.opened = !this.sideNav.opened;
   }
   async  getArticles(){
+    
     var input = {
       "modelName":"Article"
+      // "path": "category"
+      
     }
     var res = await this.itHourService.executeByGet(input,false);
     this.products = res.apidata.Data
-    for (var i = 0; i < this.products.length; i++) {
-      this.products[i].description = this._sanitizer.bypassSecurityTrustHtml(this.products[i].description);
-    }
+    // this.loader.close();
+    // for (var i = 0; i < this.products.length; i++) {
+    //   this.products[i].description = this._sanitizer.bypassSecurityTrustHtml(this.products[i].description);
+    // }
  }
 }
