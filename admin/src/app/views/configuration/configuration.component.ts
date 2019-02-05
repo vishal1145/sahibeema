@@ -34,7 +34,7 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
     public composeDialog: MatDialog,
     // private inboxService: AppInboxService,
     public itHourService: ITHoursService) {
-    this.getArticles()
+    this.getProduct()
   }
 
   ngOnInit() {
@@ -77,18 +77,15 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
   toggleSideNav() {
     this.sideNav.opened = !this.sideNav.opened;
   }
-  async  getArticles() {
+  async  getProduct() {
     var input = {
-      "modelName": "Article"
+      "modelName": "Product"
     }
     var res = await this.itHourService.executeByGet(input, false);
-    for (var i = 0; i < res.apidata.Data.length; i++) {
-      if (res.apidata.Data[i].showhomepage) {
-        this.products.push(res.apidata.Data[i])
+    for(var i = 0;i<res.apidata.Data.length;i++){
+      if(res.apidata.Data[i].showhomepage){
+ this.products.push(res.apidata.Data[i]) 
       }
-    }
-    for (var i = 0; i < this.products.length; i++) {
-      this.products[i].description = this._sanitizer.bypassSecurityTrustHtml(this.products[i].description);
-    }
+    }  
   }
 }

@@ -39,7 +39,7 @@
               <div *ngIf="product?.badge?.text" class="product-badge mat-elevation-z7" [ngStyle]="{background: product?.badge?.color || '#f44336'}">
                 <span>{{product?.badge?.text}}</span>
               </div>
-              <div class="featured-img" [routerLink]="['/shop/products/', product._id]">
+              <div class="featured-img" [routerLink]="['/category/updatecategory', product._id]">
                 <img [src]="product.image" alt="">
               </div>
               <div class="info-wrap p-1">

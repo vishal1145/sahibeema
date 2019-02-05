@@ -14,6 +14,7 @@ import {
   MatInputModule,
   MatDialogModule,
   MatListModule,
+  MatChipsModule,
   MatCheckboxModule,
   MatTooltipModule,
   MatExpansionModule
@@ -22,7 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { QuillModule } from 'ngx-quill';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from '../../shared/shared.module';
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ConfigurationComponent } from './configuration.component';
 import { AddConfigurationComponent } from './addConfiguration/addConfiguration.component';
 import { ConfigurationRoutes } from "./configuration.routing";
@@ -36,11 +37,13 @@ import { ConfigurationRoutes } from "./configuration.routing";
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    MatChipsModule,
     MatCardModule,
     MatSidenavModule,
     MatRadioModule,
     MatMenuModule,
     MatInputModule,
+    NgxDatatableModule,
     MatDialogModule,
     MatListModule,
     MatCheckboxModule,

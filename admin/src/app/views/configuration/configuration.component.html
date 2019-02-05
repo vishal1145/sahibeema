@@ -1,4 +1,4 @@
-<div >
+<div  style = "display:none">
   <mat-sidenav-container>
 <div class="shop-wrap" fxLayout="row" fxLayoutWrap="wrap">
       <!-- Filters -->
@@ -56,6 +56,107 @@
                   </div>
             
          
+  
+            </div>
+          </div>
+          <!-- End Product -->
+  
+          <div class="products-pagination">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+          </div>
+  
+        </div>
+        <!-- End Products container -->
+      </div>
+  
+    </div>
+  </mat-sidenav-container>
+</div>
+
+<div >
+  <mat-sidenav-container>
+    <!-- <mat-sidenav EgretSideNavToggle class="shop-sidebar">
+   
+    </mat-sidenav> -->
+    <div class="shop-wrap" fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Filters -->
+      <!-- Right side -->
+      <div class="full-width">
+        <!-- Search Form -->
+        <div fxLayout="row" fxLayout.lt-sm="column" class="shop-top-toolbar">
+          <button mat-icon-button class="mr-1" (click)="toggleSideNav()"><mat-icon>short_text</mat-icon> </button>
+          <div class="product-search-wrap">
+            <!-- <form [formGroup]="filterForm">
+              <input type="text" name="searchProduct" placeholder="Search product" class="product-search default-bg full-width"  (keyup)="onKey($event)" [formControl]="filterForm.controls['search']">
+            </form> -->
+          </div>
+          <!-- View change buttons and cart -->
+          <span fxFlex></span>
+ 
+       
+          <span fxFlex="20px"></span>
+          <!-- <button mat-raised-button color="primary" [routerLink]="['/product/addproduct/-1']">
+            <mat-icon>add_box</mat-icon> Add Product
+          </button> -->
+        </div>
+        <!-- Products container -->
+        <div class="product-container" 
+        [ngClass]="{'list-view': viewMode === 'list-view'}">
+          <!-- Product Box -->
+          <div  
+          class="product-wrap" 
+          *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: currentPage } ; let i = index;"
+          [@animate]="{value:'*',params:{delay: (i*100)+'ms', y:'50px'}}">
+            <div class="product-inner default-bg" >
+              <div *ngIf="product?.badge?.text" class="product-badge mat-elevation-z7" [ngStyle]="{background: product?.badge?.color || '#f44336'}">
+                <span>{{product?.badge?.text}}</span>
+              </div>
+             
+               <div class="featured-img" *ngIf="product && product.media" [routerLink]="['/shop/products/', product._id]">
+                <iframe  width="100%" height="350" [src]="product.media.mediaurl | safe" frameborder="0" gesture="media"
+                allow="encrypted-media" allowfullscreen></iframe>
+              </div> 
+            
+              <div class="info-wrap p-1">
+                <div class="main-info" style="min-height: 0">
+                  <h3 class="title" [routerLink]="['/shop/products/', product._id]">{{product.name}}</h3>
+                  <p class="text-muted p-line">{{product?.title}}</p>
+                  <!-- <p class="text-muted p-line">
+                    <strong>Category:</strong> {{product?.category.title}}</p>
+                    <button mat-raised-button color="primary"  [routerLink]="['/product/updateproduct/',product._id]">Update</button> -->
+                
+                </div>
+          
+              </div>
+              <!-- Visible when viewMode === list-view -->
+              <div class="more-info-wrap p-1" *ngIf="viewMode === 'list-view'">
+                <div class="more-info">
+                  <div class="more-actions mb-1">
+        
+                    <span fxFlex></span>
+                    <button mat-icon-button>
+                      <mat-icon>playlist_add</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                      <mat-icon>favorite</mat-icon>
+                    </button>
+                  </div>
+  
+                  <div>
+                    <ul>
+                      <li>
+                        <mat-icon>check</mat-icon> Heavy duty</li>
+                      <li>
+                        <mat-icon>check</mat-icon> Water resistance</li>
+                      <li>
+                        <mat-icon>check</mat-icon> Clean design</li>
+                      <li>
+                        <mat-icon>check</mat-icon> High quality raw materials</li>
+                    </ul>
+                  </div>
+  
+                </div>
+              </div>
   
             </div>
           </div>
