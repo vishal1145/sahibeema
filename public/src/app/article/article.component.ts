@@ -157,4 +157,24 @@ export class ArticleComponent implements OnInit {
     
 
   }
+
+  async addLikes(id){
+    var likesadd = {
+      "modelName": "Article",
+      "findQuery": {
+        _id: id
+       
+      }
+      
+    }
+      var newlikes = await this.itHoursService.executeByGet(likesadd, false)
+      for(var i= 0;i<this.newarticle.length;i++){
+        if(this.newarticle[i]._id== id)
+      {
+        this.newarticle[i].likes.push(newlikes.apidata.Data[0].likes + 1)
+      }
+      }
+     
+
+  }
 }
