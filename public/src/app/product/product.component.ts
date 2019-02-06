@@ -64,7 +64,9 @@ export class ProductComponent {
     this.router.navigate(['article']);
   }
 
-
+  async goToArtical(astId) {
+    this.router.navigate(['articlesingle/' + astId]);
+  }
   async getProduct() {
 
    

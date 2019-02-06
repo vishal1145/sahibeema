@@ -68,11 +68,26 @@ export class ArticleComponent implements OnInit {
     
   }
 
+  filterArticalthroughTag(catname) {
+    this.newarticle = []
+    for(var i =0; i < (this.allArticlas || []).length; i++) {
+      for(var j =0; j < (this.allArticlas[i].tags || []).length; j++) {
+      if(this.allArticlas[i].tags[j] == catname) {
+        this.newarticle.push(this.allArticlas[i])
+        
+      }
+    }
+    }
+    for (var k = 0; k < this.newarticle.length; k++) {
+      this.newarticle[k].description_new = this._sanitizer.bypassSecurityTrustHtml(this.newarticle[k].description);
+    }
+
+  }
+
   async catgoriesbase(catID) {
     this.newarticle = []
     for(var i =0; i < (this.allArticlas || []).length; i++) {
       if(this.allArticlas[i].category == catID) {
-        this.articaltegs = this.allArticlas[i].tags
         this.newarticle.push(this.allArticlas[i])
         
       }

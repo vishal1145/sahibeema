@@ -23,7 +23,7 @@
 					<div class="single-sidebar-widget tag-cloud-widget" style="padding: 0; margin: 0">
 
 						<ul *ngFor="let myfunc of articaltegs">
-							<li style="float:left"><a href="#">{{myfunc}}</a></li>
+							<li style="float:left"><a (click)="filterArticalthroughTag(myfunc)">{{myfunc}}</a></li>
 							<!-- <li><a href="#">Fashion</a></li>
 							<li><a href="#">Architecture</a></li>
 							<li><a href="#">Fashion</a></li>
@@ -224,7 +224,7 @@
 						</div>
 					</div>-->
 
-				<nav class="blog-pagination justify-content-center d-flex">
+				<!-- <nav class="blog-pagination justify-content-center d-flex">
 					<ul class="pagination">
 						<li class="page-item">
 							<a href="#" class="page-link" aria-label="Previous">
@@ -246,7 +246,7 @@
 							</a>
 						</li>
 					</ul>
-				</nav>
+				</nav> -->
 			</div>
 			<div class="col-lg-4 sidebar-widgets">
 				<div class="widget-wrap">
