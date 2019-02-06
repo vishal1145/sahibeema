@@ -144,7 +144,7 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
      )
      var updateproct  = res.apidata.Data
     }
-
+window.location.reload()
   }
   async changed() {
  var self = this

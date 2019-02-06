@@ -80,6 +80,7 @@ export class ProductComponent {
     }
     let productbycategory = await this.itHoursService.executeByGet(productbyid, false);
     this.allProductList = productbycategory.apidata.Data
+    this.id = productbycategory.apidata.Data[0]._id
     console.log(productbycategory)
     this.mediaurl = productbycategory.apidata.Data[0].media.mediaurl 
     this.categoryid = productbycategory.apidata.Data[0].category
