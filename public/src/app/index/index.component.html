@@ -1,5 +1,4 @@
-
- <section class="home-banner-area relative" id="home">
+<section class="home-banner-area relative" id="home">
     <div class="container">
         <div class="row d-flex align-items-center">
 
@@ -135,19 +134,20 @@
                     <!--<span class="main-title-line"></span>-->
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6" *ngFor = "let prod of value">
-                        <div class="single-news card" >
+                    <div class="col-lg-6 col-md-6" *ngFor="let prod of value">
+                        <div class="single-news card">
 
-                                <img class="data" src='https://i0.wp.com/loksewaupdate.com/wp-content/uploads/2018/07/Rastriya-Beema-Sansthan-vacancy.jpg?fit=700%2C350&ssl=1&resize=350%2C200' (click) ="openModalForStock(prod)" >
-                                <!-- <video width="412" height="280"   (click) ="openModalForStock(prod)" poster="/images/https://loksewaupdate.com/vacancies/rastriya-beema-company-vacancy"  controls>
+                            <img class="data" src='https://i0.wp.com/loksewaupdate.com/wp-content/uploads/2018/07/Rastriya-Beema-Sansthan-vacancy.jpg?fit=700%2C350&ssl=1&resize=350%2C200'
+                                (click)="openModalForStock(prod)">
+                            <!-- <video width="412" height="280"   (click) ="openModalForStock(prod)" poster="/images/https://loksewaupdate.com/vacancies/rastriya-beema-company-vacancy"  controls>
                                 </video> -->
                             <!-- <a class="video-control" style = "margin-top: 10%;"  (click) ="openModalForStock(prod)"><i class="fa fa-play fa-video-play" style="color:#3a67ab;border: 5px solid #3a67ab;"></i></a>-->
-                             <!-- <iframe class="card-top-img"  [src]=" prod.media.mediaurl| safe" height="280"
+                            <!-- <iframe class="card-top-img"  [src]=" prod.media.mediaurl| safe" height="280"
                                 frameborder="0" allowfullscreen=""></iframe>    -->
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a [href]="'product/'+prod._id">
-                                     {{prod.title}}
+                                        {{prod.title}}
                                     </a>
                                 </h4>
                                 <!-- <div class ="row"  style="margin-top:10px "> 
@@ -232,18 +232,19 @@
 <section class="latest-blog-area">
     <div class="container">
         <div class="row ">
-            <div class="col-lg-9" >
+            <div class="col-lg-9">
                 <div class="main-title">
-                    <h1 class="data" >नए लेख -  <span style="font-size: 16px; font-weight:normal">इंश्योरेंस पॉलिसीस से जुडी
+                    <h1 class="data">नए लेख - <span style="font-size: 16px; font-weight:normal">इंश्योरेंस पॉलिसीस से
+                            जुडी
                             महत्वपूर्ण जानकारियाँ</span></h1>
                     <!--<span class="main-title-line"></span>-->
                 </div>
             </div>
-            <div class="col-lg-3" >
+            <div class="col-lg-3">
                 <div class="main-title">
-                    <h1 class="data" (click) = "article()">View All </h1>
-                    <button type="button" class="btn btn-primary" style="float: right;">Expert Speaks 
-                        </button>
+                    <h1 class="data" (click)="article()">View All </h1>
+                    <button type="button" class="btn btn-primary" style="float: right;">Expert Speaks
+                    </button>
                     <!--<span class="main-title-line"></span>-->
                 </div>
             </div>
@@ -263,10 +264,11 @@
                         {{funart.description}}
                     </p>
                     <div class="meta-bottom d-flex justify-content-between">
-                        	<p><span class="lnr lnr-heart" style="margin-right: 10px;" (click)="addLikes(funart._id)" *ngIf=" funart && funart.likes && funart.likes.length >= 0 "></span>{{funart.likes.length}}  likes</p>
-                            <p><span class="lnr lnr-bubble " *ngIf=" funart && funart.comments && funart.comments.length >= 0 "></span>{{funart.comments.length}}
-                            </p>
-                        
+                        <p><span class="lnr lnr-heart" style="margin-right: 10px;" (click)="addLikes(funart._id)" *ngIf=" funart && funart.likes && funart.likes.length >= 0 "></span>{{funart.likes.length}}
+                            likes</p>
+                        <p><span class="lnr lnr-bubble " *ngIf=" funart && funart.comments && funart.comments.length >= 0 "></span>{{funart.comments.length}}
+                        </p>
+
                     </div>
                 </div>
             </div>
@@ -353,7 +355,7 @@
 <section>
     <div class="container">
         <div class="row" style="padding-top:3rem">
-            <div class="col-md-6" style="padding: 0" >
+            <div class="col-md-6" style="padding: 0">
                 <img src={{addnew1}} class="img-fluid">
             </div>
             <!-- <div class="col-md-6" style="padding: 0">
@@ -414,80 +416,80 @@
 
 
 <section class="testimonial-area feedback" style="height: 377px;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12" style="padding: 0">
-                    <div class="main-title">
-                        <h1>आपके फीडबैक </h1>
-    
-                    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12" style="padding: 0">
+                <div class="main-title">
+                    <h1>आपके फीडबैक </h1>
+
                 </div>
             </div>
-    
-            <div class="row">
-               
-                    <div class="col-md-4">
-                        <div class="media back-data"style="width: 360px;height: 204px;">
-                            <img class="mr-3 box-data-value" src="./assets/img/user1.png" alt="Generic placeholder image">
-                            <div class="media-body">
-    
-                                <p style="margin-top:20px">
-                                    Accessories Here you can find the best computer accessory for your laptop, monitor,
-                                    printer, scanner, speaker, projector,
-                                    hardware.
-                                </p>
-                                <h5>Mark Alviro Wiens</h5>
-    
-                                <p> CEO at Google</p>
-    
-                            </div>
-    
-                        </div>
-    
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="media back-data" style="width: 360px;height: 204px;">
+                    <img class="mr-3 box-data-value" src="./assets/img/user1.png" alt="Generic placeholder image">
+                    <div class="media-body">
+
+                        <p style="margin-top:20px">
+                            Accessories Here you can find the best computer accessory for your laptop, monitor,
+                            printer, scanner, speaker, projector,
+                            hardware.
+                        </p>
+                        <h5>Mark Alviro Wiens</h5>
+
+                        <p> CEO at Google</p>
+
                     </div>
-    
-    
-                    <div class="col-md-4">
-                            <div class="media back-data"style="width: 360px;height: 204px;">
-                                <img class="mr-3 box-data-value" src="./assets/img/user2.png" alt="Generic placeholder image">
-                                <div class="media-body">
-        
-                                    <p style="margin-top:20px">
-                                        Accessories Here you can find the best computer accessory for your laptop, monitor,
-                                        printer, scanner, speaker, projector,
-                                        hardware.
-                                    </p>
-                                    <h5>Lina Harrington</h5>
-        
-                                    <p> CEO at Google</p>
-        
-                                </div>
-        
-                            </div>
-        
-                        </div>
-    
-                        <div class="col-md-4">
-                                <div class="media back-data"style="width: 360px;height: 204px;">
-                                    <img class="mr-3 box-data-value" src="./assets/img/user1.png" alt="Generic placeholder image">
-                                    <div class="media-body">
-            
-                                        <p style="margin-top:20px">
-                                            Accessories Here you can find the best computer accessory for your laptop, monitor,
-                                            printer, scanner, speaker, projector,
-                                            hardware.
-                                        </p>
-                                        <h5>Mark Alviro Wiens</h5>
-            
-                                        <p> CEO at Google</p>
-            
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-    
-                             <!-- <div class="col-md-4">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="media back-data" style="width: 360px;height: 204px;">
+                    <img class="mr-3 box-data-value" src="./assets/img/user2.png" alt="Generic placeholder image">
+                    <div class="media-body">
+
+                        <p style="margin-top:20px">
+                            Accessories Here you can find the best computer accessory for your laptop, monitor,
+                            printer, scanner, speaker, projector,
+                            hardware.
+                        </p>
+                        <h5>Lina Harrington</h5>
+
+                        <p> CEO at Google</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="media back-data" style="width: 360px;height: 204px;">
+                    <img class="mr-3 box-data-value" src="./assets/img/user1.png" alt="Generic placeholder image">
+                    <div class="media-body">
+
+                        <p style="margin-top:20px">
+                            Accessories Here you can find the best computer accessory for your laptop, monitor,
+                            printer, scanner, speaker, projector,
+                            hardware.
+                        </p>
+                        <h5>Mark Alviro Wiens</h5>
+
+                        <p> CEO at Google</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- <div class="col-md-4">
                                     <div class="media back-data"style="width: 360px;height: 204px;">
                                         <img class="mr-3 box-data-value" src="./assets/img/user2.png" alt="Generic placeholder image">
                                         <div class="media-body">
@@ -550,49 +552,47 @@
                             <p class="mb-0">CEO at Google</p>
                         </div>
                     </div>-->
-              
-            </div>
+
         </div>
-    </section>  
+    </div>
+</section>
 
 
-                <section class="section-subscribe">
-                    <div class="container">
-                        <div class="row">
-                            <h3 style="text-align: center; font-weight: 600; margin-top: 40px; display: block; width: 100%">न्यूज़लेटर
-                                सब्सक्राइब करे </h3>
-                            <div class="col-md-10" style="float: none; margin: auto">
-                                <div id="mc_embed_signup">
-                                    <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                        method="get" class="form-inline">
+<section class="section-subscribe">
+    <div class="container">
+        <div class="row">
+            <h3 style="text-align: center; font-weight: 600; margin-top: 40px; display: block; width: 100%">न्यूज़लेटर
+                सब्सक्राइब करे </h3>
+            <div class="col-md-10" style="float: none; margin: auto">
+                <div id="mc_embed_signup">
+                    <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                        method="get" class="form-inline">
 
-                                        <div class="form-group row" style="width: 100%">
-                                            <div class="col-lg-9 col-md-9">
-                                                <input name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = &#39;&#39;"
-                                                    onblur="this.placeholder = &#39;Your Email Address&#39;" required=""
-                                                    type="email">
-                                                <div style="position: absolute; left: -5000px;">
-                                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1"
-                                                        value="" type="text">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-3 col-md-3">
-                                                <button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
-                                            </div>
-                                        </div>
-                                        <div class="info"></div>
-                                    </form>
+                        <div class="form-group row" style="width: 100%">
+                            <div class="col-lg-9 col-md-9">
+                                <input name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = &#39;&#39;"
+                                    onblur="this.placeholder = &#39;Your Email Address&#39;" required="" type="email">
+                                <div style="position: absolute; left: -5000px;">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-               
-    
-                
 
-                <!-- <div id="materialStockModel" class="modal fade" role="dialog">
+                            <div class="col-lg-3 col-md-3">
+                                <button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
+                            </div>
+                        </div>
+                        <div class="info"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- <div id="materialStockModel" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg" >
                   
                       <!-- Modal content
@@ -604,41 +604,55 @@
                       </div>
                     </div>
                   </div> -->
-                  
-                       
 
-   
-                  
-                  <div class="modal" id="materialStockModel" role="dialog" tabindex="-1" data-pswp-uid="1" style="background-color: rgba(0,0,0,0.4);overflow: auto;">
-                        <div class="modal-dialog modal-img modal-lg">
-                          <!-- Modal content-->
-                          <div class="modal-content">
-                        
-                              
-                                   
-                              <!--<h4 class="modal-title text-center"  style="color:black"><b>Edit Material Stock</b></h4>-->
-                            
-                            <div class="row">
-                                    <div class="col-md-6" style="line-height: 0px;" *ngIf='url'>
-                                <iframe class="card-top-img"  [src]="url | safe" height="280"width="100%" 
-                                frameborder="0" allowfullscreen=""></iframe>
-                                    </div>
-                                    <div class="col-md-5">
-                                            <h2 style="float:right"> highlight</h2>
-                                            </div>
-                                            <div class="col-md-1">
-                                                 <button type="button" class="close" data-dismiss="modal" (click)="closeTrackModel()" style="float: left;padding-top: 6px;">&times;</button>
-                                                </div>
-                                </div>
-                            <!-- <div class="modal-footer m-auto" style="border-top:none; ">
+
+
+
+
+<div class="modal" id="materialStockModel" role="dialog" tabindex="-1" data-pswp-uid="1" style="background-color: rgba(0,0,0,0.4);overflow: auto;">
+    <div class="modal-dialog modal-img modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+
+
+
+            <!--<h4 class="modal-title text-center"  style="color:black"><b>Edit Material Stock</b></h4>-->
+
+            <div class="row">
+                <div class="col-md-6" style="line-height: 0px;" *ngIf='url'>
+                    <iframe class="card-top-img" [src]="url | safe" height="280" width="100%" frameborder="0"
+                        allowfullscreen=""></iframe>
+                </div>
+                <div class="col-md-5">
+                    <div class="widget-wrap">
+
+
+                        <div class="single-sidebar-widget post-category-widget">
+                                <h4 class="category-title" >Highlights</h4>
+                            <ul class="cat-list bullet-list" *ngFor="let idtext of value">
+
+                                <li>
+                                   {{idtext.highlights}}
+
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="close" data-dismiss="modal" (click)="closeTrackModel()" style="float: left;padding-top: 6px;">&times;</button>
+                </div>
+            </div>
+            <!-- <div class="modal-footer m-auto" style="border-top:none; ">
                               <button type="button" class="btn btn-danger" style="background-color: #326cab!important; border-color:#326cab!important"
                                 (click)="closeTrackModel()">
                                 ok
                               </button>
                               <!--<button type="button" class="btn btn-default" style="background-color: #EF5350!important; border-color:#EF5350!important;color: #fff" (click)="closeTrackModel()">Cancel</button>
                             </div> -->
-                          </div>
-                        </div>
-                      </div>
-
-               
+        </div>
+    </div>
+</div>
