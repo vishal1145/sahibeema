@@ -24,6 +24,7 @@ export class IndexComponent implements OnInit {
   addnew2: any;
   newvalue: any;
   allimagedata: any;
+  articlevideo: any;
   url:any;
   newarticledata:any;
   value: any = [];
@@ -97,10 +98,13 @@ export class IndexComponent implements OnInit {
     }
     let resdata = await this.itHoursService.executeByGet(Provideo, false);
     console.log(resdata)
-    
-    this.value.push(resdata.apidata.Data[resdata.apidata.Data.length-1])
-    this.value.push(resdata.apidata.Data[resdata.apidata.Data.length-2])
-    
+    this.articlevideo = resdata.apidata.Data
+    for (var i = 0; i< this.articlevideo.length;i++){
+      if(this.articlevideo[i].showhomepage){
+    this.value.push(this.articlevideo[i])
+      }
+  
+    }
 
 
 

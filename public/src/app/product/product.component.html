@@ -137,7 +137,7 @@
                                                                                                         allowfullscreen=""></iframe>
                                                                                                 <div class="card-body">
                                                                                                         <h4 class="card-title">
-                                                                                                                <a [href]="'product/'+rel._id"
+                                                                                                                <a (click)="getProdetailsonclick(rel._id)"
                                                                                                                         tabindex="0">
                                                                                                                      {{rel.title}}
                                                                                                                 </a>
@@ -206,8 +206,8 @@
                 <div class="row">
                         <div class="col-md-12" style="padding: 0">
                                 <div class="table-responsive">
-                                        <table class="table table-striped table-bordered">
-                                                <thead>
+                                        <table class="table table-striped table-bordered" [innerHTML]="_htmlProperty3">
+                                                <!-- <thead>
                                                         <tr>
                                                                 <th>क्रमांक </th>
                                                                 <th>पॉलिसी कंपनी </th>
@@ -235,7 +235,7 @@
                                                                 <td>-</td>
                                                                 <td>-</td>
                                                         </tr>
-                                                </tbody>
+                                                </tbody> -->
                                         </table>
                                 </div>
                         </div>
@@ -266,12 +266,12 @@
                                                 <div class="slick-track" style="opacity: 1; width: 1900px; transform: translate3d(0px, 0px, 0px);">
                                                         <div class="slick-slide slick-current slick-active"
                                                                 data-slick-index="0" aria-hidden="false" style="width: 190px;">
-                                                                <div>
-                                                                        <div class="company" style="width: 100%; display: inline-block;"><img
-                                                                                        src="./assets/img/1 (1).png"></div>
+                                                                <div [innerHTML]="_htmlProperty1">
+                                                                        <!-- <div class="company" style="width: 100%; display: inline-block;"><img
+                                                                                        src="./assets/img/1 (1).png"></div> -->
                                                                 </div>
                                                         </div>
-                                                        <div class="slick-slide slick-active" data-slick-index="1"
+                                                        <!-- <div class="slick-slide slick-active" data-slick-index="1"
                                                                 aria-hidden="false" style="width: 190px;">
                                                                 <div>
                                                                         <div class="company" style="width: 100%; display: inline-block;"><img
@@ -326,14 +326,14 @@
                                                                         <div class="company" style="width: 100%; display: inline-block;"><img
                                                                                         src="./assets/img/9.png"></div>
                                                                 </div>
-                                                        </div>
-                                                        <div class="slick-slide" data-slick-index="9" aria-hidden="true"
+                                                        </div> -->
+                                                        <!-- <div class="slick-slide" data-slick-index="9" aria-hidden="true"
                                                                 tabindex="-1" style="width: 190px;">
                                                                 <div>
                                                                         <div class="company" style="width: 100%; display: inline-block;"><img
                                                                                         src="./assets/img/10.jpg"></div>
                                                                 </div>
-                                                        </div>
+                                                        </div> -->
                                                 </div>
                                         </div>
                                         <button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"
@@ -362,8 +362,8 @@
                 <div class="row">
                         <div class="col-md-12" style="padding: 0">
                                 <div class="table-responsive">
-                                        <table class="table table-striped table-bordered">
-                                                <thead>
+                                        <table class="table table-striped table-bordered" [innerHTML]="_htmlProperty2">
+                                                <!-- <thead>
                                                         <tr>
                                                                 <th>क्रमांक </th>
                                                                 <th>पॉलिसी कंपनी </th>
@@ -391,7 +391,7 @@
                                                                 <td>-</td>
                                                                 <td>-</td>
                                                         </tr>
-                                                </tbody>
+                                                </tbody> -->
                                         </table>
                                 </div>
                         </div>

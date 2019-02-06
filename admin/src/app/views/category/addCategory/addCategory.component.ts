@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AppLoaderService } from '../../../shared/services/app-loader/app-loader.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 declare var $:any;
+declare var CKEDITOR: any;
 @Component({
   selector: 'app-basic-form',
   templateUrl: './addCategory.component.html',
@@ -91,6 +92,9 @@ export class AddCategoryComponent implements OnInit {
         return null;
       })
     })
+    CKEDITOR.replace('editor1');
+    CKEDITOR.replace('editor2');
+    CKEDITOR.replace('editor3');
   }
 
 
@@ -141,12 +145,19 @@ export class AddCategoryComponent implements OnInit {
       self.loader.close();
     });
   }
-  
+  data1: any;
+  data2:any;
+  data3:any;
+
+
  
 
   async   uploadToServer1() {
     // const input = this.itHourService.prepareNodeJSRequestObject("Product", "ADDPRODUCTPHOTO", { Id: this.product.id, photo: url });
-  
+    this.data1=CKEDITOR.instances['editor1'].getData()
+    this.data2=CKEDITOR.instances['editor2'].getData()
+    this.data3=CKEDITOR.instances['editor3'].getData()
+    console.log('alldatas')
     // $("#auth").hide();
     if(!this.isShow){
       var input11 = {
@@ -158,7 +169,10 @@ export class AddCategoryComponent implements OnInit {
         "$set":{
         "title"  :this.basicForm.value.username,
         "image": this.categoryimage,
-         "icon": this.categoryicon
+         "icon": this.categoryicon,
+         "important_facts": this.data1,
+         "insurance_type": this.data2,
+         "biggest_ins_company": this.data3,
         
       }}}
       let res11 = await this.itHourService.executeByUpdate(input11, false);
@@ -175,6 +189,9 @@ export class AddCategoryComponent implements OnInit {
     var data= res.apidata.Data
     this.basicForm.controls['username'].setValue(data[0].title);
     this.image = data[0].image
+    CKEDITOR.instances['editor1'].setData(data[0].important_facts)
+    CKEDITOR.instances['editor2'].setData(data[0].insurance_type)
+    CKEDITOR.instances['editor3'].setData(data[0].biggest_ins_company)
     
   
    }

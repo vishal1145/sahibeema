@@ -33,11 +33,18 @@
                     <input  type="file" (change)= "setFile($event,2)">
               
              </div>
+            
            
-           
-                <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/category']">Submit</button>&nbsp;
+                
                 <!-- <button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/configuration']">Save
 And Publish</button> -->
+<textarea name="terms" id="editor1" ></textarea>
+<textarea name="terms2" id="editor2" ></textarea>
+<textarea name="terms3" id="editor3" ></textarea>
+<!-- <button mat-raised-button color="primary" (click)="uploadToServer()" [routerLink]="['/product']">Submit</button>&nbsp;
+<button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/product']">Save
+And Publish</button> -->
+<button mat-raised-button color="primary" (click)="uploadToServer1()" [routerLink]="['/category']">Submit</button>&nbsp;
         </form>
     </mat-card-content>
 </mat-card>

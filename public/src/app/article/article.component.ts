@@ -18,11 +18,12 @@ declare var $: any;
 export class ArticleComponent implements OnInit {
   articledata: any = [];
   data: any = [];
-  newarticle: any;
+  newarticle: any = [];
   value: any;
   postproduct: any;
   single: any;
   image: any;
+  articaltegs: any= [];
   mediaurl: any;
   _htmlProperty1: any = [];
   newvalue: any;
@@ -67,13 +68,28 @@ export class ArticleComponent implements OnInit {
     
   }
 
+  async catgoriesbase(catID) {
+    this.newarticle = []
+    for(var i =0; i < (this.allArticlas || []).length; i++) {
+      if(this.allArticlas[i].category == catID) {
+        this.articaltegs = this.allArticlas[i].tags
+        this.newarticle.push(this.allArticlas[i])
+        
+      }
+    }
+    for (var i = 0; i < this.newarticle.length; i++) {
+      this.newarticle[i].description_new = this._sanitizer.bypassSecurityTrustHtml(this.newarticle[i].description);
+    }
 
+  }
+  allArticlas: any =[];
   async getArticles() {
     var input = {
       "modelName": "Article",
     }
 
     var articles = await this.itHoursService.executeByGet(input, false)
+    this.allArticlas = articles.apidata.Data
     console.log(articles)
     for(var i=0;i<articles.apidata.Data.length;i++){
       articles.apidata.Data[i].created_at = new Date( articles.apidata.Data[i].created_at)
@@ -120,6 +136,10 @@ export class ArticleComponent implements OnInit {
     var postcategories = await this.itHoursService.executeByGet(postdata, false)
     console.log(postcategories)
     this.idtext = postcategories.apidata.Data
+    for(var i =0; i < this.idtext.length; i++) {
+      this.articaltegs.push(this.idtext[i].name)
+    }
+    
 
   }
 }

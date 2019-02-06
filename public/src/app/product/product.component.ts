@@ -31,8 +31,11 @@ export class ProductComponent {
   categoryid: any = {};
   rel_prod: any = [];
   dataid: any;
+  allProductList: any =[];
   allimagedata: any;
   _htmlProperty1: any;
+  _htmlProperty2: any;
+  _htmlProperty3: any;
   constructor(
     public itHoursService: ITHoursService,
     private activatedRoute: ActivatedRoute,
@@ -73,6 +76,7 @@ export class ProductComponent {
       "path": "category"
     }
     let productbycategory = await this.itHoursService.executeByGet(productbyid, false);
+    this.allProductList = productbycategory.apidata.Data
     console.log(productbycategory)
     this.mediaurl = productbycategory.apidata.Data[0].media.mediaurl 
     this.categoryid = productbycategory.apidata.Data[0].category
@@ -93,7 +97,7 @@ export class ProductComponent {
     console.log(res)
     this.value = res.apidata.Data
 
-    this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);
+   // this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.value);
 
 
     //this.highlights = this.value[0].highlights[0]
@@ -122,6 +126,9 @@ export class ProductComponent {
 
       if (this.data[i]._id == this.id) {
         this.productdetails = this.data[i]
+        this._htmlProperty1 = this._sanitizer.bypassSecurityTrustHtml(this.productdetails.important_facts);
+        this._htmlProperty2 = this._sanitizer.bypassSecurityTrustHtml(this.productdetails.insurance_type);
+        this._htmlProperty3 = this._sanitizer.bypassSecurityTrustHtml(this.productdetails.biggest_ins_company);
       }
     }
 
@@ -162,6 +169,22 @@ export class ProductComponent {
       }
     }
 
+  }
+
+  getProdetailsonclick(proId) {
+    for(var i =0; i < this.allProductList.length; i++){
+      if(this.allProductList[i]._id == proId) {
+        this.mediaurl = this.allProductList[i].media.mediaurl 
+        this.categoryid = this.allProductList[i].category
+        this.titleService.setTitle('उत्पाद');
+        this.highlights  = this.allProductList[i].highlights;
+        if(this.highlights.length!=0){
+          this.isShow = true
+        }
+      }
+      
+    }
+    
   }
 
 }
