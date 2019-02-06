@@ -25,6 +25,7 @@ export class ProductComponent {
   mediaurl: any;
   nameblock: any;
   newadd: any;
+
   addnew1: any;
   blockadd: any;
   half_article: any;
@@ -158,7 +159,8 @@ export class ProductComponent {
     this.blockadd = addblock.apidata.Data;
     this.nameblock = this.getImage('product', 'side', addblock)    // this.blockadd[4].image
     this.newadd = this.blockadd[1].image
-    this.addnew1 = this.blockadd[3].image
+    
+    this.addnew1 =  this.getImage('product','midscreen',addblock) 
   }
 
   getImage(pagename, area, allimages) {

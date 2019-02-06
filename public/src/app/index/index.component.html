@@ -137,8 +137,7 @@
                     <div class="col-lg-6 col-md-6" *ngFor="let prod of value">
                         <div class="single-news card">
 
-                            <img class="data" [src]="'https://img.youtube.com/vi/'+prod.youtube_id+'/0.jpg'"
-                                (click)="openModalForStock(prod)">
+                            <img class="data" [src]="'https://img.youtube.com/vi/'+prod.youtube_id+'/0.jpg'" (click)="openModalForStock(prod)">
                             <!-- <video width="412" height="280"   (click) ="openModalForStock(prod)" poster="/images/https://loksewaupdate.com/vacancies/rastriya-beema-company-vacancy"  controls>
                                 </video> -->
                             <!-- <a class="video-control" style = "margin-top: 10%;"  (click) ="openModalForStock(prod)"><i class="fa fa-play fa-video-play" style="color:#3a67ab;border: 5px solid #3a67ab;"></i></a>-->
@@ -619,33 +618,44 @@
             <!--<h4 class="modal-title text-center"  style="color:black"><b>Edit Material Stock</b></h4>-->
 
             <div class="row">
-                <div class="col-md-6" style="line-height: 0px;" *ngIf='url'>
-                    <iframe class="card-top-img" [src]="url | safe" height="280" width="100%" frameborder="0"
+                <div class="col-md-6" style="padding:0px;line-height: 0px;" *ngIf='url'>
+                    <iframe class="card-top-img" [src]="url | safe" height="407" width="100%" frameborder="0"
                         allowfullscreen=""></iframe>
                 </div>
-                <div class="col-md-5">
-                    <div class="widget-wrap">
+                <div class="col-md-6" style="padding-left:0px;">
+                    <div class="widget-wrap" style="border: 0px;padding: 0px">
 
 
-                        <div class="single-sidebar-widget post-category-widget">
-                                <h4 class="category-title" >Highlights</h4>
-                   
-                        <ul  >
-                        
-                            <li *ngFor="let idtext of highlights"> 
-                                   {{idtext}}
-
-                            </li>
-                        </ul>
-
-                    </div>
+                        <div class="single-sidebar-widget post-category-widget" style="margin:0px">
                             
-                       
+                                    <h4 class="category-title">Highlights <i class="fa fa-times data" aria-hidden="true" (click)="closeTrackModel()" style="float: right; margin-right: 10px !important;"></i></h4>
+                                
+                                    <!-- <button type="button" class="close" data-dismiss="modal" (click)="closeTrackModel()"
+                                        style="float: left;padding-top: 8px;">&times;</button> -->
+                              
+                            <ul class="cat-list bullet-list" *ngIf="highlights">
+                                <marquee direction="down" style="height:318px">
+                                    <li *ngFor="let idtext of highlights">
+                                        {{idtext}}
+
+                                    </li>
+                                </marquee>
+
+
+
+                            </ul>
+
+
+
+                        </div>
+
+
                     </div>
+
                 </div>
-                <div class="col-md-1">
-                    <button type="button" class="close" data-dismiss="modal" (click)="closeTrackModel()" style="float: left;padding-top: 6px;">&times;</button>
-                </div>
+
+
+
             </div>
             <!-- <div class="modal-footer m-auto" style="border-top:none; ">
                               <button type="button" class="btn btn-danger" style="background-color: #326cab!important; border-color:#326cab!important"
