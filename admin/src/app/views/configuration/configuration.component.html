@@ -1,3 +1,11 @@
+<style>
+  .modal-backdrop{
+    background-color:transparent !important;
+  }
+  </style>
+
+
+
 <div  style = "display:none">
   <mat-sidenav-container>
 <div class="shop-wrap" fxLayout="row" fxLayoutWrap="wrap">
@@ -75,6 +83,7 @@
 
 <div >
   <mat-sidenav-container>
+      <form [formGroup]="basicForm">
     <!-- <mat-sidenav EgretSideNavToggle class="shop-sidebar">
    
     </mat-sidenav> -->
@@ -99,13 +108,24 @@
             <mat-icon>add_box</mat-icon> Add Product
           </button> -->
         </div>
+     <p><strong> Please Select HomePage Videos</strong> !!only two</p>
+          <div >
+            <mat-form-field>
+              <mat-select placeholder="Select Product"  formControlName="userType"  (selectionChange)="changed()" multiple>
+                <mat-option *ngFor="let pro of newProducts" [value]="pro._id">
+                  {{pro.title}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+   
         <!-- Products container -->
         <div class="product-container" 
         [ngClass]="{'list-view': viewMode === 'list-view'}">
           <!-- Product Box -->
           <div  
           class="product-wrap" 
-          *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: currentPage } ; let i = index;"
+          *ngFor="let product of products ; let i = index;"
           [@animate]="{value:'*',params:{delay: (i*100)+'ms', y:'50px'}}">
             <div class="product-inner default-bg" >
               <div *ngIf="product?.badge?.text" class="product-badge mat-elevation-z7" [ngStyle]="{background: product?.badge?.color || '#f44336'}">
@@ -124,7 +144,9 @@
                   <!-- <p class="text-muted p-line">
                     <strong>Category:</strong> {{product?.category.title}}</p>
                     <button mat-raised-button color="primary"  [routerLink]="['/product/updateproduct/',product._id]">Update</button> -->
-                
+                    <i class="material-icons" (click) = "changeProduct(product._id)">
+                      edit_attributes
+                      </i>
                 </div>
           
               </div>
@@ -162,14 +184,26 @@
           </div>
           <!-- End Product -->
   
-          <div class="products-pagination">
+          <!-- <div class="products-pagination">
             <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
-          </div>
+          </div> -->
   
         </div>
         <!-- End Products container -->
       </div>
   
     </div>
+    </form>
   </mat-sidenav-container>
 </div>
+
+
+
+
+
+
+<style>
+  .modal-backdrop{
+    background-color:transparent;
+  }
+  </style>

@@ -147,6 +147,7 @@ export class AddArticleComponent implements OnInit {
       if (err) {
         return alert('There was an error uploading your Image: ');
       }
+      this.image = data.Location
       self.articles.push(data.Location);
       self.loader.close();
     });

@@ -137,6 +137,7 @@ export class AddCategoryComponent implements OnInit {
         return alert('There was an error uploading your Image: ');
       }
       if(index == 1){
+        this.image =data.Location
       self.categoryimage= data.Location;
       }
       if(index == 2){

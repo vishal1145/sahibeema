@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MediaChange, ObservableMedia } from "@angular/flex-layout";
 import { egretAnimations } from '../../shared/animations/egret-animations';
 import { MatSidenav, MatDialog } from '@angular/material';
@@ -8,7 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 // import { AppInboxService } from './app-inbox.service';
 // import { MailComposeComponent } from './mail-compose.component';
 import { ITHoursService } from 'providers/it-hours-service';
-
+declare var $: any;
 @Component({
   selector: 'app-inbox',
   templateUrl: './configuration.component.html',
@@ -18,10 +19,15 @@ import { ITHoursService } from 'providers/it-hours-service';
 })
 export class ConfigurationComponent implements OnInit, OnDestroy {
   isMobile;
+  newProducts : any = [];
+  mySelections : any;
+  prod_id:any=[]
   screenSizeWatcher: Subscription;
   public viewMode: string = 'grid-view';
   public currentPage: any;
+  
   isSidenavOpen: Boolean = true;
+  basicForm:any
   selectToggleFlag = false;
   products: any = []
   @ViewChild(MatSidenav) private sideNav: MatSidenav;
@@ -39,6 +45,19 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.inboxSideNavInit();
+    this.basicForm = new FormGroup({
+     
+      userType: new FormControl('', [
+        Validators.required
+      ]),
+      agreed: new FormControl('', (control: FormControl) => {
+        const agreed = control.value;
+        if(!agreed) {
+          return { agreed: true }
+        }
+        return null;
+      })
+    })
     // this.messages = this.inboxService.messages;
   }
   ngOnDestroy() {
@@ -82,10 +101,53 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
       "modelName": "Product"
     }
     var res = await this.itHourService.executeByGet(input, false);
+   this.newProducts  = res.apidata.Data
     for(var i = 0;i<res.apidata.Data.length;i++){
       if(res.apidata.Data[i].showhomepage){
  this.products.push(res.apidata.Data[i]) 
+ this.prod_id.push(res.apidata.Data[i]._id)
       }
     }  
   }
+  // changeProduct(id){
+  //   $('#myModal').modal('show')
+  // }
+  async changed() {
+ var self = this
+    if (this.basicForm.value.userType.length < 3) {
+      this.mySelections = this.basicForm.value;
+    } else {
+      this.basicForm.setValue(this.mySelections);
+    }
+    if(this.basicForm.value.userType.length==2){
+     
+      var res1 = await this.itHourService.executeByUpdate(
+        {
+         "modelName":"Product",
+         "findQuery":{
+           _id:{$in:self.prod_id
+           }},
+          "updateQuery":{
+            "$set":{
+         "showhomepage":false
+          }}
+        },false
+      )
+      res1.apidata.Data
+     var res = await this.itHourService.executeByUpdate(
+       {
+        "modelName":"Product",
+        "findQuery":{
+          _id:{$in:self.basicForm.value.userType
+          }},
+          "updateQuery":{
+            "$set":{
+         "showhomepage":true
+          }}
+       },false
+     )
+     var updateproct  = res.apidata.Data
+    }
+  }
+
 }
