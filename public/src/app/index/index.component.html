@@ -137,9 +137,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6" *ngFor = "let prod of value">
                         <div class="single-news card" >
-                               
-                            <iframe class="card-top-img"  [src]=" prod.media.mediaurl| safe" height="280"
-                                frameborder="0" allowfullscreen=""></iframe>
+
+                                <img class="data" src='https://i0.wp.com/loksewaupdate.com/wp-content/uploads/2018/07/Rastriya-Beema-Sansthan-vacancy.jpg?fit=700%2C350&ssl=1&resize=350%2C200' (click) ="openModalForStock(prod)" >
+                                <!-- <video width="412" height="280"   (click) ="openModalForStock(prod)" poster="/images/https://loksewaupdate.com/vacancies/rastriya-beema-company-vacancy"  controls>
+                                </video> -->
+                            <!-- <a class="video-control" style = "margin-top: 10%;"  (click) ="openModalForStock(prod)"><i class="fa fa-play fa-video-play" style="color:#3a67ab;border: 5px solid #3a67ab;"></i></a>-->
+                             <!-- <iframe class="card-top-img"  [src]=" prod.media.mediaurl| safe" height="280"
+                                frameborder="0" allowfullscreen=""></iframe>    -->
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a [href]="'product/'+prod._id">
@@ -238,6 +242,8 @@
             <div class="col-lg-3" >
                 <div class="main-title">
                     <h1 class="data" (click) = "article()">View All </h1>
+                    <button type="button" class="btn btn-primary" style="float: right;">Expert Speaks 
+                        </button>
                     <!--<span class="main-title-line"></span>-->
                 </div>
             </div>
@@ -257,7 +263,7 @@
                         {{funart.description}}
                     </p>
                     <div class="meta-bottom d-flex justify-content-between">
-                        	<p><span class="lnr lnr-heart" style="margin-right: 10px;" (click)="addLikes(funart._id)" *ngIf=" funart && funart.likes && funart.likes.length >= 0 "></span>{{funart.likes.length}}</p>
+                        	<p><span class="lnr lnr-heart" style="margin-right: 10px;" (click)="addLikes(funart._id)" *ngIf=" funart && funart.likes && funart.likes.length >= 0 "></span>{{funart.likes.length}}  likes</p>
                             <p><span class="lnr lnr-bubble " *ngIf=" funart && funart.comments && funart.comments.length >= 0 "></span>{{funart.comments.length}}
                             </p>
                         
@@ -583,9 +589,56 @@
                     </div>
                 </section>
                
-                    
+    
+                
+
+                <!-- <div id="materialStockModel" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg" >
+                  
+                      <!-- Modal content
+                      <div class="modal-content" style="margin-top: 100px;" >
+                          <button type="button" class="close video-close-btn" data-dismiss="modal">&times;</button>
+                        <div class="modal-body" style="padding:0px">
+                            
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  
                        
 
-                
+   
+                  
+                  <div class="modal" id="materialStockModel" role="dialog" tabindex="-1" data-pswp-uid="1" style="background-color: rgba(0,0,0,0.4);overflow: auto;">
+                        <div class="modal-dialog modal-img modal-lg">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                        
+                              
+                                   
+                              <!--<h4 class="modal-title text-center"  style="color:black"><b>Edit Material Stock</b></h4>-->
+                            
+                            <div class="row">
+                                    <div class="col-md-6" style="line-height: 0px;" *ngIf='url'>
+                                <iframe class="card-top-img"  [src]="url | safe" height="280"width="100%" 
+                                frameborder="0" allowfullscreen=""></iframe>
+                                    </div>
+                                    <div class="col-md-5">
+                                            <h2 style="float:right"> highlight</h2>
+                                            </div>
+                                            <div class="col-md-1">
+                                                 <button type="button" class="close" data-dismiss="modal" (click)="closeTrackModel()" style="float: left;padding-top: 6px;">&times;</button>
+                                                </div>
+                                </div>
+                            <!-- <div class="modal-footer m-auto" style="border-top:none; ">
+                              <button type="button" class="btn btn-danger" style="background-color: #326cab!important; border-color:#326cab!important"
+                                (click)="closeTrackModel()">
+                                ok
+                              </button>
+                              <!--<button type="button" class="btn btn-default" style="background-color: #EF5350!important; border-color:#EF5350!important;color: #fff" (click)="closeTrackModel()">Cancel</button>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
 
                

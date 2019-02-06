@@ -3326,7 +3326,7 @@ h6 {
 .related-videos .slick-slide div{padding: 0 5px}
 .related-videos .single-news .card-body .card-title{font-size: 12px;}
 .related-videos .single-news .card-body .card-title a{font-size: 12px;}
-.related-videos .single-news .card-body{padding: 10px 15px; min-height: 85px; max-height: 54px;}
+.related-videos .single-news .card-body{padding: 10px 15px; min-height: 54px; max-height: 54px;}
 .related-videos .slick-prev:before, .related-videos .slick-next:before{color:rgba(27,127,204,.8)}
 .companies .slick-prev:before, .companies .slick-next:before{color:rgba(27,127,204,.8)}
  .data{    cursor: pointer; }

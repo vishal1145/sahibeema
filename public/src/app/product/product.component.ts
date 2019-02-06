@@ -64,11 +64,11 @@ export class ProductComponent {
 
   async getProduct() {
 
-
+   
     var productbyid = {
       "modelName": "Product",
       "findQuery": {
-        "_id": this.id,
+        "category": this.id,
       },
       "path": "category"
     }
@@ -82,6 +82,7 @@ export class ProductComponent {
       this.isShow = true
     }
 
+    
     var input = {
       "modelName": "Product",
       "findQuery": {
