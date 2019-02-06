@@ -82,6 +82,8 @@ export class CategoryComponent implements OnInit, OnDestroy {
       "modelName": "Category"
     }
     var res = await this.itHourService.executeByGet(input, false);
-    this.products = res.apidata.Data
-  }
+    for(var i=0; i<res.apidata.Data.length;i++){
+if(res.apidata.Data[i].showhomepage){
+    this.products.push(res.apidata.Data[i])
+  }}}
 }
