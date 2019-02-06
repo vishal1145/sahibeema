@@ -112,20 +112,16 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
   // changeProduct(id){
   //   $('#myModal').modal('show')
   // }
-  async changed() {
- var self = this
-    if (this.basicForm.value.userType.length < 3) {
-      this.mySelections = this.basicForm.value;
-    } else {
-      this.basicForm.setValue(this.mySelections);
-    }
+
+  isEdit  = false;
+   async updateProduct(){
     if(this.basicForm.value.userType.length==2){
       this.selected = false
       var res1 = await this.itHourService.executeByUpdate(
         {
          "modelName":"Product",
          "findQuery":{
-           _id:{$in:self.prod_id
+           _id:{$in:this.prod_id
            }},
           "updateQuery":{
             "$set":{
@@ -138,7 +134,7 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
        {
         "modelName":"Product",
         "findQuery":{
-          _id:{$in:self.basicForm.value.userType
+          _id:{$in:this.basicForm.value.userType
           }},
           "updateQuery":{
             "$set":{
@@ -148,6 +144,16 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
      )
      var updateproct  = res.apidata.Data
     }
+
+  }
+  async changed() {
+ var self = this
+    if (this.basicForm.value.userType.length < 3) {
+      this.mySelections = this.basicForm.value;
+    } else {
+      this.basicForm.setValue(this.mySelections);
+    }
+    
   }
 
 }

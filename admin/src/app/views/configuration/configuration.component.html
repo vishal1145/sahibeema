@@ -108,8 +108,12 @@
             <mat-icon>add_box</mat-icon> Add Product
           </button> -->
         </div>
-     <p><strong> Please Select HomePage Videos</strong> !!must two</p>
-          <div *ngIf = "selected">
+     <p><strong> Please Select HomePage Videos</strong> You can select maximum two videos</p>
+     
+<button *ngIf="!isEdit" (click)="isEdit = true"> Change Videos </button>
+
+<div class = "row">
+     <div *ngIf = "isEdit" class = "col-md-6">
             <mat-form-field>
               <mat-select placeholder="Select Product"  formControlName="userType"  (selectionChange)="changed()" multiple>
                 <mat-option *ngFor="let pro of newProducts" [value]="pro._id">
@@ -118,7 +122,12 @@
               </mat-select>
             </mat-form-field>
           </div>
-   
+
+          <div class = "col-md-6">
+          <button *ngIf="isEdit" (click)="isEdit = false" (click)="updateProduct()"> upadate  Videos </button>
+          <button *ngIf="isEdit" (click)="isEdit = false">cancle </button>
+        </div>
+      </div>
         <!-- Products container -->
         <div class="product-container" 
         [ngClass]="{'list-view': viewMode === 'list-view'}">
