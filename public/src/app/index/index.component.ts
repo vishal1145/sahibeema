@@ -27,6 +27,7 @@ export class IndexComponent implements OnInit {
   articlevideo: any;
   url:any;
   newarticledata:any;
+  highlights:any=[]
   value: any = [];
   mediaurl: any=[];
   ngOnInit() {
@@ -58,6 +59,7 @@ export class IndexComponent implements OnInit {
 
   openModalForStock(data) {
     this.url = data.media.mediaurl
+    this.highlights = data.highlights
     $("#materialStockModel").show();
   }
   closeTrackModel() {
@@ -101,7 +103,9 @@ export class IndexComponent implements OnInit {
     this.articlevideo = resdata.apidata.Data
     for (var i = 0; i< this.articlevideo.length;i++){
       if(this.articlevideo[i].showhomepage){
+        this.articlevideo[i].youtube_id =  this.itHoursService.getyoutubeid(this.articlevideo[i].media.mediaurl, { fuzzy: false })
     this.value.push(this.articlevideo[i])
+  
       }
   
     }

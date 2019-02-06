@@ -109,7 +109,7 @@
           </button> -->
         </div>
      <p><strong> Please Select HomePage Videos</strong> !!must two</p>
-          <div >
+          <div *ngIf = "selected">
             <mat-form-field>
               <mat-select placeholder="Select Product"  formControlName="userType"  (selectionChange)="changed()" multiple>
                 <mat-option *ngFor="let pro of newProducts" [value]="pro._id">

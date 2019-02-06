@@ -25,7 +25,7 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
   screenSizeWatcher: Subscription;
   public viewMode: string = 'grid-view';
   public currentPage: any;
-  
+  selected:Boolean=true
   isSidenavOpen: Boolean = true;
   basicForm:any
   selectToggleFlag = false;
@@ -120,7 +120,7 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
       this.basicForm.setValue(this.mySelections);
     }
     if(this.basicForm.value.userType.length==2){
-     
+      this.selected = false
       var res1 = await this.itHourService.executeByUpdate(
         {
          "modelName":"Product",

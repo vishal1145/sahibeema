@@ -137,7 +137,7 @@
                     <div class="col-lg-6 col-md-6" *ngFor="let prod of value">
                         <div class="single-news card">
 
-                            <img class="data" src='https://i0.wp.com/loksewaupdate.com/wp-content/uploads/2018/07/Rastriya-Beema-Sansthan-vacancy.jpg?fit=700%2C350&ssl=1&resize=350%2C200'
+                            <img class="data" [src]="'https://img.youtube.com/vi/'+prod.youtube_id+'/0.jpg'"
                                 (click)="openModalForStock(prod)">
                             <!-- <video width="412" height="280"   (click) ="openModalForStock(prod)" poster="/images/https://loksewaupdate.com/vacancies/rastriya-beema-company-vacancy"  controls>
                                 </video> -->
@@ -629,17 +629,18 @@
 
                         <div class="single-sidebar-widget post-category-widget">
                                 <h4 class="category-title" >Highlights</h4>
-                            <ul class="cat-list bullet-list" *ngFor="let idtext of value">
+                   
+                        <ul  >
+                        
+                            <li *ngFor="let idtext of highlights"> 
+                                   {{idtext}}
 
-                                <li>
-                                   {{idtext.highlights}}
+                            </li>
+                        </ul>
 
-                                </li>
-
-
-
-                            </ul>
-                        </div>
+                    </div>
+                            
+                       
                     </div>
                 </div>
                 <div class="col-md-1">
