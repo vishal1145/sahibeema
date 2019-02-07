@@ -259,9 +259,6 @@
                     <h4>
                         <a [href]="'/articlesingle/'+funart._id">{{funart.posttitle}}</a>
                     </h4>
-                    <p>
-                        {{funart.description}}
-                    </p>
                     <div class="meta-bottom d-flex justify-content-between">
                         <p><span class="lnr lnr-heart" style="margin-right: 10px;" (click)="addLikes(funart._id)" *ngIf=" funart && funart.likes && funart.likes.length >= 0 "></span>{{funart.likes.length}}
                             likes</p>
@@ -269,6 +266,9 @@
                         </p>
 
                     </div>
+                    <p  [innerHTML]="funart.description">
+                    </p>
+                  
                 </div>
             </div>
             <!--<div class=" single-blog">

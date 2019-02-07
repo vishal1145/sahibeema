@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgZone } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ITHoursService } from '../../providers/it-hours-service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 declare var $: any;
 import { UseEffects } from '../effect'
 
@@ -35,7 +36,8 @@ export class IndexComponent implements OnInit {
   }
   constructor(
     public itHoursService: ITHoursService,
-    public router: Router
+    public router: Router,
+    private _sanitizer: DomSanitizer
   ) {
     this.getCategory()
     $('#myModal').show('');
@@ -89,7 +91,10 @@ export class IndexComponent implements OnInit {
     this.half_article = this.newblock.slice(0, 4)
     for(var i=0;i<this.half_article.length;i++){
       this.half_article[i].date = new Date(this.half_article[i].created_at)
-    }
+     
+        this.half_article[i].description = this._sanitizer.bypassSecurityTrustHtml(this.half_article[i].description);
+      }
+    
     console.log( this.half_article)
     
 
